@@ -6,6 +6,11 @@ The official website for Start Gjøvik.
 - [ ] Deployed
 
 
+## Developers
+
+<a href="https://github.com/KjetilIN/startgjovik/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=KjetilIN/startgjovik" />
+</a>
 
 ## How to run?
 
