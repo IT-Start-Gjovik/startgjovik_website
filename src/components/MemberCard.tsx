@@ -13,12 +13,12 @@ interface Props {
 
 export const MemberCard: React.FC<Props> = ({ name, role, study, attributes, description}) => {
 
-    const imgSize = 600;
+    const IMG_SIZE = 600;
 
     return (
 
         <div className="flex flex-col items-center bg-gray-800 border rounded-lg shadow-md md:flex-row md:max-w-xl lg:max-w-2xl">
-            <Image className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={`/${name.toLowerCase()}.JPG`} alt={name} width={imgSize} height={imgSize} />
+            <Image className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={`/${name.split(" ")[0].toLowerCase()}.JPG`} alt={name} width={IMG_SIZE} height={IMG_SIZE} />
             <div className="flex flex-col justify-between p-4 leading-normal">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
                 <h6 className='mb-1 text-white'>{role}</h6>

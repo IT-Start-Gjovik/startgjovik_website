@@ -22,7 +22,7 @@ function getStyleFromRole(role: string): React.CSSProperties {
 function getEmoji(role: string): string {
     if (role.toLocaleLowerCase() == "hr") return "🍀";
     if (role.toLocaleLowerCase() == "leder" || role.toLocaleLowerCase() == "leder") return "🥇";
-    if (role.toLocaleLowerCase() == "styre") return "📜";
+    if (role.toLocaleLowerCase() == "styret") return "📜";
     if (role.toLocaleLowerCase() == "it") return "💻";
     if (role.toLocaleLowerCase() == "event") return "📅";
     if (role.toLocaleLowerCase() == "podcast") return "🔉";
