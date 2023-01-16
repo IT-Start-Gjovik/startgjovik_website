@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <MemberCard name='Morten' role='Promo Leder' attributes={["hr", "leder"]} study="Elektroingeniør - 3.året" description='Promo ansvarlig for Start Gjøvik! '/>
+        <MemberCard name='Morten' role='Promo Leder' attributes={["hr", "leder", "it", "styre", "podcast", "event"]} study="Elektroingeniør - 3.året" description='Promo ansvarlig for Start Gjøvik! '/>
       </main>
     </>
   )
