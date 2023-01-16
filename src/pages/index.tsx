@@ -1,3 +1,4 @@
+import { MemberCard } from '@/components/MemberCard'
 import Head from 'next/head'
 
 
@@ -11,8 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        
-        
+        <MemberCard name='Morten' role='Promo Leder' attributes={["hr", "leder"]} study="Elektroingeniør - 3.året" description='Promo ansvarlig for Start Gjøvik! '/>
       </main>
     </>
   )
