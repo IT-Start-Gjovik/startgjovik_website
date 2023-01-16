@@ -30,11 +30,6 @@ function getEmoji(role: string): string {
     return "";
 }
 
-function getStyle(role: string): string {
-    return getStyleFromRole(role) + " text-xs font-medium mr-2 px-2.5 py-0.5 rounded ";
-}
-
-
 
 export const Badge: React.FC<Props> = ({ role }) => {
     const emoji = getEmoji(role);
