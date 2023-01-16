@@ -1,7 +1,13 @@
+import { MemberCard } from '@/components/MemberCard'
 import Head from 'next/head'
+
+import membersJSON from "../../constants/members.json"
 
 
 export default function Home() {
+
+  const members = membersJSON.members;
+
   return (
     <>
       <Head>
@@ -11,8 +17,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        
-        
+        {members.map((member) =>{
+          return( <MemberCard key={member.id} name={member.name} role={member.role} attributes={member.attribute} study={member.study} description={member.description}/>)
+        })}
+
+       
       </main>
     </>
   )
