@@ -1,6 +1,4 @@
 import { Hero } from '@/components/Hero';
-import { MemberCard } from '@/components/MemberCard'
-import { Navbar } from '@/components/Navbar';
 import Head from 'next/head'
 
 import membersJSON from "../../constants/members.json"
