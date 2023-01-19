@@ -1,3 +1,4 @@
+import { Hero } from '@/components/Hero';
 import { MemberCard } from '@/components/MemberCard'
 import Head from 'next/head'
 
@@ -17,7 +18,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-          <h1>Main page</h1>
+          <Hero/>
+          <h1>HI</h1>
        
       </main>
     </>
