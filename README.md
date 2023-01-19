@@ -1,9 +1,14 @@
-# Start Gjøvik 2022-2023 
+# Start Gjøvik Website 🚀🚀
 
-The official website for Start Gjøvik. 
 
-- [x] In Developent
-- [ ] Deployed
+![website](https://user-images.githubusercontent.com/66110094/213516594-630e76e9-3ee5-4518-b615-df9add29117f.gif)
+
+
+
+✅ Website for Start Gjøvik 
+
+‼ Under development ‼
+
 
 ## How to run?
 
