@@ -1,7 +1,7 @@
 import { Hero } from '@/components/Hero';
 import Head from 'next/head'
 
-import membersJSON from "../../constants/members.json"
+import membersJSON from "../constants/members.json"
 
 
 export default function Home() {

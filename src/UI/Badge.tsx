@@ -1,4 +1,4 @@
-import { GREEN, RED, YELLOW, BLUE, GRAY, PINK }  from 'constants/colors';
+import { GREEN, RED, YELLOW, BLUE, GRAY, PINK }  from '@/constants/colors';
 import React from 'react'
 
 

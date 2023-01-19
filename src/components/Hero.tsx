@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Pages } from 'constants/pagesConst'
+import { Pages } from '@/constants/pagesConst'
 import { NavLink } from './NavLink'
 
 
