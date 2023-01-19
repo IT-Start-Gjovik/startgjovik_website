@@ -17,10 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {members.map((member) =>{
-          return( <MemberCard key={member.id} name={member.name} role={member.role} attributes={member.attribute} study={member.study} description={member.description}/>)
-        })}
-
+          <h1>Main page</h1>
        
       </main>
     </>
