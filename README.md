@@ -15,7 +15,7 @@
 1. Install Node.js
 2. Clone repo
 3. ```` cd startgjovik ````
-4. ```` npm start ````
+4. ```` npm run dev ````
 
 ## How to contribute?
 
