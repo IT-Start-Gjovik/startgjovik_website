@@ -5,7 +5,7 @@ import { NavLink } from './NavLink'
 
 export const Navbar: React.FC = () => {
     return (
-        <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 absolute">
+        <nav className="bg-transparent top-0 left-0 right-0 z-10 absolute">
             <div className="container flex flex-wrap items-end justify-between mx-auto">
 
                 <div className="flex md:order-2 items-end">
