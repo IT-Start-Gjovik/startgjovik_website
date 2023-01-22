@@ -21,9 +21,8 @@ export default function Home() {
         <Navbar/>
         <Hero/>
 
-        <p className="mt-20">
+        <p className="mt-0.5">
           Conent Below!!!
-
         </p>
 
       </main>
