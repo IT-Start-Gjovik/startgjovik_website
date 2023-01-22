@@ -1,6 +1,7 @@
 import { Pages } from "@/constants/pagesConst";
 import { BlueButton } from "@/UI/BlueButton";
 import React from "react";
+import { DropdownComponent } from "./DropdownComponent";
 import { NavLink } from "./NavLink";
 
 export const Navbar: React.FC = () => {
@@ -23,6 +24,7 @@ export const Navbar: React.FC = () => {
                                 text={page.text}
                             />
                         ))}
+                        <DropdownComponent text="Projekter" options={["IT", "HR", "Økonomi"]}/>
                     </ul>
                 </div>
             </div>
