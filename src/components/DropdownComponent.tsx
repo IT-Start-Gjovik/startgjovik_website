@@ -11,8 +11,8 @@ interface Props{
 export const DropdownComponent: React.FC<Props> = ({text, options}) => {
     return (
         <div className=" lg:max-w-sm ">
-            <select className="p-2.5 text-white text-xl bg-transparent shadow-sm outline-none appearance-none hover:underline " >
-                <option hidden>{text} ↓</option>
+            <select className="block py-2 pl-3 pr-4 text-xl text-white rounded bg-transparent md:p-0  hover:text-white hover:underline" >
+                <option hidden>{text}</option>
                 {options.map((option, index) =>{
                    return <option key={index} onClick={event =>  window.location.href=`/${option.toLowerCase().replace(" ", "-")}`}>{option}</option>
                 })}
