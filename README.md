@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Start Gjøvik Website 🚀</h1>
-    <i>The production kode for the upcoming new website </i>
+    <i>The production code for the upcoming new website for Start Gjøvik </i>
     <div gap="3">
         <br />
         <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" /> 
