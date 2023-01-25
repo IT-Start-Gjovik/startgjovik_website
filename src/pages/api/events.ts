@@ -2,22 +2,6 @@
 import { Events } from '@/constants/events'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export type Event = {
-    id: string,
-    title: string,
-    tag: string,
-    date: string,
-    time: string,
-    desctiption: string,
-    link: string
-    
-}
-
-
-type EventsType = {
-    list: Event[]
-}
-
 export default function handler( req: NextApiRequest,res: NextApiResponse) {
     const {method} = req;
 

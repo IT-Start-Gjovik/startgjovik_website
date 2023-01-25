@@ -3,10 +3,7 @@ import { MemberCard } from "@/components/MemberCard";
 import { Navbar } from "@/components/Navbar";
 import Head from "next/head";
 
-import membersJSON from "../constants/members.json";
-
 export default function Home() {
-    const members = membersJSON.members;
 
     return (
         <>
@@ -27,7 +24,6 @@ export default function Home() {
                 <Hero />
 
                 <p className="mt-0.5">Conent Below!!!</p>
-
             </main>
         </>
     );

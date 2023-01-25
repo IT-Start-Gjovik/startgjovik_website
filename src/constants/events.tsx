@@ -1,6 +1,15 @@
-import { Event } from "@/pages/api/events"
+export type Event = {
+    id: string,
+    title: string,
+    tag: string,
+    date: string,
+    time: string,
+    desctiption: string,
+    link: string
+    
+}
 
-export const Events = [
+export const Events: Event[] = [
     {
         id: "1",
         title: "Workshop",
