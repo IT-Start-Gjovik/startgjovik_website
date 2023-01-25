@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { MemberCard } from "@/components/MemberCard";
 import { Navbar } from "@/components/Navbar";
 import Head from "next/head";
 
@@ -26,6 +27,7 @@ export default function Home() {
                 <Hero />
 
                 <p className="mt-0.5">Conent Below!!!</p>
+
             </main>
         </>
     );
