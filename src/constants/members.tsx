@@ -1,5 +1,5 @@
 
-type Member = {
+export type MemberType = {
     id: number,
     name: string ,
     study: string,
@@ -9,7 +9,7 @@ type Member = {
 
 }
 
-export const Members: Member[] = [
+export const Members: MemberType[] = [
     {
         id: 2223,
         name: "Kjetil Indrehus",
