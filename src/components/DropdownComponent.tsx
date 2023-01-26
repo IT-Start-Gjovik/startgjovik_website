@@ -14,7 +14,7 @@ export const DropdownComponent: React.FC<Props> = ({text, options}) => {
             <select className="block py-2 pl-3 pr-4 text-xl text-white rounded bg-transparent md:p-0  hover:text-white hover:underline" >
                 <option hidden>{text}</option>
                 {options.map((option, index) =>{
-                   return <option key={index} onClick={event =>  window.location.href=`/${option.toLowerCase().replace(" ", "-")}`}>{option}</option>
+                   return <option className="text-black" key={index} onClick={event =>  window.location.href=`/${option.toLowerCase().replace(" ", "-")}`}>{option}</option>
                 })}
 
             </select>

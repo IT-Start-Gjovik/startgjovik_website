@@ -23,7 +23,7 @@ export const MemberCard: React.FC<Props> = ({
         <div className="flex flex-col items-center rounded-lg border bg-gray-800 shadow-md md:max-w-xl md:flex-row lg:max-w-2xl">
             <Image
                 className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                src={`/${name.split(" ")[0].toLowerCase()}.JPG`}
+                src={`/${name.split(" ")[0].toLocaleLowerCase()}.JPG`}
                 alt={name}
                 width={IMG_SIZE}
                 height={IMG_SIZE}
