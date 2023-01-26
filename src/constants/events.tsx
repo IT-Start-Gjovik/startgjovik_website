@@ -1,4 +1,4 @@
-export type Event = {
+export type EventType = {
     id: string,
     title: string,
     tag: string,
@@ -9,7 +9,7 @@ export type Event = {
     
 }
 
-export const Events: Event[] = [
+export const Events: EventType[] = [
     {
         id: "1",
         title: "Workshop",
