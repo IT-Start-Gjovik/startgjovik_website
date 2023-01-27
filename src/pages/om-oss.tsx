@@ -1,4 +1,5 @@
 import { MemberCard } from '@/components/MemberCard';
+import { Navbar } from '@/components/Navbar';
 import { MemberType } from '@/constants/members';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -36,7 +37,7 @@ const Om_oss: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-
+                <Navbar config="bg-black"/>
                 <h1>Events!</h1>
 
                 {members.map((member) => (

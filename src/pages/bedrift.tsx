@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/Navbar';
 import { NextPage } from 'next'
 import Head from 'next/head';
 import React from 'react'
@@ -18,7 +19,7 @@ const Bedrift: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-
+                <Navbar config="bg-black"/>
                 <h1>Bedrifter!</h1>
 
 

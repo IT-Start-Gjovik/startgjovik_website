@@ -20,7 +20,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <Navbar />
+                <Navbar config="bg-transparent absolute" />
                 <Hero />
 
                 <div className="flex flex-col justify-center px-40">

@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/Navbar';
 import { EventType } from '@/constants/events';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -32,6 +33,7 @@ const Event: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Navbar config="bg-black"/>
 
         <h1>Events!</h1>
 

@@ -4,9 +4,14 @@ import React from "react";
 import { DropdownComponent } from "./DropdownComponent";
 import { NavLink } from "./NavLink";
 
-export const Navbar: React.FC = () => {
+
+interface Props{
+    config?: string
+}
+
+export const Navbar: React.FC<Props> = ({config}) => {
     return (
-        <nav className="absolute top-0 left-0 right-0 z-10 bg-transparent">
+        <nav className={"top-0 left-0 right-0 z-10 " + config}>
             <div className="container mx-auto flex flex-wrap items-end justify-between">
                 <div className="flex items-end md:order-2">
                     <BlueButton link="/påmelding" text="Bli Medlem!" />
