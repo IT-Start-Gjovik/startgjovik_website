@@ -1,3 +1,19 @@
+<div align="center">
+	<h1>Start Gjøvik Website 🚀</h1>
+	<i>The production code for the upcoming new website for Start Gjøvik </i>
+	<div gap="3">
+    	<br />
+    	<img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+    	<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+    	<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+	</div>
+</div>
+
+<br />
+
+![website](https://user-images.githubusercontent.com/66110094/213516594-630e76e9-3ee5-4518-b615-df9add29117f.gif)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
