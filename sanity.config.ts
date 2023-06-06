@@ -1,6 +1,6 @@
 import { defineConfig } from "sanity";
 import {deskTool} from "sanity/desk";
-import event from "./backend/schemas/event";
+import schemas from "./backend/schemas";
 
 
 // Config for sanity
@@ -11,7 +11,7 @@ const config = defineConfig({
     title: "Start Gjøvik Website",
     basePath: "/admin",
     plugins: [deskTool()],
-    schema: {types: [event]}
+    schema: {types: schemas}
 });
 
 export default config;
