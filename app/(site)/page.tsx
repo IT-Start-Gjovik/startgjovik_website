@@ -1,3 +1,4 @@
+import EventCard from '@/components/events/eventCard'
 import Logo from '@/components/logo'
 import Image from 'next/image'
 
@@ -20,6 +21,8 @@ export default function Home() {
         <h3 className="font-sans font-bold text-2xl">Kommende Arrangementer</h3>
       </div>
 
+
+      <EventCard />
 
       
 
