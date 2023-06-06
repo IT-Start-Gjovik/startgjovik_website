@@ -22,7 +22,11 @@ export default function Home() {
       </div>
 
 
-      <EventCard />
+      <EventCard
+        title="Case Breaker 2023"
+        description="Case Breaker handler om å pitche gode løsninger foran en jury. Du kan vinne store penge premier"
+        imageUrl="/images/test.png"
+       />
 
       
 
