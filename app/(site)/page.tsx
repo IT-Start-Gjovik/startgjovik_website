@@ -1,12 +1,19 @@
 import { getEventCards } from '@/backend/sanity-utils';
-import EventCard from '@/components/events/eventCard';
-import EventCardList from '@/components/events/eventCardList';
 import Logo from '@/components/logo';
 import { EventCardType } from '@/types/EventCardType';
+import EventCardList from '@/components/events/eventCardList';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically load the list of components 
+const EventCardListLocal = dynamic(() => import("@/components/events/eventCardList"), {
+  loading: () => <div>Loading...</div>,
+  ssr: false,
+});
 
 
 export default async function Home() {
-  
+
   // Fetch the projects 
   const events: EventCardType[] = await getEventCards();
 
@@ -28,21 +35,10 @@ export default async function Home() {
         <h3 className="font-sans font-bold text-2xl">Kommende Arrangementer</h3>
       </div>
 
-
-
-      {
-        events && events.length > 0 ?
-        events.map((event)=>{
-          return <EventCard
-            key={event._id}
-            title = {event.title}
-            description={event.description}
-            imageUrl={event.image}
-          />
-        }) :
-
-        <h2>Ingen kommende Arrangementer</h2>
-      }
+      {/** Using Suspense and the dynamically loaded list.  */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <EventCardListLocal events={events} />
+      </Suspense>
 
     </main>
   )

@@ -1,21 +1,31 @@
-import { getEventCards } from "@/backend/sanity-utils";
 import { EventCardType } from "@/types/EventCardType";
 import EventCard from "./eventCard";
+import Link from "next/link";
 
-export default async function EventCardList() {
-    // Fetch all cards 
-    const events: EventCardType[] = await getEventCards();
+
+interface EventCardListProps {
+    events: EventCardType[];
+  }
+
+export default function EventCardList({events }: EventCardListProps) {
 
     return (
         <>
-            {events.map((event) => (
-                <EventCard
-                    key={event._id}
-                    title={event.title}
-                    description={event.description}
-                    imageUrl={event.image}
-                />
-            ))}
+            {events && events.length > 0 ? (
+                events.map((event) => {
+                    return (
+                        <Link href={`/events/${event.slug}`} key={event._id}>
+                            <EventCard
+                                title={event.title}
+                                description={event.description}
+                                imageUrl={event.image}
+                            />
+                        </Link>
+                    );
+                })
+            ) : (
+                <h2>Ingen kommende Arrangementer</h2>
+            )}
         </>
     );
 }

@@ -15,7 +15,8 @@ export async function getEventCards(){
             title,
             description,
             datetime,
-            "image": image.asset -> url
+            "image": image.asset -> url,
+            "slug": slug.current,
         }`
     )
 }
