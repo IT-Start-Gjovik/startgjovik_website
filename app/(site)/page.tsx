@@ -1,7 +1,9 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import EventCard from '@/components/events/eventCard';
+import EventCardList from '@/components/events/eventCardList';
 import Logo from '@/components/logo';
 import { EventCardType } from '@/types/EventCardType';
+
 
 export default async function Home() {
   
@@ -14,7 +16,7 @@ export default async function Home() {
 
       {/** Paragraph for introduction */}
       <p className="font-sans text-xl flex justify-center mx-auto whitespace-pre-line break-words">
-        En studentorganisasjon med lidenskap for 
+        En studentorganisasjon med lidenskap for
         entreprenørskap og bærekraftig utvikling 🚀
       </p>
 

@@ -10,7 +10,7 @@ export default function Logo(){
             alt="Start Logo"
             src={"/images/startLogo.png"}
             className="flex justify-center mx-auto py-20"
-            width={500}
+            width={700}
             height={200}
         />
     );
