@@ -20,6 +20,13 @@ const event = {
             type: "datetime",
         },
         {
+            name: "slug",
+            title: "Slug",
+            type: "slug",
+            options: { source: "title" }
+        }
+        ,
+        {
             name: "image",
             title: "Image",
             type: "image",
