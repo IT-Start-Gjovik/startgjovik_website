@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'gradient-start': '#09203f',
-        'gradient-end': '#2b4f6b',
+        'gradient-start': 'rgb(0, 77, 123)',
+        'gradient-mid': 'rgb(1, 22, 43)',
+        'gradient-end': 'rgb(194, 217, 239)',
       },
     },
   },

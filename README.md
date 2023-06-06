@@ -11,8 +11,6 @@
 
 <br />
 
-![website](https://user-images.githubusercontent.com/66110094/213516594-630e76e9-3ee5-4518-b615-df9add29117f.gif)
-
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

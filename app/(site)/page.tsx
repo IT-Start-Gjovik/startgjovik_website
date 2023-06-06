@@ -9,7 +9,7 @@ export default async function Home() {
   const events: EventCardType[] = await getEventCards();
 
   return (
-    <main className="min-h-screen bg-gradient-to-t from-gradient-start to-gradient-end">
+    <main className="min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start">
       <Logo />
 
       {/** Paragraph for introduction */}
