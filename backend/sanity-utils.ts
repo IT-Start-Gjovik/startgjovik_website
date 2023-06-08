@@ -41,6 +41,7 @@ export async function getEventPage(slug: string): Promise<EventPageType> {
         "image": image.asset->url,
         url,
         content,
+        datetime
       }`,
       { slug }
     )
