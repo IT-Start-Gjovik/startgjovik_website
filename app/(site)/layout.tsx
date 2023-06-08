@@ -1,3 +1,4 @@
+import { getEventPages } from '@/backend/sanity-utils'
 import '../globals.css'
 import { Inter } from 'next/font/google'
 
@@ -8,11 +9,16 @@ export const metadata = {
   description: 'En student organisasjon for studenter!',
 }
 
-export default function RootLayout({
+
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  const eventPages = await getEventPages()
+
   return (
     <html lang="en">
       <body className={inter.className }>{children}</body>
