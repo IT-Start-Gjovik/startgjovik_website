@@ -10,7 +10,7 @@ interface EventCardListProps {
 export default function EventCardList({events }: EventCardListProps) {
 
     return (
-        <>
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center place-items-center mt-20 gap-3">
             {events && events.length > 0 ? (
                 events.map((event) => {
                     return (
@@ -26,6 +26,6 @@ export default function EventCardList({events }: EventCardListProps) {
             ) : (
                 <h2>Ingen kommende Arrangementer</h2>
             )}
-        </>
+        </div>
     );
 }

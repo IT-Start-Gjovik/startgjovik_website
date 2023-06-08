@@ -1,15 +1,20 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/logo';
 import { EventCardType } from '@/types/EventCardType';
-import EventCardList from '@/components/events/eventCardList';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+import { SkeletonCardGrid } from '@/components/skeleton/skeletonCardGrid';
+
+
+
 
 // Dynamically load the list of components 
 const EventCardListLocal = dynamic(() => import("@/components/events/eventCardList"), {
-  loading: () => <div>Loading...</div>,
+  loading: () => <SkeletonCardGrid />,
   ssr: false,
 });
+
+
 
 
 export default async function Home() {
@@ -36,7 +41,7 @@ export default async function Home() {
       </div>
 
       {/** Using Suspense and the dynamically loaded list.  */}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<SkeletonCardGrid/>}>
         <EventCardListLocal events={events} />
       </Suspense>
 
