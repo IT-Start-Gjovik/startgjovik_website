@@ -10,7 +10,7 @@ const event = {
         },
         {
             name: "description",
-            title: "Description",
+            title: "Description (Kort forklaring til event kort)",
             type: "text",
             validation: (Rule: { max: (arg0: number) => any }) => Rule.max(150),
         },
@@ -39,6 +39,17 @@ const event = {
                 },
             ],
         },
+        {
+            name:"joinlink",
+            title: "Join Link (Forms)",
+            type: "url"
+        },
+        {
+            name:"content",
+            title: "Content (100-500 ord)",
+            type: "array",
+            of: [{type: "block"}]
+        }
     ],
 };
 
