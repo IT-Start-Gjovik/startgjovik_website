@@ -40,9 +40,10 @@ const event = {
             ],
         },
         {
-            name:"joinlink",
-            title: "Join Link (Forms)",
-            type: "url"
+            name:"url",
+            title: "Url (Forms)",
+            type: "url",
+            required: true
         },
         {
             name:"content",

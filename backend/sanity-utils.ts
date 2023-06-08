@@ -39,31 +39,9 @@ export async function getEventPage(slug: string): Promise<EventPageType> {
         title,
         "slug": slug.current,
         "image": image.asset->url,
-        joinurl,
-        content
+        url,
+        content,
       }`,
       { slug }
     )
-}
-
-
-export async function getEventPages(): Promise<EventPageType[]> {
-    const client = createClient({
-        projectId: "a42ubgcg",
-        dataset: "production",
-        apiVersion: "2023-07-06",
-        useCdn: false 
-    });
-
-    return client.fetch(
-        groq`*[_type == "event"]{
-          _id,
-          title,
-          "slug": slug.current,
-          "image": image.asset->url,
-          joinurl,
-          content
-        }`
-      )
-
 }

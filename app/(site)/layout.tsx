@@ -1,4 +1,3 @@
-import { getEventPages } from '@/backend/sanity-utils'
 import '../globals.css'
 import { Inter } from 'next/font/google'
 
@@ -17,7 +16,6 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
 
-  const eventPages = await getEventPages()
 
   return (
     <html lang="en">

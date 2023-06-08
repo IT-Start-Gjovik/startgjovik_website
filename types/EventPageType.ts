@@ -6,7 +6,7 @@ export type EventPageType = {
     datetime: string,
     image: string,
     slug: string,
-    joinurl: string,
+    url: string,
     content: PortableTextBlock[],
     
 }
