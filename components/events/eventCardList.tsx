@@ -48,6 +48,7 @@ export default function EventCardList({events }: EventCardListProps) {
                       onClick={(e: any) =>
                         handleClick(e, `/events/${event.slug}`)
                       }
+                      className="cursor-pointer"
                     >
                       <EventCard
                         title={event.title}

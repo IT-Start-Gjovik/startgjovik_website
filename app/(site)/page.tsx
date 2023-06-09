@@ -1,3 +1,5 @@
+"use client";
+
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/logo';
 import { EventCardType } from '@/types/EventCardType';
@@ -5,6 +7,7 @@ import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Spinner from '@/components/UI/Spinner';
 import Footer from '@/components/footer/footer';
+import Hero from '@/components/heroSection/hero';
 
 
 // Spinner element that has been standard 
@@ -34,6 +37,13 @@ export default async function Home() {
           En studentorganisasjon med lidenskap for
           entreprenørskap og bærekraftig utvikling 🚀
         </p>
+
+        {/** Line Breaker */}
+        <hr className="w-96 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10" />
+
+        {/**Cards with info about Start Gjøvik */}
+        <Hero />
+
 
         {/** Line Breaker */}
         <hr className="w-96 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10" />
