@@ -6,11 +6,15 @@ import dynamic from 'next/dynamic';
 import Spinner from '@/components/UI/Spinner';
 
 
+// Spinner element that has been standard 
+const CenteredSpinner = () =>{ 
+  return (<div className="flex justify-center my-20"> <Spinner /> </div>);
+}
 
 
 // Dynamically load the list of components 
 const EventCardListLocal = dynamic(() => import("@/components/events/eventCardList"), {
-  loading: () => <div className="flex justify-center my-10"> <Spinner /> </div>,
+  loading: () => <CenteredSpinner/>,
   ssr: false,
 });
 
@@ -41,7 +45,7 @@ export default async function Home() {
       </div>
 
       {/** Using Suspense and the dynamically loaded list.  */}
-      <Suspense fallback={<div className="flex justify-center my-10"> <Spinner /> </div>}>
+      <Suspense fallback={<CenteredSpinner/>}>
         <EventCardListLocal events={events} />
       </Suspense>
 

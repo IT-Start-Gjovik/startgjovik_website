@@ -7,13 +7,12 @@ import { useRouter } from "next/navigation";
 import Spinner from "../UI/Spinner";
 
 
+// Props for the event card 
 interface EventCardListProps {
     events: EventCardType[];
 }
 
-
-
-
+// Component for the list of events 
 export default function EventCardList({events }: EventCardListProps) {
 
     // State for if the list is loading or not after being clicked on
@@ -32,24 +31,16 @@ export default function EventCardList({events }: EventCardListProps) {
     return (
         <>
           {loading ? (
-            <div className="flex justify-center my-10">
+            <div className="flex justify-center my-20">
               <Spinner />
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center place-items-center mt-20 gap-1">
+            <div className="flex flex-col justify-center items-center mt-20 gap-5 md:flex-row">
               {events && events.length > 0 ? (
                 events.map((event) => {
                   let currentDate: Date = new Date(event.datetime);
-                  let dateFormat: string =
-                    currentDate.getDay() +
-                    ". " +
-                    currentDate.toLocaleString("no-NO", { month: "long" }) +
-                    " " +
-                    currentDate.getFullYear().toString();
-                  let timeFormat: string =
-                    currentDate.getHours().toString() +
-                    ":" +
-                    currentDate.getMinutes().toString();
+                  let dateFormat: string = currentDate.getDay() + ". " + currentDate.toLocaleString("no-NO", { month: "long" }) + " " +currentDate.getFullYear().toString();
+                  let timeFormat: string = currentDate.getHours().toString() + ":" + currentDate.getMinutes().toString();
     
                   return (
                     <a
@@ -69,7 +60,10 @@ export default function EventCardList({events }: EventCardListProps) {
                   );
                 })
               ) : (
-                <h2>Ingen kommende Arrangementer</h2>
+                <div className="flex justify-center">
+                  <h2 className="text-white text-xl">Ingen kommende Arrangementer! </h2>
+                </div>
+                
               )}
             </div>
           )}
