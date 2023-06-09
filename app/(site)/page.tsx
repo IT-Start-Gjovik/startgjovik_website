@@ -1,7 +1,7 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/logo';
 import { EventCardType } from '@/types/EventCardType';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { SkeletonCardGrid } from '@/components/skeleton/skeletonCardGrid';
 
