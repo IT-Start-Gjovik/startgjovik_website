@@ -2,9 +2,9 @@
 
 import { EventCardType } from "@/types/EventCardType";
 import EventCard from "./eventCard";
-import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Spinner from "../UI/Spinner";
 
 
 interface EventCardListProps {
@@ -30,41 +30,49 @@ export default function EventCardList({events }: EventCardListProps) {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center place-items-center mt-20 gap-3">
+        <>
           {loading ? (
-            <div>Loading...</div> // Display the loading div when loading is true
-          ) : events && events.length > 0 ? (
-            events.map((event) => {
-              let currentDate: Date = new Date(event.datetime);
-              let dateFormat: string =
-                currentDate.getDay() +
-                ". " +
-                currentDate.toLocaleString("no-NO", { month: "long" }) +
-                " " +
-                currentDate.getFullYear().toString();
-              let timeFormat: string =
-                currentDate.getHours().toString() +
-                ":" +
-                currentDate.getMinutes().toString();
-    
-              return (
-                <a
-                  key={event._id}
-                  onClick={(e: any) => handleClick(e, `/events/${event.slug}`)}
-                >
-                  <EventCard
-                    title={event.title}
-                    description={event.description}
-                    imageUrl={event.image}
-                    date={dateFormat}
-                    time={timeFormat}
-                  />
-                </a>
-              );
-            })
+            <div className="flex justify-center my-10">
+              <Spinner />
+            </div>
           ) : (
-            <h2>Ingen kommende Arrangementer</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center place-items-center mt-20 gap-1">
+              {events && events.length > 0 ? (
+                events.map((event) => {
+                  let currentDate: Date = new Date(event.datetime);
+                  let dateFormat: string =
+                    currentDate.getDay() +
+                    ". " +
+                    currentDate.toLocaleString("no-NO", { month: "long" }) +
+                    " " +
+                    currentDate.getFullYear().toString();
+                  let timeFormat: string =
+                    currentDate.getHours().toString() +
+                    ":" +
+                    currentDate.getMinutes().toString();
+    
+                  return (
+                    <a
+                      key={event._id}
+                      onClick={(e: any) =>
+                        handleClick(e, `/events/${event.slug}`)
+                      }
+                    >
+                      <EventCard
+                        title={event.title}
+                        description={event.description}
+                        imageUrl={event.image}
+                        date={dateFormat}
+                        time={timeFormat}
+                      />
+                    </a>
+                  );
+                })
+              ) : (
+                <h2>Ingen kommende Arrangementer</h2>
+              )}
+            </div>
           )}
-        </div>
+        </>
       );
 }

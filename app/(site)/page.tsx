@@ -3,14 +3,14 @@ import Logo from '@/components/logo';
 import { EventCardType } from '@/types/EventCardType';
 import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { SkeletonCardGrid } from '@/components/skeleton/skeletonCardGrid';
+import Spinner from '@/components/UI/Spinner';
 
 
 
 
 // Dynamically load the list of components 
 const EventCardListLocal = dynamic(() => import("@/components/events/eventCardList"), {
-  loading: () => <SkeletonCardGrid />,
+  loading: () => <div className="flex justify-center my-10"> <Spinner /> </div>,
   ssr: false,
 });
 
@@ -41,7 +41,7 @@ export default async function Home() {
       </div>
 
       {/** Using Suspense and the dynamically loaded list.  */}
-      <Suspense fallback={<SkeletonCardGrid/>}>
+      <Suspense fallback={<div className="flex justify-center my-10"> <Spinner /> </div>}>
         <EventCardListLocal events={events} />
       </Suspense>
 
