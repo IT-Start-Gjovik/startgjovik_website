@@ -4,6 +4,7 @@ import { EventCardType } from '@/types/EventCardType';
 import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Spinner from '@/components/UI/Spinner';
+import Footer from '@/components/footer/footer';
 
 
 // Spinner element that has been standard 
@@ -48,7 +49,9 @@ export default async function Home() {
       <Suspense fallback={<CenteredSpinner/>}>
         <EventCardListLocal events={events} />
       </Suspense>
-
+    
+      <Footer/>
+      
     </main>
   )
 }
