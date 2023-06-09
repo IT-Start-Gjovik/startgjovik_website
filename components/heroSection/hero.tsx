@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Item } from '@/types/Item';
+import Image from 'next/image';
 
-// List with each item and what they contain. 
-// List of type item, see types folder. 
 const items: Item[] = [
     {
         id: 1,
@@ -11,8 +10,10 @@ const items: Item[] = [
         title: '@startgjovik',
         content: '700+ følgere',
         color: 'bg-blue-500',
-        description: 'Følg oss på instagram, @startgjovik ! \n\n Der legger vi ut mer innlegg fra konkurranser og diverse annet! \n\n Det er den SoMe kanalen vi er mest aktiv i!',
+        description: 'Følg oss på Instagram, @startgjovik! Der legger vi ut flere innlegg fra konkurranser og annet spennende. Det er den sosiale mediekanalen vi er mest aktive på!',
         figure: '📷',
+        link: 'https://www.instagram.com/startgjovik/',
+        buttonText: 'Besøk Instagram'
     },
     {
         id: 2,
@@ -20,32 +21,31 @@ const items: Item[] = [
         title: 'Start Gjøvik',
         content: '20 medlemmer',
         color: 'bg-green-500',
-        description: 'Start Gjøvik er et lokallag under Start Norge, \n\n som fremmer entreprenørskap blant studentene. \n Vi jobber for å gi muligheter for studentene her i Gjøvik, og hjelpe dei komme i gang med sin ide.',
+        description: 'Start Gjøvik er et lokallag under Start Norge som jobber med å fremme entreprenørskap blant studenter. Vi ønsker å gi muligheter for studenter her i Gjøvik og hjelpe dem med å realisere sine ideer.',
         figure: '🤝',
+        link: 'https://www.startnorge.no/',
+        buttonText: 'Les mer om Start Norge her'
     },
     {
         id: 3,
         subtitle: '🌍 Bærekraft',
-        title: 'FNs Mål',
+        title: 'FNs Bærekraftsmål',
         content: 'For en bedre fremtid',
         color: 'bg-yellow-500',
-        description: 'Vi i Start Gjøvik støtter FNs Bærekraft Mål.\n\n FNs mål for bærekraftig utvikling er "De forente nasjoners" felles arbeidsplan for å utrydde fattigdom, bekjempe ulikhet og stoppe klimaendringene innen 2030. De består av 17 hovedmål og 169 delmål. ',
+        description: 'Vi i Start Gjøvik støtter FNs bærekraftsmål. FNs mål for bærekraftig utvikling er en felles arbeidsplan for å utrydde fattigdom, bekjempe ulikhet og stoppe klimaendringene innen 2030. De består av 17 hovedmål og 169 delmål.',
         figure: '🌱',
+        link: 'https://www.fn.no/fns-baerekraftsmaal',
+        buttonText: 'Les mer'
     },
 ];
 
-
-// Hero section component 
 export default function Hero() {
-
-    // Use State for the selected item to showcase using framer motion.
     const [selectedId, setSelectedId] = useState<number | null>(null);
 
-    // Function for changing the item selected on click.
     const handleCardClick = (itemId: number) => {
         setSelectedId(selectedId === itemId ? null : itemId);
     };
-    
+
     return (
         <div className="flex flex-wrap justify-center">
             {items.map(item => (
@@ -53,7 +53,7 @@ export default function Hero() {
                     key={item.id}
                     layoutId={`item-${item.id}`}
                     onClick={() => handleCardClick(item.id)}
-                    className={`flex flex-col items-center justify-center p-6 m-4 rounded-lg cursor-pointer shadow-lg w-64 h-64 ${item.color}`}
+                    className={`flex flex-col items-center justify-center p-6 m-4 rounded-lg cursor-pointer shadow-lg w-72 h-72 ${item.color}`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0 }}
@@ -61,7 +61,7 @@ export default function Hero() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <motion.h5 className="text-gray-100 text-2xl">{item.subtitle}</motion.h5>
+                    <motion.h5 className="text-gray-100 text-xl">{item.subtitle}</motion.h5>
                     <motion.h2 className="text-white text-3xl font-bold mt-2">{item.title}</motion.h2>
                     <p className="text-gray-200 mt-4">{item.content}</p>
                 </motion.div>
@@ -96,6 +96,28 @@ export default function Hero() {
                                     <span className="text-2xl mr-2">{items[selectedId - 1].figure}</span>
                                     <span className="text-gray-500">{items[selectedId - 1].figure}</span>
                                 </div>
+                                <a
+                                    href={items[selectedId - 1].link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-6 px-4 py-2 text-white bg-purple-500 rounded-lg hover:bg-purple-600 flex items-center"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5 mr-2"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M5 12h14" />
+                                        <path d="M12 5l7 7-7 7" />
+                                    </svg>
+                                    {items[selectedId - 1].buttonText}
+                                </a>
+
                                 <motion.button
                                     onClick={() => handleCardClick(selectedId)}
                                     className="mt-6 px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 flex items-center"
@@ -112,7 +134,7 @@ export default function Hero() {
                                             clipRule="evenodd"
                                         />
                                     </svg>
-                                    Close
+                                    Lukk
                                 </motion.button>
                             </div>
                         </motion.div>

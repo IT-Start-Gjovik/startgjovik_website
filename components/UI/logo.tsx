@@ -9,8 +9,8 @@ export default function Logo(){
         <Image
             alt="Start Logo"
             src={"/images/startLogo.png"}
-            className="flex justify-center mx-auto py-20"
-            width={700}
+            className="flex justify-center mx-auto py-5"
+            width={900}
             height={200}
         />
     );
