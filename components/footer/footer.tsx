@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer(){
 
     const licenseURL: string = "https://github.com/IT-Start-Gjovik/startgjovik_website/blob/development/LICENSE";
-    const privacyPolicyURL: string = "#";
+    const privacyPolicyURL: string = "/privacy-policy";
 
     return (
         <div className="flex justify-center">

@@ -65,5 +65,5 @@ export default async function PageForEvent({ params }: Props) {
       </main>
       <Footer />
     </div>
-    )
+  );
 } 
