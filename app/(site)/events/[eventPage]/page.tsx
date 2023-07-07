@@ -3,7 +3,6 @@
 import { getEventPage } from "@/backend/sanity-utils";
 import { EventPageType } from "@/types/EventPageType";
 
-import ErrorPage from "../../404/page";
 import {PortableText} from '@portabletext/react'
 import Footer from "@/components/footer/footer";
 import BackButton from "@/components/UI/backbutton";
@@ -22,8 +21,7 @@ export default async function PageForEvent({ params }: Props) {
 
   // If the event does not exist, return the error page 
   if (!event) {
-    return <ErrorPage />
-  }
+    return <p>Error loading the event</p>
 
   // Information time and date formatted correctly 
   let currentDate: Date = new Date();
@@ -71,4 +69,4 @@ export default async function PageForEvent({ params }: Props) {
       <Footer />
     </div>
   );
-} 
+}} 
