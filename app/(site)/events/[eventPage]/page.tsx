@@ -2,9 +2,9 @@
 
 import { getEventPage } from "@/backend/sanity-utils";
 import { EventPageType } from "@/types/EventPageType";
-import { PortableText } from '@portabletext/react';
+
 import ErrorPage from "../../404/page";
-import Link from "next/link";
+import {PortableText} from '@portabletext/react'
 import Footer from "@/components/footer/footer";
 import BackButton from "@/components/UI/backbutton";
 import RegistrerButton from "@/components/UI/registrerbutton";
