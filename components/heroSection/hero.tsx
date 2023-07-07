@@ -34,7 +34,7 @@ const items: Item[] = [
         color: 'bg-yellow-500',
         description: 'Vi i Start Gjøvik støtter FNs bærekraftsmål. FNs mål for bærekraftig utvikling er en felles arbeidsplan for å utrydde fattigdom, bekjempe ulikhet og stoppe klimaendringene innen 2030. De består av 17 hovedmål og 169 delmål.',
         figure: '🌱',
-        link: 'https://www.fn.no/fns-baerekraftsmaal',
+        link: 'https://www.fn.no/om-fn/fns-baerekraftsmaal',
         buttonText: 'Les mer'
     },
 ];
