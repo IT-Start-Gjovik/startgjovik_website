@@ -35,7 +35,7 @@ export default function EventCardList({events }: EventCardListProps) {
               <Spinner />
             </div>
           ) : (
-            <div className="flex flex-wrap justify-center items-center mt-20 gap-5 md:flex-row">
+            <div className="flex flex-wrap justify-center items-center px-5 mt-20 gap-5 md:flex-row">
               {events && events.length > 0 ? (
                 events.map((event) => {
                   let currentDate: Date = new Date(event.datetime);
