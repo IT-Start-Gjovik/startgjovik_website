@@ -40,7 +40,7 @@ export default async function Home() {
         <Hero />
 
         {/** Line Breaker */}
-        <hr className="w-96 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10" />
+        <hr className="w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10" />
 
         {/**List of events */}
         <div className="flex justify-center items-center">

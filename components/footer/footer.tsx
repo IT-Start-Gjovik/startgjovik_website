@@ -8,7 +8,7 @@ export default function Footer(){
     const privacyPolicyURL: string = "/privacy-policy";
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-5">
             <footer className="rounded-xl mt-2 bg-gray-800 w-4/5">
                 <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                     <span className="text-sm sm:text-center text-gray-400">© 2023 <Link href="https://startgjovik.no/" className="hover:underline">Start Gjøvik</Link>. Alle Rettigheter Reservert.

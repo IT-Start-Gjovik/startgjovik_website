@@ -43,11 +43,11 @@ export default async function PageForEvent({ params }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start">
-      <main className=" flex justify-center min-h-screen">
-        <div className="bg-slate-100 w-3/4 h-fit p-20">
-          <h1 className="text-6xl font-bold text-black">{event.title}</h1>
+      <main className="text-4xl flex justify-center min-h-screen">
+        <div className="bg-slate-100 h-fit w-11/12 mt-2 p-5 md:p-20 md:w-3/4 md:text-6xl">
+          <h1 className=" font-bold text-black">{event.title}</h1>
 
-          <h2 className="text-black text-2xl my-5"> 📅 {dateFormat}  |  🕕 {timeFormat} <EventOverBadge /> </h2>
+          <h2 className="text-black text-xl my-2 md:text-2xl md:my-5"> 📅 {dateFormat}  |  🕕 {timeFormat} <EventOverBadge /> </h2>
 
           <hr className="h-1 my-8 border-0 bg-gray-800" />
 
