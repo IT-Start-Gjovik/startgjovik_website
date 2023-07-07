@@ -21,7 +21,8 @@ export default async function PageForEvent({ params }: Props) {
 
   // If the event does not exist, return the error page 
   if (!event) {
-    return <p>Error loading the event</p>
+   return <p>Error loading the event</p>
+  }
 
   // Information time and date formatted correctly 
   let currentDate: Date = new Date();
@@ -69,4 +70,4 @@ export default async function PageForEvent({ params }: Props) {
       <Footer />
     </div>
   );
-}} 
+}
