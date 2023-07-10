@@ -2,7 +2,7 @@
 
 import { getEventCards } from '@/backend/sanity-utils';
 import { EventCardType } from '@/types/EventCardType';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, use, useEffect, useLayoutEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Spinner from '@/components/UI/Spinner';
 import Footer from '@/components/footer/footer';
@@ -21,19 +21,17 @@ const CenteredSpinner = () => {
 
 export default function Home() {
 
-  const [events, setEvents] = useState<Map<string, EventCardType> | null>(null);
+  const [events, setEvents] = useState<EventCardType[]>();
 
-  useEffect(()=>{
-    const getEventMap = async () => {
-      const events: EventCardType[] = await getEventCards();
-      const eventCardMap: Map<string, EventCardType> = new Map<string, EventCardType>();
-      events.forEach((event) => eventCardMap.set(event.slug, event));
-      setEvents(eventCardMap);
-    }
-
-    getEventMap();
-
-  })
+  useEffect(() => {
+    getEventCards()
+      .then((data) => {
+        setEvents(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching event cards:', error);
+      });
+  }, []);
 
   if(!events){
     return <CenteredSpinner />
@@ -60,11 +58,9 @@ export default function Home() {
 
         {/** Listing all events if there are any  */}
         <div className="flex flex-wrap justify-center items-center px-5 mt-20 gap-5 md:flex-row">
-        { events.size > 0 ? <EventCardList events={Array.from(events.values())} /> : <NoEvents/> }
+        { events && events.length > 0 ? <EventCardList events={events} /> : <NoEvents/>}
         </div>
         
-
-
       </main>
 
       <Footer />
