@@ -10,23 +10,15 @@ import RegistrerButton from "@/components/UI/registrerbutton";
 
 // Props for the event page 
 type Props = {
-  params: { eventPage: string }
+  eventPage: EventPageType
 }
 
-export default async function PageForEvent({ params }: Props) {
-  const slug = params.eventPage; // Slug to the page
-
-  // Get the details for the event page
-  const event: EventPageType = await getEventPage(slug);
-
-  // If the event does not exist, return the error page 
-  if (!event) {
-   return <p>Error loading the event</p>
-  }
+export default function PageForEvent( { eventPage }:Props) {
+  const slug = eventPage.slug // Slug to the page
 
   // Information time and date formatted correctly 
   let currentDate: Date = new Date();
-  let eventDate: Date = new Date(event.datetime);
+  let eventDate: Date = new Date(eventPage.datetime);
   let dateFormat: string = eventDate.getDay() + ". " + eventDate.toLocaleString("no-NO", { month: "long" }) + " " + eventDate.getFullYear().toString();
   let timeFormat: string = eventDate.getHours().toString() + ":" + eventDate.getMinutes().toString();
   let isOver: Boolean = currentDate > eventDate;
@@ -45,20 +37,20 @@ export default async function PageForEvent({ params }: Props) {
     <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start">
       <main className="text-4xl flex justify-center min-h-screen">
         <div className="bg-slate-100 h-fit w-11/12 mt-2 p-5 md:p-20 md:w-3/4 md:text-6xl">
-          <h1 className=" font-bold text-black">{event.title}</h1>
+          <h1 className=" font-bold text-black">{eventPage.title}</h1>
 
           <h2 className="text-black text-xl my-2 md:text-2xl md:my-5"> 📅 {dateFormat}  |  🕕 {timeFormat} <EventOverBadge /> </h2>
 
           <hr className="h-1 my-8 border-0 bg-gray-800" />
 
           <div className="text-lg text-gray-800 mt-5 mx-10">
-            <PortableText value={event.content} />
+            <PortableText value={eventPage.content} />
           </div>
 
 
           <div className="flex justify-left gap-2">
 
-            <RegistrerButton isEventOverBoolean={isOver ? true : false} urlToForm={event.url} />
+            <RegistrerButton isEventOverBoolean={isOver ? true : false} urlToForm={eventPage.url} />
 
             <BackButton link="/" text="Tilbake" />
 
