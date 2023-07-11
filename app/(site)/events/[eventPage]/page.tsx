@@ -2,26 +2,38 @@
 
 import { getEventPage } from "@/backend/sanity-utils";
 import { EventPageType } from "@/types/EventPageType";
-
 import {PortableText} from '@portabletext/react'
 import Footer from "@/components/footer/footer";
 import BackButton from "@/components/UI/backbutton";
 import RegistrerButton from "@/components/UI/registrerbutton";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { redirect } from 'next/navigation';
+import Spinner from "@/components/UI/Spinner";
+import getDateTimeFormat from "@/utils/date";
 
 // Props for the event page 
 type Props = {
-  eventPage: EventPageType
+  params: { eventPage: string }
 }
 
-export default function PageForEvent( { eventPage }:Props) {
-  const slug = eventPage.slug // Slug to the page
+export default function PageForEvent({params}: Props) {
+  const [eventPage, setEventPage] = useState<EventPageType | null>(null);
+
+  const slug = params.eventPage;
+
+  useEffect(()=>{
+    if(!slug) redirect("/");
+    getEventPage(slug).then(data => setEventPage(data))
+  },[slug])
+
+  if(!eventPage){
+    return <Spinner/>
+  }
 
   // Information time and date formatted correctly 
-  let currentDate: Date = new Date();
-  let eventDate: Date = new Date(eventPage.datetime);
-  let dateFormat: string = eventDate.getDay() + ". " + eventDate.toLocaleString("no-NO", { month: "long" }) + " " + eventDate.getFullYear().toString();
-  let timeFormat: string = eventDate.getHours().toString() + ":" + eventDate.getMinutes().toString();
-  let isOver: Boolean = currentDate > eventDate;
+  let {dateFormat, timeFormat} = getDateTimeFormat(eventPage.datetime)
+  let isOver: Boolean = new Date > new Date(eventPage.datetime);
 
   const EventOverBadge = () => {
     return (

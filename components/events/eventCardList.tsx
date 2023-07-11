@@ -1,10 +1,6 @@
-"use client";
-
 import { EventCardType } from "@/types/EventCardType";
 import EventCard from "./eventCard";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Spinner from "../UI/Spinner";
+import getDateTimeFormat from "@/utils/date";
 
 
 // Props for the event card 
@@ -16,7 +12,8 @@ export default function EventCardList({ events }: EventCardListProps) {
   return (
     <>
       {events.map((event) => {
-        return <EventCard description={event.description} imageUrl={event.image} title={event.title} key={event._id} date={event.datetime} slug={event.slug}/>;
+        let { dateFormat, timeFormat } = getDateTimeFormat(event.datetime);
+        return <EventCard description={event.description} imageUrl={event.image} title={event.title} key={event._id} date={dateFormat} slug={event.slug} time={timeFormat} />;
       })}
     </>
   );
