@@ -1,13 +1,13 @@
 # CODEOWNERS file
 
 # IT Leder Start GJøvik and repsonsible for 
-* @kjetikin
+* @KjetilIN
 
 # Deployment responsible
-/.github/* @kjetikin
+/.github/* @KjetilIN
 
 # @sanity-team is responsible for the /app/(sanity)/ folder
-/app/(sanity)/* @sanity-team
+/app/(sanity)/* @IT-Start-Gjovik/sanity-team
 
 # Web Developers are repsonsible for the app itself that is found inside the /app/(site)/ folder
-/app/(site)/* @web-utviklere
+/app/(site)/* @IT-Start-Gjovik/web-utviklere 
