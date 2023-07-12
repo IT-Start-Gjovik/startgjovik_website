@@ -7,10 +7,9 @@ import Footer from "@/components/footer/footer";
 import BackButton from "@/components/UI/backbutton";
 import RegistrerButton from "@/components/UI/registrerbutton";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { redirect } from 'next/navigation';
-import Spinner from "@/components/UI/Spinner";
 import getDateTimeFormat from "@/utils/date";
+import LoadingPage from "@/components/loadingPage/loadingPage";
 
 // Props for the event page 
 type Props = {
@@ -28,7 +27,7 @@ export default function PageForEvent({params}: Props) {
   },[slug, eventPage])
 
   if(!eventPage){
-    return <Spinner/>
+    return <LoadingPage />
   }
 
   // Information time and date formatted correctly 

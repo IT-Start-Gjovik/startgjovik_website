@@ -2,21 +2,14 @@
 
 import { getEventCards } from '@/backend/sanity-utils';
 import { EventCardType } from '@/types/EventCardType';
-import { Suspense, use, useEffect, useLayoutEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
-import Spinner from '@/components/UI/Spinner';
+import { useEffect, useState } from 'react';
 import Footer from '@/components/footer/footer';
 import Hero from '@/components/heroSection/hero';
 import HeaderJumbotron from '@/components/jumbotron/jumbotron';
 import Logo from '@/components/UI/logo';
 import EventCardList from '@/components/events/eventCardList';
 import NoEvents from '@/components/UI/noEventsFound';
-
-
-// Spinner element that has been standard 
-const CenteredSpinner = () => {
-  return (<div className="flex justify-center my-20"> <Spinner /> </div>);
-}
+import LoadingPage from '@/components/loadingPage/loadingPage';
 
 
 export default function Home() {
@@ -37,7 +30,7 @@ export default function Home() {
   }, [events]);
 
   if(!events){
-    return <CenteredSpinner />
+    return <LoadingPage />
   }
 
   return (
