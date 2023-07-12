@@ -24,14 +24,17 @@ export default function Home() {
   const [events, setEvents] = useState<EventCardType[]>();
 
   useEffect(() => {
-    getEventCards()
+    if(!events){
+      getEventCards()
       .then((data) => {
         setEvents(data);
       })
       .catch((error) => {
         console.error('Error fetching event cards:', error);
       });
-  }, []);
+    }
+    
+  }, [events]);
 
   if(!events){
     return <CenteredSpinner />

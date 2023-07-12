@@ -24,8 +24,8 @@ export default function PageForEvent({params}: Props) {
 
   useEffect(()=>{
     if(!slug) redirect("/");
-    getEventPage(slug).then(data => setEventPage(data))
-  },[slug])
+    if(!eventPage) getEventPage(slug).then(data => setEventPage(data))
+  },[slug, eventPage])
 
   if(!eventPage){
     return <Spinner/>
