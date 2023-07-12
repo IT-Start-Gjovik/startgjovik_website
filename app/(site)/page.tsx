@@ -2,31 +2,36 @@
 
 import { getEventCards } from '@/backend/sanity-utils';
 import { EventCardType } from '@/types/EventCardType';
-import { Suspense, useState } from 'react';
-import dynamic from 'next/dynamic';
-import Spinner from '@/components/UI/Spinner';
+import { useEffect, useState } from 'react';
 import Footer from '@/components/footer/footer';
 import Hero from '@/components/heroSection/hero';
 import HeaderJumbotron from '@/components/jumbotron/jumbotron';
 import Logo from '@/components/UI/logo';
+import EventCardList from '@/components/events/eventCardList';
+import NoEvents from '@/components/UI/noEventsFound';
+import LoadingPage from '@/components/loadingPage/loadingPage';
 
 
-// Spinner element that has been standard 
-const CenteredSpinner = () =>{ 
-  return (<div className="flex justify-center my-20"> <Spinner /> </div>);
-}
+export default function Home() {
 
-// Dynamically load the list of components 
-const EventCardListLocal = dynamic(() => import("@/components/events/eventCardList"), {
-  loading: () => <CenteredSpinner/>,
-  ssr: false,
-});
+  const [events, setEvents] = useState<EventCardType[]>();
 
+  useEffect(() => {
+    if(!events){
+      getEventCards()
+      .then((data) => {
+        setEvents(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching event cards:', error);
+      });
+    }
+    
+  }, [events]);
 
-export default async function Home() {
-
-  // Fetch the projects 
-  const events: EventCardType[] = await getEventCards();
+  if(!events){
+    return <LoadingPage />
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start">
@@ -47,14 +52,14 @@ export default async function Home() {
           <h3 className="font-sans font-bold text-4xl px-10 sm:text-5xl">📅 Kommende Arrangementer</h3>
         </div>
 
-        {/** Using Suspense and the dynamically loaded list.  */}
-        <Suspense fallback={<CenteredSpinner/>}>
-          <EventCardListLocal events={events} />
-        </Suspense>
+        {/** Listing all events if there are any  */}
+        <div className="flex flex-wrap justify-center items-center px-5 mt-20 gap-5 md:flex-row">
+        { events && events.length > 0 ? <EventCardList events={events} /> : <NoEvents/>}
+        </div>
         
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
   )
 }
