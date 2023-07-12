@@ -1,8 +1,6 @@
-import Spinner from "@/components/UI/Spinner";
+
+import LoadingPage from "@/components/loadingPage/loadingPage";
 
 export default function PageLoading() {
-    return (
-    <div className="flex justify-center min-h-screen text-3xl">
-        <Spinner />
-    </div>)
+    return <LoadingPage />
 }
