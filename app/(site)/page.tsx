@@ -10,11 +10,15 @@ import Logo from '@/components/UI/logo';
 import EventCardList from '@/components/events/eventCardList';
 import NoEvents from '@/components/UI/noEventsFound';
 import LoadingPage from '@/components/loadingPage/loadingPage';
+import ErrorPage from './feilside/page';
+import { NextResponse } from 'next/server';
+import { useRouter } from 'next/navigation';
 
 
 export default function Home() {
 
   const [events, setEvents] = useState<EventCardType[]>();
+  const router = useRouter();
 
   useEffect(() => {
     if(!events){
@@ -23,11 +27,11 @@ export default function Home() {
         setEvents(data);
       })
       .catch((error) => {
-        console.error('Error fetching event cards:', error);
+        router.push("/feilside")
       });
     }
     
-  }, [events]);
+  }, [events, router]);
 
   if(!events){
     return <LoadingPage />
