@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { redirect } from 'next/navigation';
 import getDateTimeFormat from "@/utils/date";
 import LoadingPage from "@/components/loadingPage/loadingPage";
+import { error } from "console";
+import { useRouter } from 'next/navigation'
 
 // Props for the event page 
 type Props = {
@@ -20,16 +22,29 @@ export default function PageForEvent({params}: Props) {
   const [eventPage, setEventPage] = useState<EventPageType | null>(null);
 
   const slug = params.eventPage;
+  const router = useRouter()
 
+
+  
   useEffect(()=>{
-    if(!slug) redirect("/");
-    if(!eventPage) getEventPage(slug).then(data => setEventPage(data))
-  },[slug, eventPage])
+    if(!slug) router.push("/");
+    if(!eventPage) {
+      getEventPage(slug)
+      .then(
+        (data) => {
+          if(!data){
+            router.push("/feilside")
+          }
+          setEventPage(data)
+        })
+      .catch(error => console.log("Error catches!", error))}
+  },[slug, eventPage, router])
+  
 
   if(!eventPage){
     return <LoadingPage />
   }
-
+  
   // Information time and date formatted correctly 
   let {dateFormat, timeFormat} = getDateTimeFormat(eventPage.datetime)
   let isOver: Boolean = new Date > new Date(eventPage.datetime);
