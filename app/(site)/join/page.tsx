@@ -9,14 +9,14 @@ export default function JoinPage() {
     return (
         <main className="bg-gray-900 min-h-screen">
 
-            <div className="flex justify-center pt-10">
-                <h1 className="text-5xl">Bli medlem i Start Gjøvik 🚀</h1>
+            <div className="flex justify-center pt-10 px-6">
+                <h1 className="text-4xl md:text-6xl">Bli medlem🚀</h1>
             </div>
 
 
             <div className="flex flex-col items-center mt-10 gap-10">
 
-                <section className="inline-block">
+                <section className="px-1">
                     <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Hvem burde søke? 🤔</h2>
                     <ul className="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
                         <ChecklistItem text="Du er engasjert!" />
@@ -26,7 +26,7 @@ export default function JoinPage() {
                     </ul>
                 </section>
 
-                <section className="inline-block">
+                <section className="px-1">
                     <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Fordeler ✨</h2>
                     <ul className="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
                         <ChecklistItem text="Styrk CV'en din 📝" />
