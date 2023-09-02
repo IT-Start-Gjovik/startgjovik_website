@@ -1,6 +1,7 @@
 import JoinList from "@/components/JoinList/joinlist";
 import BackButton from "@/components/UI/backbutton";
 import ChecklistItem from "@/components/UI/checklistitem";
+import Footer from "@/components/footer/footer";
 
 export default function JoinPage() {
 
@@ -38,8 +39,11 @@ export default function JoinPage() {
 
                 <JoinList />
 
-                <BackButton link="/" text="Tilbake til hovudsiden"  />
+                <BackButton link="/" text="Tilbake til hovudsiden"/>
             </div>
+
+            <Footer/>
+            
 
 
 
