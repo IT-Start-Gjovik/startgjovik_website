@@ -10,13 +10,15 @@ export default function JoinList() {
 
             <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
                 Våre avdelinger trenger engasjerte studenter til å forme Start Gjøvik. 
-                Her er en liste med alle avdelinger som er åpne for nye studenter!
+                Her er en liste med alle avdelinger som er åpne for nye studenter! <br/> <br/>
+
+                Klikk på linkene under for å søke! ✍ 
             </p>
 
             <ul className="my-4 space-y-3">
-                <JoinListElement formUrl="#" status={JoinStatus.OPEN} title="IT Verv"/>
+                <JoinListElement formUrl="https://forms.gle/7yxEwP1HqtarFaQi6" status={JoinStatus.OPEN} title="IT Verv"/>
                 <JoinListElement formUrl="#" status={JoinStatus.COMING_SOON} title="Event Verv" />
-                <JoinListElement formUrl="#" status={JoinStatus.CLOSED} title="Sponsor Verv" />
+                <JoinListElement formUrl="#" status={JoinStatus.COMING_SOON} title="PR Verv" />
                 
             </ul>
             <div>

@@ -27,7 +27,7 @@ export default function JoinListElement({formUrl, title, status }:Props) {
 
     return (
         <li>
-            <a href={formUrl} className={"flex items-center p-3 text-white rounded-lg text-base font-bold hover:shadow "+ style}>
+            <a href={formUrl} target="_blank" className={"flex items-center p-3 text-white rounded-lg text-base font-bold hover:shadow "+ style}>
                 <span className="flex-1 ml-3 whitespace-nowrap">{title}</span>
                 {getStatusBadge(status)}
             </a>

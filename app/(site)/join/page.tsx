@@ -1,6 +1,8 @@
 import JoinList from "@/components/JoinList/joinlist";
+import BackButton from "@/components/UI/backbutton";
+import ChecklistItem from "@/components/UI/checklistitem";
 
-export default function JoinPage(){
+export default function JoinPage() {
 
 
     return (
@@ -10,10 +12,37 @@ export default function JoinPage(){
                 <h1 className="text-5xl">Bli medlem i Start Gjøvik 🚀</h1>
             </div>
 
-            <div>
-                <JoinList/>
+
+            <div className="flex flex-col items-center mt-10 gap-10">
+
+                <section className="inline-block">
+                    <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Hvem burde søke? 🤔</h2>
+                    <ul className="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                        <ChecklistItem text="Du er engasjert!" />
+                        <ChecklistItem text="Du liker å ta ansvar!"/>
+                        <ChecklistItem text="Du brenner for invasjon og entreprenørskap!" />
+                        <ChecklistItem text="Du studerer på NTNU eller Fagskolen i Gjøvik" />
+                    </ul>
+                </section>
+
+                <section className="inline-block">
+                    <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Fordeler ✨</h2>
+                    <ul className="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                        <ChecklistItem text="Styrk CV'en din 📝" />
+                        <ChecklistItem text="Delta på intern teambuilding!" />
+                        <ChecklistItem text="Bygg et solid nettverk" />
+                    </ul>
+                </section>
+
+
+
+                <JoinList />
+
+                <BackButton link="/" text="Tilbake til hovudsiden"  />
             </div>
-            
+
+
+
 
         </main>
     );
