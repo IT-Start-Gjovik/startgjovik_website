@@ -21,7 +21,7 @@ export default function JoinPage() {
                     <ul className="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
                         <ChecklistItem text="Du er engasjert!" />
                         <ChecklistItem text="Du liker å ta ansvar!"/>
-                        <ChecklistItem text="Du brenner for invasjon og entreprenørskap!" />
+                        <ChecklistItem text="Du brenner for innovasjon og entreprenørskap!" />
                         <ChecklistItem text="Du studerer på NTNU eller Fagskolen i Gjøvik" />
                     </ul>
                 </section>
@@ -39,7 +39,7 @@ export default function JoinPage() {
 
                 <JoinList />
 
-                <BackButton link="/" text="Tilbake til hovudsiden"/>
+                <BackButton link="/" text="Tilbake til hovedsiden"/>
             </div>
 
             <Footer/>
