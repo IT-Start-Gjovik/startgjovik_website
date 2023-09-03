@@ -23,7 +23,7 @@ const getStatusBadge = (status: JoinStatus) =>{
 
 export default function JoinListElement({formUrl, title, status }:Props) {
 
-    const style = status === JoinStatus.OPEN ? " bg-gray-700 hover:bg-gray-600" : "bg-gray-900 cursor-not-allowed"
+    const style = status === JoinStatus.OPEN ? " bg-gray-700 hover:bg-gray-600" : "bg-gray-900 cursor-not-allowed pointer-events-none"
 
     return (
         <li>
