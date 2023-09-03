@@ -1,31 +1,31 @@
 {
-  "name": "startgjovik",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@portabletext/react": "^3.0.4",
-    "@sanity/client": "^6.1.7",
-    "@types/node": "20.5.2",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "autoprefixer": "10.4.14",
-    "eslint": "^8.47.0",
-    "eslint-config-next": "^13.4.9",
-    "framer-motion": "^10.16.0",
-    "next": "13.4.9",
-    "next-sanity": "^5.4.4",
-    "postcss": "8.4.25",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-loading-skeleton": "^3.3.1",
-    "sanity": "^3.15.1",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.2.2"
+    "name": "startgjovik",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
+    },
+    "dependencies": {
+      "@portabletext/react": "^3.0.4",
+      "@sanity/client": "^6.1.7",
+      "@types/node": "20.5.2",
+      "@types/react": "18.2.14",
+      "@types/react-dom": "18.2.6",
+      "autoprefixer": "10.4.14",
+      "eslint": "^8.48.0",
+      "eslint-config-next": "^13.4.9",
+      "framer-motion": "^10.16.0",
+      "next": "13.4.9",
+      "next-sanity": "^5.4.4",
+      "postcss": "8.4.25",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-loading-skeleton": "^3.3.1",
+      "sanity": "^3.16.1",
+      "tailwindcss": "3.3.2",
+      "typescript": "5.2.2"
+    }
   }
-}

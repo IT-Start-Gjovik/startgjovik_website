@@ -11,7 +11,7 @@ export default function Footer(){
         <div className="flex justify-center mt-5">
             <footer className="rounded-xl mt-2 bg-gray-800 w-4/5">
                 <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-                    <span className="text-sm sm:text-center text-gray-400">© 2023 <Link href="https://startgjovik.no/" className="hover:underline">Start Gjøvik</Link>. Alle Rettigheter Reservert.
+                    <span className="text-sm sm:text-center text-gray-400">Opphavsrett © 2023 <Link href="https://startgjovik.no/" className="hover:underline">Start Gjøvik</Link>, NO 918 138 358
                     </span>
                     <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-400 sm:mt-0">
                         <li>
