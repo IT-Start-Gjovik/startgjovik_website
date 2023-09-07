@@ -1,29 +1,20 @@
 const getDateTimeFormat = (date: string) => {
-    const eventDate: Date = new Date(date);
-    const dateFormat: string =
-        eventDate.getDate()+
-        ". " +
-        eventDate.toLocaleString("no-NO", { month: "long" })
+    const eventDate = new Date(date);
 
-    // Event minutes
-    let eventMinutes: number | string = eventDate.getMinutes();
+    const formatDate = (date: Date) =>
+        `${date.getDate()}. ${date.toLocaleString('no-NO', { month: 'long' })}`;
 
-    // If it is 0, set it to "00" for fixing the bug
-    if(eventMinutes === 0){
-        eventMinutes = "00";
-    }else if(eventMinutes > 0 && eventMinutes < 10){
-        // For minutes that are f.exp :01 to :09
-        eventMinutes = "0" + eventMinutes.toString();
-    }else{
-        // it is 
-        eventMinutes.toString();
-    }
+    const formatTime = (date: Date) => {
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        return `${hours}:${minutes}`;
+    };
 
+    const dateFormat = formatDate(eventDate);
+    const timeFormat = formatTime(eventDate);
 
-    const timeFormat: string =
-        eventDate.getHours().toString() +
-        ":" + eventMinutes;
     return { dateFormat, timeFormat };
 };
 
 export default getDateTimeFormat;
+
