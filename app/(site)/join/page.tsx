@@ -17,8 +17,8 @@ export default function JoinPage() {
             <div className="flex flex-col items-center mt-10 gap-10">
 
                 <section className="px-1">
-                    <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Hvem burde søke? 🤔</h2>
-                    <ul className="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                    <h2 className="mb-2 text-lg font-semibold text-white">Hvem burde søke? 🤔</h2>
+                    <ul className="max-w-md space-y-1 list-inside text-gray-400">
                         <ChecklistItem text="Du er engasjert!" />
                         <ChecklistItem text="Du liker å ta ansvar!"/>
                         <ChecklistItem text="Du brenner for innovasjon og entreprenørskap!" />
@@ -27,8 +27,8 @@ export default function JoinPage() {
                 </section>
 
                 <section className="px-1">
-                    <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Fordeler ✨</h2>
-                    <ul className="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                    <h2 className="mb-2 text-lg font-semibold text-white">Fordeler ✨</h2>
+                    <ul className="max-w-md space-y-1 list-inside text-gray-400">
                         <ChecklistItem text="Styrk CV'en din 📝" />
                         <ChecklistItem text="Delta på intern teambuilding!" />
                         <ChecklistItem text="Bygg et solid nettverk" />
