@@ -18,7 +18,7 @@
     "eslint": "^8.49.0",
     "eslint-config-next": "^13.4.9",
     "framer-motion": "^10.16.0",
-    "next": "13.4.9",
+    "next": "13.5.1",
     "next-sanity": "^5.5.3",
     "postcss": "8.4.25",
     "react": "18.2.0",
