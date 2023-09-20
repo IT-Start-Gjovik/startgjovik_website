@@ -1,7 +1,7 @@
 interface Props{
     title: string,
     formUrl: string,
-    status: JoinStatus
+    status: number
 
 }
 
@@ -21,15 +21,24 @@ const getStatusBadge = (status: JoinStatus) =>{
 }
 
 
+// Transforming a status code into the correct type 
+const statusMap : Record<string, JoinStatus>= {
+    "0" : JoinStatus.OPEN,
+    "1" : JoinStatus.COMING_SOON,
+    "2" : JoinStatus.CLOSED
+}
+
+
 export default function JoinListElement({formUrl, title, status }:Props) {
 
-    const style = status === JoinStatus.OPEN ? " bg-gray-700 hover:bg-gray-600" : "bg-gray-900 cursor-not-allowed pointer-events-none"
+    let statusType: JoinStatus = statusMap[status];
+    const style = statusType === JoinStatus.OPEN ? " bg-gray-700 hover:bg-gray-600" : "bg-gray-900 cursor-not-allowed pointer-events-none"
 
     return (
         <li>
             <a href={formUrl} target="_blank" className={"flex items-center p-3 text-white rounded-lg text-base font-bold hover:shadow "+ style}>
                 <span className="flex-1 ml-3 whitespace-nowrap">{title}</span>
-                {getStatusBadge(status)}
+                {getStatusBadge(statusType)}
             </a>
         </li>
     )
