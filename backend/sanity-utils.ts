@@ -1,5 +1,6 @@
 import { EventCardType } from "@/types/EventCardType";
 import { EventPageType } from "@/types/EventPageType";
+import { VervType } from "@/types/Verv";
 import { createClient, groq } from "next-sanity";
 
 // Async function that gets all event cards available 
@@ -44,5 +45,24 @@ export async function getEventPage(slug: string): Promise<EventPageType> {
         datetime
       }`,
       { slug }
+    )
+}
+
+// Async function that gets all vervtypes from the backend
+export async function getVervs(): Promise<VervType[]>{
+    const client = createClient({
+        projectId: "a42ubgcg",
+        dataset: "production",
+        apiVersion: "2023-07-06",
+        useCdn: false 
+    });
+
+    return client.fetch(
+        groq`*[_type == "verv"]{
+            _id,
+            title,
+            url,
+            type
+        }`
     )
 }
