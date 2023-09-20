@@ -26,9 +26,9 @@ const verv = {
             type: "string",
             options: {
               list: [
-                { title: "Open", value: JoinStatus.OPEN },
-                { title: "Coming Soon", value: JoinStatus.COMING_SOON },
-                { title: "Closed", value: JoinStatus.CLOSED },
+                { title: "Open", value: JoinStatus.OPEN.toString() },
+                { title: "Coming Soon", value: JoinStatus.COMING_SOON.toString() },
+                { title: "Closed", value: JoinStatus.CLOSED.toString() },
               ],
             },
             initialValue: JoinStatus.COMING_SOON
