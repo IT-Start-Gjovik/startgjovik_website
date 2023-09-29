@@ -1,11 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import JoinListElement, { JoinStatus } from "./joinlistelement";
 import { getVervs } from "@/backend/sanity-utils";
-import { useState, useEffect } from "react";
-import LoadingPage from "../loadingPage/loadingPage";
 import { VervType } from "@/types/Verv";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import LoadingPage from "../loadingPage/loadingPage";
+import JoinListElement from "./joinlistelement";
 
 export default function JoinList() {
 
