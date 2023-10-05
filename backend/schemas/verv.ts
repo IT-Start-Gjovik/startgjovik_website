@@ -1,4 +1,4 @@
-import { JoinStatus } from "@/components/JoinList/joinlistelement";
+import { JoinStatus } from "@/enums/EJoinStatus";
 
 const verv = {
     name: "verv",
@@ -10,14 +10,14 @@ const verv = {
             title: "Tittel",
             description: "Tittel til verv. F.eks IT Verv",
             type: "string",
-            required: true
+            required: true,
         },
         {
-            name:"url",
+            name: "url",
             title: "Url",
             description: "Link til påmeldingskjema for vervet",
             type: "url",
-            required: true
+            required: true,
         },
         {
             title: "Status",
@@ -25,14 +25,14 @@ const verv = {
             name: "type",
             type: "string",
             options: {
-              list: [
-                { title: "Open", value: JoinStatus.OPEN.toString() },
-                { title: "Coming Soon", value: JoinStatus.COMING_SOON.toString() },
-                { title: "Closed", value: JoinStatus.CLOSED.toString() },
-              ],
+                list: [
+                    { title: "Open", value: JoinStatus.OPEN.toString() },
+                    { title: "Coming Soon", value: JoinStatus.COMING_SOON.toString() },
+                    { title: "Closed", value: JoinStatus.CLOSED.toString() },
+                ],
             },
-            initialValue: JoinStatus.COMING_SOON
-          }
+            initialValue: JoinStatus.COMING_SOON,
+        },
     ],
 };
 

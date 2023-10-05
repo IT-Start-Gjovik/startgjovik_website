@@ -3,13 +3,13 @@ import { EventPageType } from "@/types/EventPageType";
 import { VervType } from "@/types/Verv";
 import { createClient, groq } from "next-sanity";
 
-// Async function that gets all event cards available 
-export async function getEventCards(): Promise<EventCardType[]>{
+// Async function that gets all event cards available
+export async function getEventCards(): Promise<EventCardType[]> {
     const client = createClient({
         projectId: "a42ubgcg",
         dataset: "production",
         apiVersion: "2023-07-06",
-        useCdn: false 
+        useCdn: false,
     });
 
     return client.fetch(
@@ -21,7 +21,7 @@ export async function getEventCards(): Promise<EventCardType[]>{
             "image": image.asset -> url,
             "slug": slug.current,
         }`
-    )
+    );
 }
 
 // Get a single event page based on the slug
@@ -30,12 +30,11 @@ export async function getEventPage(slug: string): Promise<EventPageType> {
         projectId: "a42ubgcg",
         dataset: "production",
         apiVersion: "2023-07-06",
-        useCdn: false 
+        useCdn: false,
     });
 
-
     return client.fetch(
-      groq`*[_type == "event" && slug.current == $slug][0]{
+        groq`*[_type == "event" && slug.current == $slug][0]{
         _id,
         title,
         "slug": slug.current,
@@ -44,17 +43,17 @@ export async function getEventPage(slug: string): Promise<EventPageType> {
         content,
         datetime
       }`,
-      { slug }
-    )
+        { slug }
+    );
 }
 
 // Async function that gets all vervtypes from the backend
-export async function getVervs(): Promise<VervType[]>{
+export async function getVervs(): Promise<VervType[]> {
     const client = createClient({
         projectId: "a42ubgcg",
         dataset: "production",
         apiVersion: "2023-07-06",
-        useCdn: false 
+        useCdn: false,
     });
 
     return client.fetch(
@@ -64,5 +63,5 @@ export async function getVervs(): Promise<VervType[]>{
             url,
             type
         }`
-    )
+    );
 }
