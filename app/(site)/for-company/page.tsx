@@ -4,7 +4,7 @@ export default function ForCompany() {
     return (
         <div class="bg-gray-900 min-h-screen">
         <main>
-            <h1 class="ml-4 mb-4 text-7git xl font-extrabold leading-none leading-snug text-center">For bedrifter</h1>
+            <h1 class="ml-4 mb-4 text-7xl font-extrabold leading-none leading-snug text-center">For bedrifter</h1>
             <p class="ml-4 mb-4 text-lg font-normal text-gray-500 dark:text-gray-400 text-center">Her skal vi legge til noe info om oss for bedriftene!</p>
 
             <div class="absolute inset-x-0 bottom-0">
