@@ -6,7 +6,7 @@ const event = {
         {
             name: "title",
             title: "Title på Event ",
-            description:"Tittel til event. F.eks 'PR VERV'",
+            description:"Tittel til event. F.eks 'Casebreaker'",
             type: "string",
         },
         {
@@ -30,7 +30,7 @@ const event = {
         ,
         {
             name: "image",
-            title: "Bilde for evnet",
+            title: "Bilde for event",
             type: "image",
             options: { hotspot: true },
             fields: [
