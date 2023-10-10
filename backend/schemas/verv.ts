@@ -8,7 +8,7 @@ const verv = {
         {
             name: "title",
             title: "Tittel",
-            description: "Tittel til verv. F.eks IT Verv",
+            description: "Tittel til verv. F.eks Casebreaker",
             type: "string",
             required: true,
         },
