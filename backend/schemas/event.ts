@@ -1,53 +1,56 @@
 const event = {
     name: "event",
-    title: "Events",
+    title: "Event",
     type: "document",
     fields: [
         {
             name: "title",
-            title: "Title",
+            title: "Title på Event ",
+            description:"Tittel til event. F.eks 'Casebreaker'",
             type: "string",
         },
         {
             name: "description",
-            title: "Description (Kort forklaring til event kort)",
+            title: " Beskrivelse av Event",
             type: "text",
+            description : "En kort beskrivelse av Event(maks 150 ord)",
             validation: (Rule: { max: (arg0: number) => any }) => Rule.max(150),
         },
         {
             name: "datetime",
-            title: "Date and Time",
+            title: "Dato og tidspunkt på event",
             type: "datetime",
         },
         {
             name: "slug",
-            title: "Slug",
+            title: "URL-mer leselig lenke(slug)",
             type: "slug",
             options: { source: "title" }
         }
         ,
         {
             name: "image",
-            title: "Image",
+            title: "Bilde for event",
             type: "image",
             options: { hotspot: true },
             fields: [
                 {
                     name: "alt",
-                    Title: "Alt",
+                    Title: "Forklaring på bilde",
+                    description : "Kort beskrivelse av bildet",
                     type: "string",
                 },
             ],
         },
         {
             name:"url",
-            title: "Url (Forms)",
+            title: "Link til Event(for skjermaer)",
             type: "url",
             required: true
         },
         {
             name:"content",
-            title: "Content (100-500 ord)",
+            title: "Innhold for Event (100-500 Ord) ",
             type: "array",
             of: [{type: "block"}]
         }
