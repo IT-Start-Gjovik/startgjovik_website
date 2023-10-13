@@ -27,6 +27,15 @@
       ]
     },
     {
+      "login": "Hannah-Sofie",
+      "name": "Hannah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90150033?v=4",
+      "profile": "https://github.com/Hannah-Sofie",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "Mosazghi",
       "name": "Mosazghi",
       "avatar_url": "https://avatars.githubusercontent.com/u/116307580?v=4",
@@ -34,6 +43,6 @@
       "contributions": [
         "code"
       ]
-    }
+    },
   ]
 }
