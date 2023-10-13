@@ -1,5 +1,21 @@
 {
   "projectName": "startgjovik_website",
   "projectOwner": "IT-Start-Gjovik",
-  "files": ["CONTRIBUTORS.md"]
+  "files": [
+    "CONTRIBUTORS.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "KjetilIN",
+      "name": "Kjetil Indrehus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66110094?v=4",
+      "profile": "http://www.indrehusdev.no",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
 }
