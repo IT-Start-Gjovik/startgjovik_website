@@ -16,6 +16,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "members",
+      "name": "members",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1530276?v=4",
+      "profile": "https://github.com/members",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
