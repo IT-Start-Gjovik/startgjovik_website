@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Start Gjøvik',
-  description: 'En student organisasjon for studenter!',
+  description: ' student organisasjon for studenter!',
 }
 
 

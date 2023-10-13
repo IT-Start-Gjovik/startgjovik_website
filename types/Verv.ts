@@ -1,8 +1,8 @@
-import { JoinStatus } from "@/components/JoinList/joinlistelement"
+import { JoinStatus } from "@/enums/EJoinStatus";
 
 export type VervType = {
-    _id: string,
-    title: string,
-    url: string,
-    type: JoinStatus
-}
+    _id: string;
+    title: string;
+    url: string;
+    type: JoinStatus;
+};
