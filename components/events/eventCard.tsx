@@ -16,21 +16,17 @@ interface EventProps{
 export default function EventCard({date, title, imageUrl, time, description, slug}: EventProps): JSX.Element {
     
     return (
-        <div className="flex flex-col items-center border rounded-lg shadow md:flex-row md:max-w-xl max-w-md border-gray-700 bg-gray-800 hover:bg-gray-700">
+        <div className='flex flex-col items-stretch text-start m-[1em]  justify-stretch min-w-[302px] border rounded-lg shadow md:flex-row md:max-w-xl max-w-md border-gray-700 bg-gray-800 hover:bg-gray-700'>
             <Image
-                className="object-cover w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg"
+                className='transition-all ease-out duration-300 object-fit rounded-t-lg md:w-48 md:rounded-none md:rounded-l-lg'
                 src={imageUrl}
-                alt="project card"
+                alt='project card'
                 width={400}
                 height={400}
             />
-            <div className="flex flex-col justify-between p-4 leading-normal"> 
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
-                    {title}
-                </h5>
-                <p className="mb-3 font-normal text-gray-400">
-                    {description}
-                </p>
+            <div className='flex flex-col justify-between p-4 leading-normal'>
+                <h5 className='mb-2 text-2xl font-bold tracking-tight text-white'>{title}</h5>
+                <p className='mb-3 font-normal text-gray-400 flex flex-1'>{description}</p>
                 <h4> 📅 {date}</h4>
                 <h4>🕕 {time}</h4>
                 <Link href={`/arrangementer/${slug}`} className="inline-flex items-center px-3 py-2 mt-2 text-sm font-medium text-center text-white  rounded-lg focus:ring-4 focus:outline-none  bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
