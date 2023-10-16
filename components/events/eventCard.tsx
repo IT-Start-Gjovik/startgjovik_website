@@ -18,7 +18,7 @@ export default function EventCard({date, title, imageUrl, time, description, slu
     return (
         <div className='flex flex-col items-stretch text-start m-[1em]  justify-stretch min-w-[302px] border rounded-lg shadow md:flex-row md:max-w-xl max-w-md border-gray-700 bg-gray-800 hover:bg-gray-700'>
             <Image
-                className='transition-all ease-out duration-300 object-fit rounded-t-lg md:w-48 md:rounded-none md:rounded-l-lg'
+                className='transition-all ease-out duration-300 rounded-t-lg md:w-36 lg:w-44 xl:w-64 md:rounded-none md:rounded-l-lg'
                 src={imageUrl}
                 alt='project card'
                 width={400}
