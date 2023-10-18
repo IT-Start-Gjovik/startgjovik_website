@@ -21,15 +21,17 @@ const EventCard: React.FC<EventProps> = ({
   description,
   slug,
 }: EventProps) => {
+  
   // Calculate the event date and time as a JavaScript Date object
   const eventDateTime = date && time ? new Date(`${date}T${time}`) : null;
-
+  console.log("eventDateTime:", eventDateTime);
   // Get the current date and time as a JavaScript Date object
   const currentDateTime = new Date();
+  console.log("currentDateTime:", currentDateTime);
 
   // Check if the event has finished by comparing eventDateTime and currentDateTime
   const eventFinished = eventDateTime && eventDateTime < currentDateTime;
-
+  console.log("eventFinished:", eventFinished);
   // Render the EventCard component
   return (
     <div className="flex flex-col items-center border rounded-lg shadow md:flex-row md:max-w-xl max-w-md border-gray-700 bg-gray-800 hover:bg-gray-700">
@@ -47,18 +49,18 @@ const EventCard: React.FC<EventProps> = ({
         <p className="mb-3 font-normal text-gray-400">{description}</p>
         {eventFinished ? (
           // Display this message if the event has finished
-          <p className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
-            ⌛️ Arrangementet er over
+          <div>
+            <p className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-3 py-2 rounded-lg dark:bg-red-900 dark:text-red-200 inline">
+            ⌛️ Arrangementet er over!
           </p>
+          </div>
         ) : (
           // Display event date and time if the event is ongoing
           <div>
             <p>📅 {date}</p>
             <p>🕕 {time}</p>
-          </div>
-        )}
-        {/* Create a link to the event details page */}
-        <Link
+
+            <Link
           href={`/arrangementer/${slug}`}
           className="inline-flex items-center px-3 py-2 mt-2 text-sm font-medium text-center text-white  rounded-lg focus:ring-4 focus:outline-none  bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
         >
@@ -77,6 +79,9 @@ const EventCard: React.FC<EventProps> = ({
             ></path>
           </svg>
         </Link>
+          </div>
+          
+        )}
       </div>
     </div>
   );
