@@ -1,3 +1,27 @@
+## Start Gjøvik IT Contributors 
+
+We value and recognize the contributions of our Start Gjøvik IT team members. Below are the emojis and their meanings used to acknowledge different types of contributions. From both previous and current Start Gjøvik members:
+
+- 💻 **Code**: Assigned to IT Members who have made substantial code contributions. It signifies their impact on the website's development.
+
+- 🎨 **Design**: Given to IT Members who enhance the website with their design skills, creating visually appealing and user-friendly elements.
+
+- 🤔 **Ideas & Planning**: This emoji acknowledges IT Members who actively participate in discussions, provide valuable ideas, and contribute to website planning.
+
+- 🐛 **bug**: Given to members that found a bug and fixed it with a pull request 
+
+- 🚧 **Maintenance**: Assigned to IT members that have maintained the project with dependabot reviews or other maintenance work.  
+
+- 👀 **Review**: Given to those who have done a pull request review, and given good feedback to individuals. 
+
+- 📢 **Talk**: Given to IT members that have held an presentation in front of a group. 
+
+- 📆 **ProjectManagement**: Given to CTO / IT Leader of Start Gjøvik. 
+
+
+Thank you to all IT members contributors for their valuable contributions to Start Gjøvik! This is the organizations way of showing gratitude. 
+
+
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
