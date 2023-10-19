@@ -16,7 +16,8 @@
       "contributions": [
         "code",
         "bug",
-        "projectManagement"
+        "projectManagement",
+        "design"
       ]
     },
     {
@@ -45,7 +46,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/90150033?v=4",
       "profile": "https://github.com/Hannah-Sofie",
       "contributions": [
-        "code"
+        "code",
+        "design"
       ]
     },
     {
@@ -55,7 +57,8 @@
       "profile": "https://github.com/Mosazghi",
       "contributions": [
         "code",
-        "bug"
+        "bug",
+        "design"
       ]
     }
   ]
