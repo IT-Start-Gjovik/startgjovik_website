@@ -36,7 +36,6 @@ Thank you to all IT members contributors for their valuable contributions to Sta
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hannah-Sofie"><img src="https://avatars.githubusercontent.com/u/90150033?v=4?s=100" width="100px;" alt="Hannah"/><br /><sub><b>Hannah</b></sub></a><br /><a href="#code-Hannah-Sofie" title="Code">💻</a> <a href="#design-Hannah-Sofie" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mosazghi"><img src="https://avatars.githubusercontent.com/u/116307580?v=4?s=100" width="100px;" alt="Mosazghi"/><br /><sub><b>Mosazghi</b></sub></a><br /><a href="#code-Mosazghi" title="Code">💻</a> <a href="#bug-Mosazghi" title="Bug reports">🐛</a> <a href="#design-Mosazghi" title="Design">🎨</a></td>
 
-    </tr>
   </tbody>
 </table>
 
