@@ -1,7 +1,7 @@
 import BackButton from '@/components/UI/backbutton';
 import Footer from '@/components/footer/footer';
 
-export default function LesmerPage() {
+export default function AboutUsPage() {
     return (
         <main className='bg-gray-900 min-h-screen'>
             <div className='flex justify-center pt-10 px-6'>
