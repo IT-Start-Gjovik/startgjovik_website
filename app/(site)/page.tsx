@@ -56,11 +56,18 @@ export default function Home() {
           <h3 className="font-sans font-bold text-4xl px-10 sm:text-5xl">📅 Kommende Arrangementer</h3>
         </div>
 
-              {/** Listing all events if there are any  */}
-              <div className='grid justify-center grid-cols-[repeat(auto-fit,minmax(400px,1fr))]  px-10 sm:px-24 md:px-40 mt-20 transition-all ease-out duration-300 '>
-                  {events && events.length > 0 ? <EventCardList events={events} /> : <NoEvents />}
-              </div>
-          </main>
+                {/** Listing all events if there are any  */}
+                <div className='grid  md:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] gap-4 justify-center px-5 sm:px-24 md:px-40 mt-10 md:mt-20 transition-all ease-out duration-300 '>
+                    {events && events.length > 0 ? (
+                        <>
+                            <EventCardList events={events} />
+                            <EventCardList events={events} />
+                        </>
+                    ) : (
+                        <NoEvents />
+                    )}
+                </div>
+            </main>
 
       <Footer />
     </div>
