@@ -24,6 +24,7 @@ export default function Home() {
     if(!events){
       getEventCards()
       .then((data) => {
+        data.reverse();
         setEvents(data);
       })
       .catch((error) => {
