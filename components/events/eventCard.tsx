@@ -14,12 +14,12 @@ interface EventProps{
 export default function EventCard({date, title, imageUrl, time, description, slug}: EventProps): JSX.Element {
     
     return (
-        <div className='max-w-sm w-full lg:max-w-full lg:flex border rounded-lg shadow border-gray-700 bg-gray-800 hover:bg-gray-700'>
+        <div className='max-w-sm w-full lg:max-w-full lg:flex lg:justify-stretch lg:items-stretch h-full rounded-lg shadow  bg-gray-800 hover:bg-gray-700'>
             <div
                 className='h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden md:rounded-none md:rounded-l-lg'
                 style={{ backgroundImage: `url(${imageUrl})` }}
                 title='Event image'></div>
-            <div className='flex flex-col border-r border-b border-l lg:border-l-0 lg:border-t lg:border-gray-400  rounded-b lg:rounded-b-none lg:rounded-r p-4 justify-between leading-normal '>
+            <div className='flex flex-col rounded-b lg:rounded-b-none lg:rounded-r p-4 justify-between leading-normal '>
                 <div className='mb-4'>
                     <div className='mb-2 text-xl font-bold tracking-tight text-white'>{title}</div>
                     <p className='mb-3 font-normal text-gray-400'>{description}</p>

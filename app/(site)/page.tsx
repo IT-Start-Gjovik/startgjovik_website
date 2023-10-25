@@ -57,12 +57,9 @@ export default function Home() {
         </div>
 
                 {/** Listing all events if there are any  */}
-                <div className='grid  md:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] gap-4 justify-center px-5 sm:px-24 md:px-40 mt-10 md:mt-20 transition-all ease-out duration-300 '>
+                <div className='lg:grid lg:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] flex flex-col justify-center items-center w-screen gap-4 px-5 sm:px-24 md:px-40 mt-10 md:mt-20 transition-all ease-out duration-300 '>
                     {events && events.length > 0 ? (
-                        <>
                             <EventCardList events={events} />
-                            <EventCardList events={events} />
-                        </>
                     ) : (
                         <NoEvents />
                     )}
