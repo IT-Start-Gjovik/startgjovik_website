@@ -8,7 +8,7 @@ export default function AboutUsPage() {
                 <h1 className='text-4xl md:text-6xl'> Om oss</h1>
             </div>
             <h2 className='text-2xl md:text-6xl'>Kommer snart....</h2>
-            <p> her vil det stå mer om start....</p>
+            <p> Her vil det stå mer om start....</p>
             <div className='fixed top-0 right-0 m-4'>
                 <BackButton link='/' text='Tilbake til hovedsiden' />
             </div>
