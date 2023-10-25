@@ -38,35 +38,31 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start">
-      <main className="min-h-screen">
-        <Logo />
+      <div className='flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
+          <main className='min-h-screen'>
+              <Logo />
 
-        {/** Paragraph for introduction */}
-        <HeaderJumbotron />
+              {/** Paragraph for introduction */}
+              <HeaderJumbotron />
 
-        {/**Cards with info about Start Gjøvik */}
-        <Hero />
+              {/**Cards with info about Start Gjøvik */}
+              <Hero />
 
-        {/** Line Breaker */}
-        <hr className="w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10" />
+              {/** Line Breaker */}
+              <hr className='w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10' />
 
-        {/**List of events */}
-        <div className="flex justify-center items-center">
-          <h3 className="font-sans font-bold text-4xl px-10 sm:text-5xl">📅 Kommende Arrangementer</h3>
-        </div>
+              {/**List of events */}
+              <div className='flex justify-center items-center'>
+                  <h3 className='font-sans font-bold text-4xl px-10 sm:text-5xl'>📅 Kommende Arrangementer</h3>
+              </div>
 
-                {/** Listing all events if there are any  */}
-                <div className='lg:grid lg:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] flex flex-col justify-center items-center w-screen gap-4 px-5 sm:px-24 md:px-40 mt-10 md:mt-20 transition-all ease-out duration-300 '>
-                    {events && events.length > 0 ? (
-                            <EventCardList events={events} />
-                    ) : (
-                        <NoEvents />
-                    )}
-                </div>
-            </main>
+              {/** Listing all events if there are any  */}
+              <div className='flex flex-col md:grid md:grid-cols-2 xl:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] justify-center items-center w-screen gap-4 px-5 sm:px-24 md:px-32 mt-10 md:mt-20 transition-all ease-out duration-300 '>
+                  {events && events.length > 0 ? <EventCardList events={events} /> : <NoEvents />}
+              </div>
+          </main>
 
-      <Footer />
-    </div>
-  )
+          <Footer />
+      </div>
+  );
 }
