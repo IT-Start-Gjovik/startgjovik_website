@@ -15,7 +15,9 @@
       "profile": "http://www.indrehusdev.no",
       "contributions": [
         "code",
-        "bug"
+        "bug",
+        "projectManagement",
+        "design"
       ]
     },
     {
@@ -25,7 +27,8 @@
       "profile": "https://github.com/AbdiYus",
       "contributions": [
         "code",
-        "bug"
+        "bug",
+        "design"
       ]
     },
     {
@@ -43,7 +46,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/90150033?v=4",
       "profile": "https://github.com/Hannah-Sofie",
       "contributions": [
-        "code"
+        "code",
+        "design"
       ]
     },
     {
@@ -53,7 +57,8 @@
       "profile": "https://github.com/Mosazghi",
       "contributions": [
         "code",
-        "bug"
+        "bug",
+        "design"
       ]
     }
   ]
