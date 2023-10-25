@@ -1,43 +1,42 @@
-# Bidra til prosjektet
+# Contribute to the Project
 
-Vi setter stor pris på din interesse for å bidra til dette prosjektet! 
-Følg disse trinnene for å delta:
+We greatly appreciate your interest in contributing to this project! Follow these steps to participate:
 
-## 1. Opprett en branch
+## 1. Create a branch
 
-Opprett en egen branch for dine endringer. Navnet på branchen bør være beskrivende og relatert til endringene du gjør.
+Create a dedicated branch for your changes. The branch name should be descriptive and related to the changes you are making.
 
-## 2. Gjør endringer
+## 2. Make changes
 
-Utfør de nødvendige endringene i koden. Sørg for å følge gjeldende kodestandarder og beste praksis.
+Make the necessary code changes. Be sure to follow the current code standards and best practices.
 
-## 3. Commit endringene
+## 3. Commit your changes
 
-Bruk følgende prefiks i commit-meldingen din for å angi typen endring:
+Use the following prefixes in your commit message to indicate the type of change:
 
-- `fix`: Feilrettinger
-- `refactor`: Kodeomstrukturering
-- `add`: Legge til ny funksjonalitet
-- `update`: Oppdatere eksisterende funksjonalitet
-- `remove`: Fjerne kode eller funksjonalitet
+- `fix`: Bug fixes
+- `refactor`: Code restructuring
+- `add`: Add new functionality
+- `update`: Update existing functionality
+- `remove`: Remove code or functionality
 
-Skriv en kort og beskrivende melding på engelsk for hver commit. Eksempel: "fix: Retter feil i håndtering av brukerinnlogging".
+Write a brief and descriptive message each commit. Example: "fix: Fixing errors in user login handling."
 
-## 4. Opprett en pull request (PR)
+## 4. Create a pull request (PR)
 
-Når du er ferdig med dine endringer, opprett en pull request (PR) på GitHub. Fyll ut PR-templaten for å gi en grundig beskrivelse av endringene dine, inkludert formålet med endringene, eventuelle avhengigheter og annen relevant informasjon.
+Once you've finished your changes, create a pull request (PR) on GitHub. Fill out the PR template to provide a thorough description of your changes, including the purpose of the changes, any dependencies, and other relevant information.
 
-En person med IT-verv i Start Gjøvik vil vurdere PR-en din basert på den utfylte PR-templaten og gi tilbakemeldinger og eventuelle kommentarer direkte på GitHub.
+A person with IT responsibilities at Start Gjøvik will review your PR based on the filled-out PR template and provide feedback and any comments directly on GitHub.
 
-## 5. Gjennomgå PR-en og adresser kommentarer
+## 5. Review the PR and address comments
 
-Andre bidragsytere og prosjektets eiere vil gå gjennom PR-en din, gi tilbakemeldinger og legge igjen eventuelle kommentarer på GitHub. Sørg for å adressere kommentarene ved å gjøre nødvendige endringer og svare på kommentarene for å holde dialogen aktiv.
+Other contributors and project owners will review your PR, provide feedback, and leave any comments on GitHub. Make sure to address the comments by making necessary changes and responding to the comments to keep the dialogue active.
 
 ## 6. Merge
 
-Når PR-en er godkjent av personen med IT-verv i Start Gjøvik og eventuelle endringer er gjort, vil prosjektets eiere sammenføye (merge) endringene dine inn i `develop` branchen.
+Once the PR is approved by the person with IT responsibilities at Start Gjøvik, and any changes are made, the project owners will merge your changes into the `develop` branch.
 
-Takk for at du bidrar til prosjektet! Vi setter pris på innsatsen din.
+Thank you for contributing to the project! We appreciate your effort.
 
-Hilsen <br>
+Regards,
 _Start Gjøvik - IT_
