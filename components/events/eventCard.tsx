@@ -24,11 +24,11 @@ const EventCard: React.FC<EventProps> = ({
   slug,
 }: EventProps) => {
   
-  const [monthNum, monthNorwegian] = date ? split(date, ' ') : [null, null];
+  const [dayNum, monthNorwegian] = date ? split(date, ' ') : [null, null];
 
-  const eventDateTime = date && time ? new Date(`${monthNum} ${getEnglishMonth(monthNorwegian)} ${new Date().getFullYear()} ${time}`) : null;
+  const eventDateTime = date && time ? new Date(`${dayNum} ${(getEnglishMonth(monthNorwegian as any))} ${new Date().getFullYear()} ${time}`) : null;
   const currentDateTime = new Date();
-const eventFinished = eventDateTime && eventDateTime < currentDateTime;
+  const eventFinished = eventDateTime && eventDateTime < currentDateTime;
     
   return (
     <div className="flex flex-col items-center border rounded-lg shadow md:flex-row md:max-w-xl max-w-md border-gray-700 bg-gray-800 hover:bg-gray-700">
