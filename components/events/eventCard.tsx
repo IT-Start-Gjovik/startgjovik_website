@@ -1,4 +1,8 @@
+import event from '@/backend/schemas/event';
+import Image from 'next/image';
 import Link from 'next/link';
+import { split } from 'lodash';
+import getEnglishMonth from '@/utils/englishMonth';
 
 // Interface for the event card
 interface EventProps {
@@ -12,17 +16,13 @@ interface EventProps {
 
 // Event card itself
 const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, description, slug }: EventProps) => {
-    // Calculate the event date and time as a JavaScript Date object
-    const eventDateTime = date && time ? new Date(`${date}T${time}`) : null;
-    console.log('eventDateTime:', eventDateTime);
-    // Get the current date and time as a JavaScript Date object
-    const currentDateTime = new Date();
-    console.log('currentDateTime:', currentDateTime);
+    const [dayNum, monthNorwegian] = date ? split(date, ' ') : [null, null];
 
-    // Check if the event has finished by comparing eventDateTime and currentDateTime
+    const eventDateTime = date && time ? new Date(`${dayNum} ${getEnglishMonth(monthNorwegian as any)} ${new Date().getFullYear()} ${time}`) : null;
+    console.log(eventDateTime);
+    const currentDateTime = new Date();
     const eventFinished = eventDateTime && eventDateTime < currentDateTime;
-    console.log('eventFinished:', eventFinished);
-    
+
     return (
         <div className='max-w-sm w-full lg:max-w-full lg:flex lg:justify-stretch lg:items-stretch h-full rounded-lg shadow  bg-gray-800 hover:bg-gray-700'>
             <div
@@ -67,5 +67,4 @@ const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, descript
     );
 };
 
-// Export the EventCard component as the default export
 export default EventCard;
