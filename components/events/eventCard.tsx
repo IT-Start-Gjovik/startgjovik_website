@@ -1,6 +1,8 @@
 import event from "@/backend/schemas/event";
 import Image from "next/image";
 import Link from "next/link";
+import { split } from "lodash";
+import getEnglishMonth from "@/utils/englishMonth";
 
 // Define the props interface for the EventCard component
 interface EventProps {
@@ -22,17 +24,12 @@ const EventCard: React.FC<EventProps> = ({
   slug,
 }: EventProps) => {
   
-  // Calculate the event date and time as a JavaScript Date object
-  const eventDateTime = date && time ? new Date(`${date}T${time}`) : null;
-  console.log("eventDateTime:", eventDateTime);
-  // Get the current date and time as a JavaScript Date object
-  const currentDateTime = new Date();
-  console.log("currentDateTime:", currentDateTime);
+  const [dayNum, monthNorwegian] = date ? split(date, ' ') : [null, null];
 
-  // Check if the event has finished by comparing eventDateTime and currentDateTime
+  const eventDateTime = date && time ? new Date(`${dayNum} ${(getEnglishMonth(monthNorwegian as any))} ${new Date().getFullYear()} ${time}`) : null;
+  const currentDateTime = new Date();
   const eventFinished = eventDateTime && eventDateTime < currentDateTime;
-  console.log("eventFinished:", eventFinished);
-  // Render the EventCard component
+    
   return (
     <div className="flex flex-col items-center border rounded-lg shadow md:flex-row md:max-w-xl max-w-md border-gray-700 bg-gray-800 hover:bg-gray-700">
       <Image
@@ -87,5 +84,4 @@ const EventCard: React.FC<EventProps> = ({
   );
 };
 
-// Export the EventCard component as the default export
 export default EventCard;
