@@ -1,0 +1,65 @@
+{
+  "projectName": "startgjovik_website",
+  "projectOwner": "IT-Start-Gjovik",
+  "files": [
+    "CONTRIBUTORS.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "KjetilIN",
+      "name": "Kjetil Indrehus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66110094?v=4",
+      "profile": "http://www.indrehusdev.no",
+      "contributions": [
+        "code",
+        "bug",
+        "projectManagement",
+        "design"
+      ]
+    },
+    {
+      "login": "AbdiYus",
+      "name": "AbdiYus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/133913649?v=4",
+      "profile": "https://github.com/AbdiYus",
+      "contributions": [
+        "code",
+        "bug",
+        "design"
+      ]
+    },
+    {
+      "login": "FredrikSundt-Hansen",
+      "name": "Fredrik Sundt-Hansen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38140980?v=4",
+      "profile": "https://github.com/FredrikSundt-Hansen",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Hannah-Sofie",
+      "name": "Hannah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90150033?v=4",
+      "profile": "https://github.com/Hannah-Sofie",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "Mosazghi",
+      "name": "Mosazghi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/116307580?v=4",
+      "profile": "https://github.com/Mosazghi",
+      "contributions": [
+        "code",
+        "bug",
+        "design"
+      ]
+    }
+  ]
+}
