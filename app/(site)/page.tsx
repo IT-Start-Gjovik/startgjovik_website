@@ -58,7 +58,8 @@ export default function Home() {
               </div>
 
               {/** Listing all events if there are any  */}
-              <div className='flex flex-col md:grid md:grid-cols-2 xl:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] justify-center items-center w-full gap-4 px-5 sm:px-24 md:px-32 mt-10 md:mt-20 transition-all ease-out duration-300 '>
+              <div
+                className={`flex flex-col md:grid  xl:grid-cols-[repeat(auto-fill,minmax(500px,1fr))] xl:max-w-${events.length > 1 ? 'full' : 'min'} mx-auto justify-center items-center w-full gap-4 px-5 sm:px-24 md:px-32 mt-10 md:mt-20 transition-all ease-out duration-300 `}>
                   {events && events.length > 0 ? <EventCardList events={events} /> : <NoEvents />}
               </div>
           </main>
