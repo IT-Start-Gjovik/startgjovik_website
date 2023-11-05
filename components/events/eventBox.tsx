@@ -2,18 +2,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 type EventBoxProps = {
+    id: string;
     imageUrl: string;
     title: string;
+    alt: string;
     link: string;
 };
 
-const EventBox: React.FC<EventBoxProps> = ({ imageUrl, title, link }) => {
+const EventBox: React.FC<EventBoxProps> = ({ imageUrl, title, alt, link }) => {
     return (
-        <div className='flex flex-col items-center p-4 bg-gray-800 rounded-md shadow-lg'>
-            <Image src={imageUrl} alt={title} width={200} height={200} className='rounded-md' />
-            <h3 className='mt-4 text-xl text-gray-200 hover:text-gray-400 transition duration-300'>{title}</h3>
+        <div className='flex flex-col items-center py-4 px-10 bg-gray-800 rounded-md shadow-lg'>
+            <Image src={imageUrl} alt={alt} width={200} height={200} className='rounded-md mt-10 mb-8' />
+
+            <h3 className='mt-4 text-xl text-gray-200 hover:text-gray-400 transition duration-300 text-center w-full'>{title}</h3>
+
             <Link href={link} passHref>
-                <button className='mt-4 px-4 py-2 bg-gray-700 text-gray-200 rounded hover:bg-gray-600 transition duration-300 flex items-center'>
+                <button className='mt-4 mb-5 px-4 py-2 bg-blue-700 text-gray-200 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-900 transition duration-300 flex items-center'>
                     Les mer
                     <svg aria-hidden='true' className='ml-2 -mr-1 w-5 h-5' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
                         <title>Arrow</title>
