@@ -40,24 +40,18 @@ export default function Home() {
         <div className='flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             <main className='min-h-screen'>
                 <Logo />
-
                 {/** Paragraph for introduction */}
                 <HeaderJumbotron />
-
                 {/**Cards with info about Start Gjøvik */}
                 <Hero />
-
                 {/** Line Breaker */}
                 <hr className='w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10' />
-
                 {/**List of events */}
                 <div className='flex justify-center items-center'>
                     <h3 className='font-sans font-bold text-4xl px-10 sm:text-5xl'>📅 Kommende Arrangementer</h3>
                 </div>
-
                 {/** Button to navigate to the events we offer. */}
-                <Button label='Se hvilke arrangementer vi tilbyr' onClick={() => router.push('/alle-arrangementer')} />
-
+                <Button label='Se hvilke arrangementer vi tilbyr' onClick={() => router.push('/alle-arrangementer')} />;
                 {/** Listing all events if there are any  */}
                 <div
                     className={`flex flex-col md:grid  xl:grid-cols-[repeat(auto-fill,minmax(500px,1fr))] xl:max-w-${
