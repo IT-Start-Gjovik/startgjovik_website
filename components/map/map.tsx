@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as Mazemap from "mazemap";
 import "mazemap/mazemap.min.css";
+import { MapPositionType } from "@/types/MapPosistionType";
 
 export default function Map() {
     const mapContainer = useRef(null);
@@ -26,7 +27,7 @@ export default function Map() {
                 });
                 
                 // positioning to our location
-                Mazemap.Data.getPoi(239637).then( poi => {
+                Mazemap.Data.getPoi(239637).then( (poi:MapPositionType) => {
                     console.log(poi); // Raw data about the position.
                     if(poi) {
                         var lngLat = Mazemap.Util.getPoiLngLat(poi);
