@@ -1,18 +1,18 @@
 "use client";
 
 import { getEventCards } from '@/backend/sanity-utils';
-import { EventCardType } from '@/types/EventCardType';
-import { useEffect, useState } from 'react';
+import Logo from '@/components/UI/logo';
+import NoEvents from '@/components/UI/noEventsFound';
+import EventCardList from '@/components/events/eventCardList';
 import Footer from '@/components/footer/footer';
 import Hero from '@/components/heroSection/hero';
 import HeaderJumbotron from '@/components/jumbotron/jumbotron';
-import Logo from '@/components/UI/logo';
-import EventCardList from '@/components/events/eventCardList';
-import NoEvents from '@/components/UI/noEventsFound';
 import LoadingPage from '@/components/loadingPage/loadingPage';
-import ErrorPage from './feilside/page';
-import { NextResponse } from 'next/server';
+import { EventCardType } from '@/types/EventCardType';
 import { useRouter } from 'next/navigation';
+import { NextResponse } from 'next/server';
+import { useEffect, useState } from 'react';
+import ErrorPage from './feilside/page';
 
 
 export default function Home() {
@@ -58,8 +58,7 @@ export default function Home() {
               </div>
 
               {/** Listing all events if there are any  */}
-              <div
-                className={`flex flex-col md:grid  xl:grid-cols-[repeat(auto-fill,minmax(500px,1fr))] ${events && events.length > 1 ? 'xl:max-w-full' : 'xl:max-w-min'} mx-auto justify-center items-center w-full gap-4 px-5 sm:px-24 md:px-32 mt-10 md:mt-15 transition-all ease-out duration-300 `}>
+              <div className={`flex flex-col md:grid  xl:grid-cols-[repeat(auto-fill,minmax(500px,1fr))] ${events && events.length > 1 ? 'xl:max-w-full' : 'xl:max-w-min'} mx-auto justify-center items-center w-full gap-4 px-5 sm:px-24 md:px-32 mt-10 md:mt-15 transition-all ease-out duration-300 `}>
                   {events && events.length > 0 ? <EventCardList events={events} /> : <NoEvents />}
               </div>
           </main>
