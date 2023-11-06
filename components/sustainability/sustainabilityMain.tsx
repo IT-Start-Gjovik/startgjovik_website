@@ -1,8 +1,8 @@
-export default function SustainabilityMain() {
+export default function SustainabilityMainText() {
     return (
-        <section className='w-full md:w-3/5 h-fit'>
-            <h2 className='text-7xl text-center'>Bærekraft</h2>
-            <article className='text-xl text-start px-7 md:px-0 mt-5'>
+        <section>
+            <h2 className='text-5xl md:text-7xl text-center'>Bærekraft</h2>
+            <article className='text-lg md:text-xl text-center md:text-start mt-5'>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum magna erat, at accumsan est finibus quis. Fusce dapibus viverra
                     arcu, vel mollis purus commodo nec. Phasellus nulla nulla, accumsan ac massa quis, tempor sollicitudin elit. Suspendisse facilisis risus
