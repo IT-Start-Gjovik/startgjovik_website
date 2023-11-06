@@ -1,5 +1,5 @@
 import Footer from '@/components/footer/footer';
-import CarbonFootprintText from '@/components/sustainability/carbonFootprint/carbonFootprintText';
+import CarbonFootprint from '@/components/sustainability/carbonFootprint/carbonFootprint';
 import SustainabilityMain from '@/components/sustainability/sustainabilityMain';
 
 export default function BaerekraftPage() {
@@ -7,7 +7,7 @@ export default function BaerekraftPage() {
         <div className='bg-gray-900'>
             <main className='mx-auto my-0 max-w-4xl px-4 transition-all md:px-8  min-h-screen'>
                 <SustainabilityMain />
-                <CarbonFootprintText />
+                <CarbonFootprint />
             </main>
             <Footer />
         </div>

@@ -1,7 +1,7 @@
 'use client';
 import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
 
-export default function CarbonFootprintText() {
+export default function CarbonFootprint() {
     return (
         <section>
             <h2 className='text-3xl md:text-5xl md:text-center'>Carbon Footprint</h2>
