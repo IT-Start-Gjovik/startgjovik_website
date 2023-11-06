@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import * as Mazemap from "mazemap";
 import "mazemap/mazemap.min.css";
@@ -26,15 +27,15 @@ export default function Map() {
                     fillColor: Mazemap.Util.Colors.MazeColors.MazeBlue  // optional
                 });
                 
-                // positioning to our location
-                // Mazemap.Data.getPoi(239637).then( (poi:MapPositionType) => {
-                //     console.log(poi); // Raw data about the position.
-                //     if(poi) {
-                //         var lngLat = Mazemap.Util.getPoiLngLat(poi);
-                //         map.flyTo({center: lngLat, zoom: 19, speed: 0.5});
-                //         highlighter.highlight(poi);    
-                //     }
-                // });
+                //positioning to our location
+                Mazemap.Data.getPoi(239637).then( (poi:MapPositionType) => {
+                    console.log(poi); // Raw data about the position.
+                    if(poi) {
+                        var lngLat = Mazemap.Util.getPoiLngLat(poi);
+                        map.flyTo({center: lngLat, zoom: 19, speed: 0.5});
+                        highlighter.highlight(poi);    
+                    }
+                });
             });
           
         }
