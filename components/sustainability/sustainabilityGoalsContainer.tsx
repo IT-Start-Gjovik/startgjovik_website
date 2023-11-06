@@ -21,7 +21,7 @@ const sustainabilityGoals = [
     },
 ];
 
-export default function SustainabilityImageContainer() {
+export default function SustainabilityGoalsContainer() {
     return (
         <section className='grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] min-w-full gap-4 mt-10'>
             {sustainabilityGoals.map((goal, index) => {

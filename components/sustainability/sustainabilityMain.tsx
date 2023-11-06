@@ -1,11 +1,11 @@
-import SustainabilityImageContainer from './sustainabilityGoalsContainer';
+import SustainabilityGoalsContainer from './sustainabilityGoalsContainer';
 import SustainabilityText from './sustainabilityText';
 
 export default function SustainabilityMain() {
     return (
         <>
             <SustainabilityText />
-            <SustainabilityImageContainer />
+            <SustainabilityGoalsContainer />
         </>
     );
 }

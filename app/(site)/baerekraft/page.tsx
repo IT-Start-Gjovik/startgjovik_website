@@ -1,6 +1,7 @@
 import Footer from '@/components/footer/footer';
-import SustainabilityMain from '@/components/sustainability/sustainabilityMain';
 import CarbonFootprintText from '@/components/sustainability/carbonFootprint/carbonFootprintText';
+import SustainabilityMain from '@/components/sustainability/sustainabilityMain';
+
 export default function BaerekraftPage() {
     return (
         <div className='bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
