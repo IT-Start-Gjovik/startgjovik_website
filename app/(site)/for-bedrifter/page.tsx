@@ -65,6 +65,7 @@ export default function ForCompany() {
             <div className='flex justify-center'>
                 <div className='grid grid-cols-2 p-7 w-[80%] bg-[#0B0C0E] rounded-xl shadow-2xl'>
                     <div className=' rounded-lg w-[90%] justify-self-start'>
+                        <h2 className='text-3xl text-center font-extrabold mb-1'>Kontakt oss</h2>
                         <p className='text-xl'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
@@ -72,7 +73,7 @@ export default function ForCompany() {
                         </p>
 
                     </div> 
-                    <div className=' p-4 rounded-lg w-[90%] justify-self-end'>
+                    <div className=' p-4 rounded-lg w-[90%] justify-self-end bg-[#1D2432]'>
                     </div>
                 </div>
             </div>
