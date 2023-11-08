@@ -1,12 +1,13 @@
 import Footer from '@/components/footer/footer';
-import SustainabilityImageContainer from '@/components/sustainability/sustainabilityGoalsContainer';
-import SustainabilityMainText from '@/components/sustainability/sustainabilityMain';
+import CarbonFootprint from '@/components/sustainability/carbonFootprint/carbonFootprint';
+import SustainabilityMain from '@/components/sustainability/sustainabilityMain';
+
 export default function BaerekraftPage() {
     return (
-        <div className='bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
-            <main className='mx-auto my-0 max-w-4xl px-3  min-h-screen'>
-                <SustainabilityMainText />
-                <SustainabilityImageContainer />
+        <div className='bg-gray-900'>
+            <main className='mx-auto my-0 max-w-4xl px-4 transition-all md:px-8  min-h-screen'>
+                <SustainabilityMain />
+                <CarbonFootprint />
             </main>
             <Footer />
         </div>
