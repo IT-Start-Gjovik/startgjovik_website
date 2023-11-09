@@ -11,11 +11,11 @@
   "dependencies": {
     "@portabletext/react": "^3.0.4",
     "@sanity/client": "^6.7.0",
-    "@types/node": "20.8.2",
+    "@types/node": "20.9.0",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "eslint-config-next": "^14.0.1",
     "framer-motion": "^10.16.0",
     "mazemap-api": "^1.0.1",
@@ -25,12 +25,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-loading-skeleton": "^3.3.1",
+    "react-websitecarbon-badge": "^1.0.6",
     "sanity": "^3.19.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@types/node": "20.8.6",
+    "@types/node": "20.9.0",
     "@types/react": "18.2.28",
     "eslint-config-prettier": "^9.0.0"
   }
