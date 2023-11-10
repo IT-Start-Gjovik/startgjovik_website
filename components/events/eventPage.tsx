@@ -17,8 +17,8 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
     if (!event) return <ErrorPage />;
 
     // Function to transform event description text into paragraphs with line breaks
-    const getDescriptionWithLineBreaks = (text) => {
-        return text.split('\n').map((item, key) => (
+    const getDescriptionWithLineBreaks = (text: string): JSX.Element[] => {
+        return text.split('\n').map((item: string, key: number) => (
             <span key={key}>
                 {item}
                 <br />
