@@ -8,7 +8,7 @@ export default function AllEventsPage() {
     return (
         <main className='bg-gray-900 min-h-screen flex flex-col items-center justify-start'>
             <header>
-                <SectionTitle title='🏆 Våre arrangementer' />
+                <SectionTitle title='Våre arrangementer' />
             </header>
 
             <section className='grid md:grid-cols-3 gap-8 my-8 w-full max-w-5xl'>
@@ -18,7 +18,7 @@ export default function AllEventsPage() {
             </section>
 
             <section>
-                <SectionTitle title='⌛️ Tidligere arrangementer' />
+                <SectionTitle title='Tidligere arrangementer' />
                 <h2 className='text-2xl text-center md:text-4xl mt-4'>Kommer snart....</h2>
                 <p className='mt-2 text-center'> Her vil det stå mer om tidligere arrangementer</p>
             </section>
