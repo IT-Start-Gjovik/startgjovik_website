@@ -5,7 +5,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-type BurgerMenuProps = {
+type MenuProps = {
     menuItems: { name: string, path: string }[]
     title: string
     menuIcon: ReactNode
@@ -13,7 +13,7 @@ type BurgerMenuProps = {
 }
 
 
-export default function DropDownMenu({ menuItems, title, menuIcon, textSize} : BurgerMenuProps) {
+export default function DropDownMenu({ menuItems, title, menuIcon, textSize} : MenuProps) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
