@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="bg-darkblue">
             <nav className="flex items-center justify-between py-4 phone:pb-0 phone:pt-1 phone:pl-3 pl-5 text-white text-2xl">
                 <div className='tablet:hidden desktop:hidden'>
-                    <DropDownMenu menuItems={homePageMenuItems} title="" menuIcon={burgerMenuIcon}/>
+                    <DropDownMenu menuItems={homePageMenuItems} title="" menuIcon={burgerMenuIcon} textSize='text-2xl'/>
                 </div>
                 <ul className="flex space-x-7 -space-y-0 tracking-tight leading-none">
                     {homePageMenuItems.map((item, index) => (
@@ -39,7 +39,7 @@ export default function Navbar() {
                     ))}
 
                     <li className='phone:hidden'>
-                         <DropDownMenu menuItems={eventsMenuItems} title="Arrangementer" menuIcon={defualtMenuIcon}/>
+                         <DropDownMenu menuItems={eventsMenuItems} title="Arrangementer" menuIcon={defualtMenuIcon} textSize='text-lg'/>
                     </li>
                 </ul>
             </nav>       

@@ -9,10 +9,11 @@ type BurgerMenuProps = {
     menuItems: { name: string, path: string }[]
     title: string
     menuIcon: ReactNode
+    textSize: string
 }
 
 
-export default function DropDownMenu({ menuItems, title, menuIcon} : BurgerMenuProps) {
+export default function DropDownMenu({ menuItems, title, menuIcon, textSize} : BurgerMenuProps) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -40,7 +41,7 @@ export default function DropDownMenu({ menuItems, title, menuIcon} : BurgerMenuP
                             href={item.path}
                             className={classNames(
                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                'block px-4 py-2 text-sm'
+                                'block px-4 py-2 leading-none ' + textSize
                               )}
                         >
                             {item.name}
