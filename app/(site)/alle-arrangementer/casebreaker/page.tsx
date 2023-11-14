@@ -1,7 +1,7 @@
 import EventPage from '@/components/events/eventPage';
 
-const Event4Page = () => {
+const CasebreakerEventPage = () => {
     return <EventPage eventId='4' />;
 };
 
-export default Event4Page;
+export default CasebreakerEventPage;
