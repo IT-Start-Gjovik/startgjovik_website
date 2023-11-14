@@ -23,12 +23,12 @@ export default function Navbar() {
 
     const defualtMenuIcon = <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
 
-    const burgerMenuIcon = <Image src="/images/burger-menu.png" alt="Menu button" width={20} height={20} />
+    const burgerMenuIcon = <Image src="/images/burger-menu.png" alt="Menu button" width={50} height={50} />
 
     return (
         <div className="bg-darkblue">
-            <nav className="flex items-center justify-between py-4 pl-5 text-white text-2xl">
-                <div className='tablet:hidden desktop:hidden XLdesktop:hidden'>
+            <nav className="flex items-center justify-between py-4 phone:pb-0 phone:pt-1 phone:pl-3 pl-5 text-white text-2xl">
+                <div className='tablet:hidden desktop:hidden'>
                     <DropDownMenu menuItems={homePageMenuItems} title="" menuIcon={burgerMenuIcon}/>
                 </div>
                 <ul className="flex space-x-7 -space-y-0 tracking-tight leading-none">

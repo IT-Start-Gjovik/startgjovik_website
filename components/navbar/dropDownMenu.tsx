@@ -1,7 +1,5 @@
 import { Fragment, ReactNode } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import Image from 'next/image'
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -33,7 +31,7 @@ export default function DropDownMenu({ menuItems, title, menuIcon} : BurgerMenuP
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute left-0 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {menuItems.map((item, index) => (
                 <Menu.Item key={index}>
@@ -41,9 +39,9 @@ export default function DropDownMenu({ menuItems, title, menuIcon} : BurgerMenuP
                         <a
                             href={item.path}
                             className={classNames(
-                                active ? 'bg-white text-gray-900' : 'text-gray-700',
+                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                 'block px-4 py-2 text-sm'
-                            )}
+                              )}
                         >
                             {item.name}
                         </a>
