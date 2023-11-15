@@ -28,7 +28,6 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
     };
 
     return (
-
         <div className='bg-gradient-to-r from-gray-800 via-gray-900 to-black'>
             <div className='container mx-auto px-4 py-10'>
                 {' '}
@@ -74,6 +73,7 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
                     </div>
                 </div>
                 <Footer />
+            </div>
         </div>
     );
 };
