@@ -1,58 +1,81 @@
-import { EventCardType } from "@/types/EventCardType";
-import { EventPageType } from "@/types/EventPageType";
-import { VervType } from "@/types/Verv";
-import { createClient, groq } from "next-sanity";
+import { createClient, groq } from 'next-sanity';
+import { EventCardType } from '@/types/EventCardType';
+import { EventPageType } from '@/types/EventPageType';
+import { VervType } from '@/types/Verv';
 
-// Async function that gets all event cards available
 export async function getEventCards(): Promise<EventCardType[]> {
     const client = createClient({
-        projectId: "a42ubgcg",
-        dataset: "production",
-        apiVersion: "2023-07-06",
+        projectId: 'a42ubgcg',
+        dataset: 'production',
+        apiVersion: '2023-07-06',
         useCdn: false,
     });
 
+    const currentDate = new Date().toISOString();
+
     return client.fetch(
-        groq`*[_type == "event"]{
+        groq`*[_type == "event" && datetime > $currentDate] | order(datetime asc){
             _id,
             title,
             description,
             datetime,
             "image": image.asset -> url,
             "slug": slug.current,
-        }`
+        }`,
+        { currentDate },
     );
 }
 
-// Get a single event page based on the slug
-export async function getEventPage(slug: string): Promise<EventPageType> {
+export async function getPastEventCards(): Promise<EventCardType[]> {
     const client = createClient({
-        projectId: "a42ubgcg",
-        dataset: "production",
-        apiVersion: "2023-07-06",
+        projectId: 'a42ubgcg',
+        dataset: 'production',
+        apiVersion: '2023-07-06',
+        useCdn: false,
+    });
+
+    const currentDate = new Date().toISOString();
+
+    return client.fetch(
+        groq`*[_type == "event" && datetime < $currentDate] | order(datetime desc){
+            _id,
+            title,
+            description,
+            datetime,
+            "image": image.asset -> url,
+            "slug": slug.current,
+        }`,
+        { currentDate },
+    );
+}
+
+export async function getCurrentEventCards(slug: string): Promise<EventPageType> {
+    const client = createClient({
+        projectId: 'a42ubgcg',
+        dataset: 'production',
+        apiVersion: '2023-07-06',
         useCdn: false,
     });
 
     return client.fetch(
         groq`*[_type == "event" && slug.current == $slug][0]{
-        _id,
-        title,
-        "slug": slug.current,
-        "image": image.asset->url,
-        url,
-        content,
-        datetime
-      }`,
-        { slug }
+            _id,
+            title,
+            "slug": slug.current,
+            "image": image.asset->url,
+            url,
+            content,
+            datetime
+        }`,
+        { slug },
     );
 }
 
-// Async function that gets all vervtypes from the backend
 export async function getVervs(): Promise<VervType[]> {
     const client = createClient({
-        projectId: "a42ubgcg",
-        dataset: "production",
-        apiVersion: "2023-07-06",
+        projectId: 'a42ubgcg',
+        dataset: 'production',
+        apiVersion: '2023-07-06',
         useCdn: false,
     });
 
@@ -62,6 +85,6 @@ export async function getVervs(): Promise<VervType[]> {
             title,
             url,
             type
-        }`
+        }`,
     );
 }
