@@ -43,16 +43,9 @@ export default function Navbar() {
     return (
         <div className="bg-darkblue">
             <nav className="flex items-center justify-between py-4 phone:pb-0 phone:pt-1 phone:pl-3 pl-5 text-white text-2xl font-semibold">
-                <motion.div className='tablet:hidden desktop:hidden'
-                    initial="initial"
-                    variants={fadeInAnimation}
-                    whileInView="animate"
-                    viewport={{
-                        once: true,
-                    }}
-                >
+                <div className='tablet:hidden desktop:hidden'>
                     <DropDownMenu menuItems={homePageMenuItems} title="" menuIcon={burgerMenuIcon} textSize='text-2xl' />
-                </motion.div>
+                </div>
                 <ul className="flex space-x-7 -space-y-0 tracking-tight leading-none">
 
                     {homePageMenuItems.map((item, index) => (
