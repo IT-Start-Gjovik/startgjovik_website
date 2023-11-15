@@ -1,7 +1,7 @@
 import EventPage from '@/components/events/eventPage';
 
-const Event1Page = () => {
+const BcmEventPage = () => {
     return <EventPage eventId='1' />;
 };
 
-export default Event1Page;
+export default BcmEventPage;

@@ -1,7 +1,7 @@
 import EventPage from '@/components/events/eventPage';
 
-const Event5Page = () => {
+const StartABusinessEventPage = () => {
     return <EventPage eventId='5' />;
 };
 
-export default Event5Page;
+export default StartABusinessEventPage;
