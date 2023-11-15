@@ -9,6 +9,7 @@ import PastEventBox from '@/components/events/pastEventBox';
 import { events } from '@/components/events/eventData';
 import { getPastEventCards } from '@/backend/sanity-utils';
 import { EventCardType } from '@/types/EventCardType';
+import Header from '@/components/header/page';
 
 export default function AllEventsPage() {
     const [pastEvents, setPastEvents] = useState<EventCardType[]>([]);
@@ -27,44 +28,48 @@ export default function AllEventsPage() {
     }, []);
 
     return (
-        <main className='bg-gradient-to-r from-gray-800 via-gray-900 to-black min-h-screen flex flex-col items-center justify-start'>
-            <header>
-                <SectionTitle title='Våre arrangementer' />
-            </header>
+        <div>
+            <Header />
+            <main className='bg-gradient-to-r from-gray-800 via-gray-900 to-black min-h-screen flex flex-col items-center justify-start'>
+                <header>
+                    <SectionTitle title='Våre arrangementer' />
+                </header>
 
-            <section className='grid md:grid-cols-3 gap-8 my-8 w-full max-w-5xl'>
-                {events.map((event) => (
-                    <EventBox key={event.id} {...event} />
-                ))}
-            </section>
+                <section className='grid md:grid-cols-3 gap-8 my-8 w-full max-w-5xl'>
+                    {events.map((event) => (
+                        <EventBox key={event.id} {...event} />
+                    ))}
+                </section>
 
-            <section>
-                <SectionTitle title='Tidligere arrangementer' />
-                {/* Change to a single-column grid layout */}
-                <div className='grid grid-cols-1 gap-8 my-8 w-full max-w-5xl'>
-                    {pastEvents.length > 0 ? (
-                        pastEvents.map((event) => (
-                            <PastEventBox
-                                key={event._id}
-                                id={event._id}
-                                title={event.title}
-                                alt={`Image for ${event.title}`}
-                                link={`/arrangementer/${event.slug}`}
-                            />
-                        ))
-                    ) : (
-                        <p className='mt-2 text-center'>Ingen tidligere arrangementer.</p>
-                    )}
+                <section>
+                    <SectionTitle title='Tidligere arrangementer' />
+                    {/* Change to a single-column grid layout */}
+                    <div className='grid grid-cols-1 gap-8 my-8 w-full max-w-5xl'>
+                        {pastEvents.length > 0 ? (
+                            pastEvents.map((event) => (
+                                <PastEventBox
+                                    key={event._id}
+                                    id={event._id}
+                                    title={event.title}
+                                    alt={`Image for ${event.title}`}
+                                    link={`/arrangementer/${event.slug}`}
+                                />
+                            ))
+                        ) : (
+                            <p className='mt-2 text-center'>Ingen tidligere arrangementer.</p>
+                        )}
+                    </div>
+                </section>
+
+                <div className='fixed top-0 right-0 m-4'>
+                    <BackButton link='/' text='Tilbake til hovedsiden' />
                 </div>
-            </section>
 
-            <div className='fixed top-0 right-0 m-4'>
-                <BackButton link='/' text='Tilbake til hovedsiden' />
-            </div>
-
-            <footer className='w-full'>
-                <Footer />
-            </footer>
-        </main>
+                <footer className='w-full'>
+                    <Footer />
+                </footer>
+            </main>
+        </div>
+        
     );
 }

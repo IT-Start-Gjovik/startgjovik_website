@@ -60,7 +60,7 @@ export default function Home() {
         </div>
 
         {/** Listing all events if there are any  */}
-        <div className="flex flex-wrap justify-center items-center px-5 mt-20 gap-5 md:flex-row">
+        <div id="allEvents" className="flex flex-wrap justify-center items-center px-5 mt-20 gap-5 md:flex-row">
         { events && events.length > 0 ? <EventCardList events={events} /> : <NoEvents/>}
         </div>
         
