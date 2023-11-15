@@ -17,8 +17,8 @@ export default function Navbar() {
       ];
 
     const eventsMenuItems = [
-        { name: 'Kommende', path: '/alle-arrangementer' },
-        { name: 'Tidligere', path: '/arrangementer/[eventPage]' },
+        { name: 'Kommende', path: '/#allEvents' },
+        { name: 'Tidligere', path: '/alle-arrangementer' },
       ];
 
     const defualtMenuIcon = <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
