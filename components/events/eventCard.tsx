@@ -1,5 +1,3 @@
-import event from '@/backend/schemas/event';
-import Image from 'next/image';
 import Link from 'next/link';
 import { split } from 'lodash';
 import getEnglishMonth from '@/utils/englishMonth';

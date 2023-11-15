@@ -29,7 +29,8 @@ const fadeInAnimation: Variants = {
 
 
 export default function DropDownMenu({ menuItems, title, menuIcon, textSize }: MenuProps) {
-  return (
+    return (
+
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
@@ -72,7 +73,6 @@ export default function DropDownMenu({ menuItems, title, menuIcon, textSize }: M
                   )}
                 </Menu.Item>
               </motion.div>
-
             ))}
           </div>
         </Menu.Items>
