@@ -1,25 +1,40 @@
 import { Fragment, ReactNode } from 'react'
 import { Menu, Transition } from '@headlessui/react'
+import { motion, Variants } from "framer-motion";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 type MenuProps = {
-    menuItems: { name: string, path: string }[]
-    title: string
-    menuIcon: ReactNode
-    textSize: string
+  menuItems: { name: string, path: string }[]
+  title: string
+  menuIcon: ReactNode
+  textSize: string
+}
+
+const fadeInAnimation: Variants = {
+  initial: {
+    opacity: 0,
+    y: -50
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05 * index,
+    }
+  }),
 }
 
 
-export default function DropDownMenu({ menuItems, title, menuIcon, textSize} : MenuProps) {
+export default function DropDownMenu({ menuItems, title, menuIcon, textSize }: MenuProps) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
-            {title}
-            {menuIcon}
+          {title}
+          {menuIcon}
         </Menu.Button>
       </div>
 
@@ -35,19 +50,29 @@ export default function DropDownMenu({ menuItems, title, menuIcon, textSize} : M
         <Menu.Items className="absolute left-0 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {menuItems.map((item, index) => (
+              <motion.div key={index}
+                initial="initial"
+                variants={fadeInAnimation}
+                whileInView="animate"
+                viewport={{
+                  once: true,
+                }}
+                custom={index}>
                 <Menu.Item key={index}>
-                    {({ active }) => (
-                        <a key={index}
-                          href={item.path}
-                          className={classNames(
-                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                              'block px-4 py-2 leading-none ' + textSize
-                          )}
-                        >
-                            {item.name}
-                        </a>
-                    )}
+                  {({ active }) => (
+                    <a key={index}
+                      href={item.path}
+                      className={classNames(
+                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        'block px-4 py-2 leading-none ' + textSize
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  )}
                 </Menu.Item>
+              </motion.div>
+
             ))}
           </div>
         </Menu.Items>
