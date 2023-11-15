@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@portabletext/react": "^3.0.4",
     "@sanity/client": "^6.8.0",
     "@types/node": "20.9.0",
@@ -17,7 +19,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "^8.53.0",
     "eslint-config-next": "^14.0.1",
-    "framer-motion": "^10.16.0",
+    "framer-motion": "^10.16.5",
     "next": "13.5.4",
     "next-sanity": "^5.5.3",
     "postcss": "8.4.31",

@@ -47,7 +47,6 @@ export default function AllEventsPage() {
                             <PastEventBox
                                 key={event._id}
                                 id={event._id}
-                                imageUrl={event.image}
                                 title={event.title}
                                 alt={`Image for ${event.title}`}
                                 link={`/arrangementer/${event.slug}`}
