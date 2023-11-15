@@ -3,6 +3,7 @@ import JoinList from '@/components/JoinList/joinlist';
 import BackButton from '@/components/UI/backbutton';
 import ChecklistItem from '@/components/UI/checklistitem';
 import Footer from '@/components/footer/footer';
+import Header from '@/components/header/page';
 
 export default function JoinPage() {
     return (
