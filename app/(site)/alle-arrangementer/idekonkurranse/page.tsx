@@ -1,7 +1,8 @@
 import EventPage from '@/components/events/eventPage';
 
-const Event6Page = () => {
+const IdeaCompetitionEventPage = () => {
     return <EventPage eventId='6' />;
 };
 
-export default Event6Page;
+export default IdeaCompetitionEventPage;
+

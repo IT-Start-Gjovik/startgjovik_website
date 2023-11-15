@@ -73,7 +73,6 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
                 </div>
                 <Footer />
             </div>
-        </div>
     );
 };
 
