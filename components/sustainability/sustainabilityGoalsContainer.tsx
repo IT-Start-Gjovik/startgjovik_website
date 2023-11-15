@@ -21,12 +21,12 @@ const sustainabilityGoals = [
     },
 ];
 
-export default function SustainabilityImageContainer() {
+export default function SustainabilityGoalsContainer() {
     return (
-        <div className='grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] min-w-full gap-4 mt-10 '>
+        <section className='grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] min-w-full gap-4 my-16'>
             {sustainabilityGoals.map((goal, index) => {
                 return <SustainabilityGoal key={index} title={goal.title} linkUrl={goal.linkUrl} description={goal.description} imageSrc={goal.imageSrc} />;
             })}
-        </div>
+        </section>
     );
 }
