@@ -1,7 +1,8 @@
 import EventPage from '@/components/events/eventPage';
 
-const Event2Page = () => {
+const BlenderEventPage = () => {
     return <EventPage eventId='2' />;
 };
 
-export default Event2Page;
+export default BlenderEventPage;
+
