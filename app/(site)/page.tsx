@@ -1,5 +1,5 @@
 'use client';
-// test2
+
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/UI/logo';
 import NoEvents from '@/components/UI/noEventsFound';
