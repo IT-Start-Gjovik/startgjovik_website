@@ -17,8 +17,8 @@ export default function Navbar() {
       ];
 
     const eventsMenuItems = [
-        { name: 'Kommende arrangementer', path: '/' },
-        { name: 'Tidligere arrangementer', path: '/about' },
+        { name: 'Kommende', path: '/' },
+        { name: 'Tidligere', path: '/about' },
       ];
 
     const defualtMenuIcon = <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -33,7 +33,7 @@ export default function Navbar() {
                 </div>
                 <ul className="flex space-x-7 -space-y-0 tracking-tight leading-none">
                     {homePageMenuItems.map((item, index) => (
-                    <li className='phone:hidden'>
+                    <li key={index} className='phone:hidden'>
                         <Link key={index} href={item.path} className={`link ${pathname === item.path ? 'active-link' : ''} `}>{item.name}</Link>
                     </li>
                     ))}

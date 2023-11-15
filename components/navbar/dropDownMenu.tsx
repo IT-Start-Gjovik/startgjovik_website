@@ -37,12 +37,12 @@ export default function DropDownMenu({ menuItems, title, menuIcon, textSize} : M
             {menuItems.map((item, index) => (
                 <Menu.Item key={index}>
                     {({ active }) => (
-                        <a
-                            href={item.path}
-                            className={classNames(
-                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                'block px-4 py-2 leading-none ' + textSize
-                              )}
+                        <a key={index}
+                          href={item.path}
+                          className={classNames(
+                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                              'block px-4 py-2 leading-none ' + textSize
+                          )}
                         >
                             {item.name}
                         </a>
