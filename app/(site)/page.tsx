@@ -13,6 +13,7 @@ import LoadingPage from '@/components/loadingPage/loadingPage';
 import ErrorPage from './feilside/page';
 import { NextResponse } from 'next/server';
 import { useRouter } from 'next/navigation';
+import Header from '@/components/header/page';
 
 
 export default function Home() {
@@ -39,6 +40,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start">
+      {/** Header */}
+      <Header />
+      
       <main className="min-h-screen">
         <Logo />
 
