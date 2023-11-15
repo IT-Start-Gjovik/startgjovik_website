@@ -35,7 +35,8 @@ Thank you to all IT members contributors for their valuable contributions to Sta
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/FredrikSundt-Hansen"><img src="https://avatars.githubusercontent.com/u/38140980?v=4?s=100" width="100px;" alt="Fredrik Sundt-Hansen"/><br /><sub><b>Fredrik Sundt-Hansen</b></sub></a><br /><a href="#code-FredrikSundt-Hansen" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hannah-Sofie"><img src="https://avatars.githubusercontent.com/u/90150033?v=4?s=100" width="100px;" alt="Hannah"/><br /><sub><b>Hannah</b></sub></a><br /><a href="#code-Hannah-Sofie" title="Code">💻</a> <a href="#design-Hannah-Sofie" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mosazghi"><img src="https://avatars.githubusercontent.com/u/116307580?v=4?s=100" width="100px;" alt="Mosazghi"/><br /><sub><b>Mosazghi</b></sub></a><br /><a href="#code-Mosazghi" title="Code">💻</a> <a href="#bug-Mosazghi" title="Bug reports">🐛</a> <a href="#design-Mosazghi" title="Design">🎨</a></td>
-
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Nahom101-1"><img src="https://avatars.githubusercontent.com/u/146176292?v=4?s=100" width="100px;" alt="Nahom101-1"/><br /><sub><b>Nahom101-1</b></sub></a><br /><a href="#code-Nahom101-1" title="Code">💻</a></td>
+    </tr>
   </tbody>
 </table>
 
