@@ -6,6 +6,16 @@ import DropDownMenu from './dropDownMenu';
 import Image from 'next/image'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { motion, Variants } from "framer-motion";
+import { useEffect } from 'react';
+
+export const scrollIntoTheView = (id: string) => {
+    let element = document.getElementById(id) as HTMLElement;
+    if (!element) return;
+
+    element.scrollIntoView({
+        behavior: "auto",
+    });
+};
 
 export default function Navbar() {
     const pathname = usePathname()
@@ -21,6 +31,15 @@ export default function Navbar() {
         { name: 'Kommende', path: '/#allEvents' },
         { name: 'Tidligere', path: '/alle-arrangementer' },
       ];
+
+    const burgerMenyuItems = [
+        { name: 'Hjem', path: '/' },
+        { name: 'Bærekraft', path: '/baerekraft' },
+        { name: 'For Bedrifter', path: '/for-bedrifter' },
+        { name: 'Personvern', path: '/personvern' },
+        { name: 'Kommende arrangementer', path: '/#allEvents' },
+        { name: 'Tidligere arrangementer', path: '/alle-arrangementer' },
+    ];
 
     const defualtMenuIcon = <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
 
@@ -40,11 +59,18 @@ export default function Navbar() {
         }),
     }
 
+    useEffect(() => {
+        // Scroll to the element with ID "allEvents" 
+        if (window.location.hash === '#allEvents') {
+          scrollIntoTheView('allEvents');
+        }
+      }, []);
+
     return (
         <div className="bg-darkblue">
             <nav className="flex items-center justify-between py-4 phone:pb-0 phone:pt-1 phone:pl-3 pl-5 text-white text-2xl font-semibold">
                 <div className='tablet:hidden desktop:hidden'>
-                    <DropDownMenu menuItems={homePageMenuItems} title="" menuIcon={burgerMenuIcon} textSize='text-2xl' />
+                    <DropDownMenu menuItems={burgerMenyuItems} title="" menuIcon={burgerMenuIcon} textSize='text-2xl' />
                 </div>
                 <ul className="flex space-x-7 -space-y-0 tracking-tight leading-none">
 
@@ -79,3 +105,4 @@ export default function Navbar() {
         </div>
     )
 }
+
