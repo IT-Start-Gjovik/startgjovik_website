@@ -1,7 +1,9 @@
+"use client";
 import Footer from '@/components/footer/footer';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Map from '@/components/map/map';
 
+const Map = dynamic(() => import('@/components/map/map'), { ssr: false });
 export default function ForCompany() {
     return (
         <div className='bg-gray-900 min-h-screen'>
