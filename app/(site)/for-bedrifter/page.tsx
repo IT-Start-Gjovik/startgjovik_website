@@ -2,11 +2,13 @@
 import Footer from '@/components/footer/footer';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import Header from '@/components/header/page';
 
 const Map = dynamic(() => import('@/components/map/map'), { ssr: false });
 export default function ForCompany() {
     return (
         <div className='bg-gray-900 min-h-screen'>
+        <Header />
             <main>
                 <h1 className='ml-4 mb-4 text-7xl font-extrabold leading-none leading-snug text-center'>For bedrifter</h1>
 
