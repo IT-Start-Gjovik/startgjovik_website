@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-// Assume these are your hardcoded images
 const hardcodedImages = ['/images/test1.png', '/images/test2.png', '/images/test3.png', '/images/test4.png'];
 
 type PastEventBoxProps = {

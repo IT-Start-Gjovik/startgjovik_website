@@ -5,4 +5,3 @@ const MeetAFounderEventPage = () => {
 };
 
 export default MeetAFounderEventPage;
-

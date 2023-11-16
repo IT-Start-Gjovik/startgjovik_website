@@ -1,4 +1,3 @@
-import React from 'react';
 import SectionTitle from '@/components/events/sectionTitle';
 import { events } from '@/components/events/eventData';
 import Footer from '@/components/footer/footer';
