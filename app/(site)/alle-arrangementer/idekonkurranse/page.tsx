@@ -5,3 +5,4 @@ const IdeaCompetitionEventPage = () => {
 };
 
 export default IdeaCompetitionEventPage;
+

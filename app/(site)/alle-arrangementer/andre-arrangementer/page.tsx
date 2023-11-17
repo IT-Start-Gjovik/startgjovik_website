@@ -5,3 +5,4 @@ const OtherEventsPage = () => {
 };
 
 export default OtherEventsPage;
+
