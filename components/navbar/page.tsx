@@ -13,7 +13,7 @@ export const scrollIntoTheView = (id: string) => {
     if (!element) return;
 
     element.scrollIntoView({
-        behavior: "auto",
+        behavior: "smooth",
     });
 };
 
@@ -48,11 +48,11 @@ export default function Navbar() {
     const fadeInAnimation: Variants = {
         initial: {
             opacity: 0,
-            x: -50
+            y: -20
         },
         animate: (index: number) => ({
             opacity: 1,
-            x: 0,
+            y: 0,
             transition: {
                 delay: 0.05 * index,
             }
@@ -68,15 +68,14 @@ export default function Navbar() {
 
     return (
         <div className="bg-darkblue">
-            <nav className="flex items-center justify-between py-4 phone:pb-0 phone:pt-1 phone:pl-3 pl-5 text-white text-2xl font-semibold">
-                <div className='tablet:hidden desktop:hidden'>
+            <nav className="flex items-center justify-between py-4 sm:pb-0 sm:pt-1 sm:pl-3 pl-5 text-white text-2xl font-semibold">
+                <div className='sm:block md:hidden lg:hidden xl:hidden 2xl:hidden'>
                     <DropDownMenu menuItems={burgerMenyuItems} title="" menuIcon={burgerMenuIcon} textSize='text-2xl' />
                 </div>
                 <ul className="flex space-x-7 -space-y-0 tracking-tight leading-none">
 
                     {homePageMenuItems.map((item, index) => (
-
-                        <motion.li key={index} className='phone:hidden'
+                        <motion.li key={index} className='sm:hidden md:block lg:block xl:block 2xl:block'
                             initial="initial"
                             variants={fadeInAnimation}
                             whileInView="animate"
@@ -84,12 +83,13 @@ export default function Navbar() {
                                 once: true,
                             }}
                             custom={index}
+                            whileHover={{ scale: 1.1 }}
                         >
                             <Link key={index} href={item.path} className={`link ${pathname === item.path ? 'active-link' : ''} `}>{item.name}</Link>
                         </motion.li>
 
                     ))}
-                    <motion.li className='phone:hidden'
+                    <motion.li className='sm:hidden md:block lg:block xl:block 2xl:block'
                         initial="initial"
                         variants={fadeInAnimation}
                         whileInView="animate"
@@ -97,6 +97,7 @@ export default function Navbar() {
                             once: true,
                         }}
                         custom={homePageMenuItems.length + 1}
+                        whileHover={{ scale: 1.1 }}
                     >
                         <DropDownMenu menuItems={eventsMenuItems} title="Arrangementer" menuIcon={defualtMenuIcon} textSize='text-lg' />
                     </motion.li>
