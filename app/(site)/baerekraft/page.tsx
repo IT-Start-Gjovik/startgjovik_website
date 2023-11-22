@@ -7,7 +7,7 @@ export default function BaerekraftPage() {
     return (
         <div className='bg-gray-900'>
             <Header />
-            <main className='mx-auto my-0 max-w-4xl px-4 transition-all md:px-8  min-h-screen'>
+            <main className='mx-auto my-0 max-w-5xl px-4 transition-all md:px-8 min-h-screen'>
                 <SustainabilityMain />
                 <CarbonFootprint />
             </main>
