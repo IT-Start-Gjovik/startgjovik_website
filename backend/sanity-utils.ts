@@ -2,6 +2,7 @@ import { createClient, groq } from 'next-sanity';
 import { EventCardType } from '@/types/EventCardType';
 import { EventPageType } from '@/types/EventPageType';
 import { VervType } from '@/types/Verv';
+import { StyreType } from '@/types/StyreType';
 
 export async function getEventCards(): Promise<EventCardType[]> {
     const client = createClient({
@@ -86,5 +87,28 @@ export async function getVervs(): Promise<VervType[]> {
             url,
             type
         }`,
+    );
+}
+
+// Async function that gets all start members from the backend
+export async function getStyreMedlemmer(): Promise<StyreType[]> {
+    const client = createClient({
+        projectId: 'a42ubgcg',
+        dataset: 'production',
+        apiVersion: '2023-07-06',
+        useCdn: false,
+    });
+
+    return client.fetch(
+        groq`*[_type == "styre"]{
+_id,
+title,
+url,
+"slug": slug.current,
+name,
+"image": image.asset->url,
+linkdn,
+stilling
+}`,
     );
 }
