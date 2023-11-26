@@ -65,7 +65,8 @@ export default function ForCompany() {
                     <div className='grid grid-cols-2 p-7 2xl:w-[80%] xl:w-[80%] bg-[#0B0C0E] rounded-xl shadow-2xl'>
                         <div className=' rounded-lg w-[90%] justify-self-start '>
                             <h2 className='text-2xl text-center font-extrabold mb-7 break-words'>Kontakt oss</h2>
-                            <ul className='flex flex-col gap-[2.75rem] text-xl'>
+                            
+                            <ul className='flex flex-col gap-[2.75rem] text-xl mt-[4rem] ml-[4rem]'>
                                 <li className='inline-flex items-center'>
                                     <div className='w-7'>
                                         <PhoneIcon/>
@@ -90,11 +91,14 @@ export default function ForCompany() {
                                 </li>
                             </ul>
                         </div>
+
                         <div className=' p-4 rounded-lg w-[90%] h-[30rem] justify-self-end bg-[#1D2432] flex items-center justify-center'>
                             <Map />
                         </div>
+
                     </div>
                 </div>
+
                 <Footer />
             </main>
         </div>
