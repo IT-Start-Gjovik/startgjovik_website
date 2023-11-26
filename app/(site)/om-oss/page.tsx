@@ -12,6 +12,7 @@ import { StyreType } from '@/types/StyreType';
 import { EventCardType } from '@/types/EventCardType';
 import Header from '@/components/header/page';
 
+
 export default async function AboutUsPage() {
     const styre = await getStyreMedlemmer();
     return (
@@ -25,8 +26,8 @@ export default async function AboutUsPage() {
 
                         <h1 className='text-slate-900 font-medium'>What is Lorem Ipsum?</h1>
                         <p className='mt-4 text-lg leading-10 text-slate-900'>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy
+                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         </p>
                     </div>
 
@@ -35,8 +36,8 @@ export default async function AboutUsPage() {
 
                         <h1 className='text-slate-900 font-medium'>What is Lorem Ipsum?</h1>
                         <p className='mt-4 text-lg leading-10 text-slate-900'>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy
+                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         </p>
                     </div>
                     <div className='w-full lg:w-1/2 xl:w-1/3 p-20 sm:px-6'>
@@ -44,8 +45,8 @@ export default async function AboutUsPage() {
 
                         <h1 className='text-slate-900 font-medium'>What is Lorem Ipsum?</h1>
                         <p className='mt-4 text-lg leading-10 text-slate-900'>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy
+                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         </p>
                     </div>
 
@@ -70,7 +71,6 @@ text ever since the 1500s, when an unknown printer took a galley of type and scr
                     <h1 className='text-7xl font-extrabold'>
                         Sttyre <span className='bg-gradient-to-r from-blue-400 to-white text-transparent bg-clip-text'>Medlemmer</span>
                     </h1>
-
                     <div className='grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-1 gap-20 mt-12'>
                         {styre.map((styre) => (
                             <div key={styre._id} className='p-5 sm:px-6'>
