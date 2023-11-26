@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import strye from '@/backend/schemas/styre';
 import { getStyreMedlemmer } from '@/backend/sanity-utils';
-import { StyreType } from '@/types/styreType';
+import { StyreType } from '@/types/StyreType';
 import { EventCardType } from '@/types/EventCardType';
 import Header from '@/components/header/page';
 
