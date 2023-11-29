@@ -12,7 +12,7 @@
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@portabletext/react": "^3.0.4",
-    "@sanity/client": "^6.8.0",
+    "@sanity/client": "^6.9.1",
     "@types/node": "20.10.0",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
