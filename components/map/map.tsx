@@ -42,7 +42,7 @@ export default function Map() {
     }, []);
     return (
         <>
-        <div ref={mapContainer} className="h-64 w-64"></div> 
+        <div ref={mapContainer} className="h-full w-full rounded-xl"></div> 
         </>
     );
 }

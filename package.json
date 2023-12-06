@@ -8,11 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
+ "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@portabletext/react": "^3.0.4",
-    "@sanity/client": "^6.8.0",
+    "@sanity/client": "^6.9.1",
+    "@types/node": "20.10.0",
+    "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
     "eslint": "^8.54.0",
@@ -31,7 +33,7 @@
     "typescript": "5.3.2"
   },
   "devDependencies": {
-    "@types/node": "20.9.0",
+    "@types/node": "20.10.0",
     "@types/react": "18.2.28",
     "eslint-config-prettier": "^9.0.0"
   }
