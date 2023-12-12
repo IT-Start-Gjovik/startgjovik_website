@@ -1,4 +1,5 @@
 import Footer from "@/components/footer/footer";
+import Header from "@/components/header/page";
 
 export default function PrivacyPolicyPage(){
 
@@ -7,6 +8,7 @@ export default function PrivacyPolicyPage(){
 
     return ( 
         <div className="flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start">
+            <Header />
             <main className=" flex justify-center min-h-screen">
             <div className="bg-slate-100 w-3/4 h-fit p-20">
 

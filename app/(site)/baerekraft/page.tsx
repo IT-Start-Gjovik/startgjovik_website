@@ -1,10 +1,15 @@
 import Footer from '@/components/footer/footer';
-import SustainabilityMain from '@/components/jumbotron/sustainabilityMain';
+import Header from '@/components/header/page';
+import CarbonFootprint from '@/components/sustainability/carbonFootprint/carbonFootprint';
+import SustainabilityMain from '@/components/sustainability/sustainabilityMain';
+
 export default function BaerekraftPage() {
     return (
-        <div className='flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
-            <main className='flex justify-center min-h-screen'>
+        <div className='bg-gray-900'>
+            <Header />
+            <main className='mx-auto my-0 max-w-5xl px-4 transition-all md:px-8 min-h-screen'>
                 <SustainabilityMain />
+                <CarbonFootprint />
             </main>
             <Footer />
         </div>

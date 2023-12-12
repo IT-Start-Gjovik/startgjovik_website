@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Item } from '@/types/Item';
 import Image from 'next/image';
 
@@ -46,20 +46,40 @@ export default function Hero() {
         setSelectedId(selectedId === itemId ? null : itemId);
     };
 
+    const fadeInAnimation: Variants = {
+        initial: {
+            opacity: 0,
+            x: -250
+        },
+        animate: (index: number) => ({
+            opacity: 1,
+            x: 0,
+            transition: {
+                delay: 0.2 * index,
+            }
+        }),
+    }
+
     return (
         <div className="flex flex-wrap justify-center">
-            {items.map(item => (
+            {items.map((item, index) => (
                 <motion.div
                     key={item.id}
                     layoutId={`item-${item.id}`}
                     onClick={() => handleCardClick(item.id)}
-                    className={`flex flex-col items-center justify-center p-6 m-4 rounded-lg cursor-pointer shadow-lg w-72 h-72 ${item.color}`}
+                    className={` z-auto flex flex-col items-center justify-center p-6 m-4 rounded-lg cursor-pointer shadow-lg w-72 h-72 ${item.color}`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
+                    initial="initial"
+                    variants={fadeInAnimation}
+                    whileInView="animate"
+                    viewport={{
+                        once: true,
+                    }}
+                    custom={index}
                 >
                     <motion.h5 className="text-gray-100 text-xl">{item.subtitle}</motion.h5>
                     <motion.h2 className="text-white text-3xl font-bold mt-2">{item.title}</motion.h2>
