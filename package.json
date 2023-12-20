@@ -28,7 +28,7 @@
     "react-dom": "18.2.0",
     "react-loading-skeleton": "^3.3.1",
     "react-websitecarbon-badge": "^1.0.6",
-    "sanity": "^3.21.1",
+    "sanity": "^3.23.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.3.2"
   },
