@@ -6,4 +6,6 @@ export type StyreType = {
     slug: string;
     url: string;
     stilling: string;
+    styre: Array<string>;
+    src: string;
 };

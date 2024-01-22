@@ -90,7 +90,6 @@ export async function getVervs(): Promise<VervType[]> {
     );
 }
 
-// Async function that gets all start members from the backend
 export async function getStyreMedlemmer(): Promise<StyreType[]> {
     const client = createClient({
         projectId: 'a42ubgcg',
