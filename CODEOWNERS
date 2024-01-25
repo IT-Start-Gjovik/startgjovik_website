@@ -1,10 +1,10 @@
 # CODEOWNERS file
 
 # IT Leder Start GJøvik and repsonsible for 
-* @KjetilIN
+* @Mosazghi
 
 # Deployment responsible
-/.github/* @KjetilIN
+/.github/* @Mosazghi
 
 # @sanity-team is responsible for the /app/(sanity)/ folder
 /app/(sanity)/* @IT-Start-Gjovik/sanity-team
