@@ -67,7 +67,7 @@ export default function Navbar() {
       }, []);
 
     return (
-            <nav className="bg-darkblue flex items-center justify-between p-[0.3rem] md:p-6 text-white text-xl font-semibold fixed top-0 left-0 right-0 z-50">
+            <nav className="bg-darkblue flex items-center justify-between p-[0.3rem] md:p-6 text-white text-xl font-semibold">
                 <div className='block md:hidden'>
                 <DropDownMenu menuItems={burgerMenyItems} title="" menuIcon={burgerMenuIcon} textSize='text-xl' />
                 </div>
