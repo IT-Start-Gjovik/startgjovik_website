@@ -14,26 +14,26 @@ export default function ForCompany() {
         window.addEventListener('resize', () => {
             setWindow({width: window.innerWidth, height: window.innerHeight})
         })
-    });
+    }, []);
     if(typeof window !== 'undefined') {
         console.log(Window)
     }
-    
+
     return (
-        <div className='bg-gray-900'>
+        <div className='bg-gray-900 min-w-screen-xl mx-auto'>
             <Header />
             <main className='bg-gray-900 min-h-screen' >
-            <h1 className='ml-4 mb-7 text-5xl md:text-7xl md:text-center font-bold'>For bedrsifter</h1>
+            <h1 className='ml-4 mb-7 text-5xl md:text-7xl text-center font-bold'>For bedrifter</h1>
 
             {/* Introduction */}
             <div className='flex justify-center mb-7 h-fit ml-4 mr-4'>
-                <div className='grid grid-cols-2 h-96 p-7 2xl:w-[80%] xl:w-[80%] bg-[#0B0C0E] rounded-xl shadow-2xl'>
-                    <div className=' rounded-lg relative xl:h-96 lg:h-80 md:h-64 sm:h-48'>
-                        <Image src='/images/grunder_eksempel.png' layout='fill' objectFit='cover' className='rounded' alt='grunder eksempler' />
+                <div className='grid sm:grid-cols-1 md:grid-cols-2 h-auto p-7 w-[80%] bg-[#0B0C0E] rounded-xl shadow-2xl md:justify-self-start'>
+                    <div className=' rounded-lg relative sm:h-[50vh] md:h-auto'>
+                        <Image src='/images/grunder_eksempel.png' layout='responsive' height={500} width={500} objectFit='contain' className='rounded' alt='grunder eksempler' />
                     </div>
-                    <div className=' p-4 rounded-lg w-[90%] justify-self-end'>
+                    <div className=' p-4 rounded-lg w-full sm:justify-self-center md:justify-self-end md:col-span-1'>
                         <h2 className='text-2xl text-center font-extrabold mb-7 break-words'>Hva får du ut av et samarbeid?</h2>
-                        <p className='break-words text-xl'>
+                        <p className='break-words sm:text-base md:text-xl leading-snug'>
                             Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide med engasjerte studenter fra NTNU Gjøvik. Dette gir dere
                             muligheten til å utvikle nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon.
                         </p>
@@ -42,7 +42,7 @@ export default function ForCompany() {
             </div>
 
             {/* Event, skills development and networking */}
-            <div className='flex flex-col justify-center items-center mb-7 ml-4 mr-4'>
+            {/*<div className='flex flex-col justify-center items-center mb-7 ml-4 mr-4'>
                 <div className='grid grid-cols-3 w-[80%] h-96'>
                     <div className='flex flex-col bg-[#0B0C0E] mr-4 rounded-xl shadow-2xl p-4 h-full'>
                         <h2 className='text-2xl text-center font-extrabold mb-7 break-words'>Arrangement</h2>
@@ -71,7 +71,7 @@ export default function ForCompany() {
                 </div>
             </div>
 
-            {/* information */}
+            {/* information 
             <div className='flex justify-center ml-4 mr-4 '>
                 <div className='grid grid-cols-2 p-7 2xl:w-[80%] xl:w-[80%] bg-[#0B0C0E] rounded-xl shadow-2xl'>
                     <div className=' rounded-lg w-[90%] justify-self-start '>
@@ -108,7 +108,7 @@ export default function ForCompany() {
                     </div>
 
                 </div>
-            </div>
+            </div>*/}
 
             <Footer />
         </main>
