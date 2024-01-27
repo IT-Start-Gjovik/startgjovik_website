@@ -5,11 +5,20 @@ import Header from '@/components/header/page';
 import { InboxIcon, MapIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Map = dynamic(() => import('@/components/map/map'), { ssr: false, loading: () => <Spinner/> });
 export default function ForCompany() {
     const [Window, setWindow] = useState({width: window.innerWidth, height: window.innerHeight})
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setWindow({width: window.innerWidth, height: window.innerHeight})
+        })
+    });
+    if(typeof window !== 'undefined') {
+        console.log(Window)
+    }
+    
     return (
         <div className='bg-gray-900'>
             <Header />
