@@ -5,39 +5,35 @@ import Header from '@/components/header/page';
 import { InboxIcon, MapIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 const Map = dynamic(() => import('@/components/map/map'), { ssr: false, loading: () => <Spinner/> });
 export default function ForCompany() {
-    const [Window, setWindow] = useState({width: window.innerWidth, height: window.innerHeight})
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            setWindow({width: window.innerWidth, height: window.innerHeight})
-        })
-    }, []);
-    if(typeof window !== 'undefined') {
-        console.log(Window)
-    }
-
     return (
         <div className='bg-gray-900 min-w-screen-xl mx-auto'>
             <Header />
             <main className='bg-gray-900 min-h-screen' >
-            <h1 className='ml-4 mb-7 text-5xl md:text-7xl text-center font-bold'>For bedrifter</h1>
+            <h1 className=' mb-7 text-5xl md:text-7xl text-center font-bold'>For bedrifter</h1>
 
             {/* Introduction */}
-            <div className='flex justify-center mb-7 h-fit ml-4 mr-4'>
-                <div className='grid sm:grid-cols-1 md:grid-cols-2 h-auto p-7 w-[80%] bg-[#0B0C0E] rounded-xl shadow-2xl md:justify-self-start'>
-                    <div className=' rounded-lg relative sm:h-[50vh] md:h-auto'>
-                        <Image src='/images/grunder_eksempel.png' layout='responsive' height={500} width={500} objectFit='contain' className='rounded' alt='grunder eksempler' />
+            <div className='flex justify-center h-fit'>
+                <div className='grid w-4/5 sm:grid-cols-1 xl:grid-cols-2 h-auto p-7 w-[80%] bg-[#0B0C0E] rounded-xl shadow-2xl xl:justify-self-start'>
+                    <div className='flex items-center justify-center rounded-lg relative h-auto'>
+                        <Image 
+                        src='/images/grunder_eksempel.png' 
+                        height={628} // These sizes will be used for the 'layout="responsive"' setting
+                        width={1200} 
+                        objectFit='contain' 
+                        className='rounded md:max-w-[35rem] md:h-auto xl:h-auto xl:w-auto' // Adjusted the width to 31.25rem which is equivalent to 500px
+                        alt='grunder eksempler' 
+                        />
                     </div>
-                    <div className=' p-4 rounded-lg w-full sm:justify-self-center md:justify-self-end md:col-span-1'>
-                        <h2 className='text-2xl text-center font-extrabold mb-7 break-words'>Hva får du ut av et samarbeid?</h2>
-                        <p className='break-words sm:text-base md:text-xl leading-snug'>
+                    <article className='xl:p-4 rounded-lg w-full sm:justify-self-center xl:justify-self-end xl:col-span-1 xl:h-auto'>
+                        <h2 className='text-2xl xl:ml-10 font-extrabold mb-2'>Hva får du ut av et samarbeid?</h2>
+                        <p className='xl:p-4 sm:text-xs xl:text-xl leading-snug overflow-auto text-pretty'>
                             Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide med engasjerte studenter fra NTNU Gjøvik. Dette gir dere
                             muligheten til å utvikle nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon.
                         </p>
-                    </div>
+                    </article>
                 </div>
             </div>
 
