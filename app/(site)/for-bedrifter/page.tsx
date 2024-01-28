@@ -30,7 +30,7 @@ export default function ForCompany() {
                         </div>
                         <article className='xl:p-4 rounded-lg w-full sm:justify-self-center xl:justify-self-end xl:col-span-1 xl:h-auto'>
                             <h2 className='text-2xl xl:ml-10 font-extrabold mb-2'>Hva får du ut av et samarbeid?</h2>
-                            <p className='xl:p-4 sm:text-xs xl:text-xl leading-snug overflow-auto text-pretty'>
+                            <p className='xl:p-4 xl:text-xl leading-snug overflow-auto text-pretty'>
                                 Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide med engasjerte studenter fra NTNU Gjøvik. Dette gir dere
                                 muligheten til å utvikle nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon.
                             </p>
@@ -43,7 +43,7 @@ export default function ForCompany() {
                     <div className='grid w-4/5 gap-3 sm:grid-cols-1 md:grid-cols-3 h-auto'>
                         <article className='flex flex-col items-center justify-center bg-[#0B0C0E] rounded-xl p-4'>
                             <h2 className='text-2xl mb-2 font-extrabold'>Arrangement</h2>
-                            <p className='xl:p-2 sm:text-xs xl:text-xl leading-snug overflow-auto text-pretty'>
+                            <p className='xl:p-2 xl:text-xl leading-snug overflow-auto text-pretty'>
                                 Vi tilbyr et miljø for å skape innovative ideer gjennom våre workshops, foredrag og andre arrangementer. Her kan dere spille en aktiv
                                 rolle i å forme morgendagens innovatører, samtidig som det gir en gyllen anledning for å profilere deres bedrift eller organisasjon, og
                                 demonstrere deres engasjement og ekspertise.
@@ -51,7 +51,7 @@ export default function ForCompany() {
                         </article>
                         <article className='flex flex-col items-center justify-center bg-[#0B0C0E] rounded-xl p-4'>
                             <h2 className='text-2xl mb-2 font-extrabold'>Kompetanseutvekslig</h2>
-                            <p className='xl:p-2 sm:text-xs xl:text-xl leading-snug overflow-auto text-pretty'>
+                            <p className='xl:p-2 xl:text-xl leading-snug overflow-auto text-pretty'>
                                 Vi gir dere muligheten til å utvikle deres bedrift eller organisasjon gjennom aktiv kompetanseutveksling med studenter. Dette åpner for en
                                 verdifull innsikt fra den neste generasjonen av entreprenører, og gir dere muligheten til å forstå og integrere nye, friske perspektiver i
                                 deres virksomhet.
@@ -59,7 +59,7 @@ export default function ForCompany() {
                         </article>
                         <article className='flex flex-col items-center justify-center bg-[#0B0C0E] rounded-xl p-4'>
                             <h2 className='text-2xl mb-2 font-extrabold'>Nettverksbygging</h2>
-                            <p className='xl:p-2 sm:text-xs xl:text-xl leading-snug overflow-auto text-pretty'>
+                            <p className='xl:p-2 xl:text-xl leading-snug overflow-auto text-pretty'>
                                 Ved å bli en del av vårt nettverk, åpner dere dørene til en verden av muligheter, der dere kan knytte kontakter med studenter, akademiske
                                 institusjoner, samt en rekke bedrifter og organisasjoner. Denne forbindelsen gir en unik mulighet for vekst og utvikling, idet den sammenfører
                                 ulike perspektiver og ekspertise.
