@@ -72,9 +72,9 @@ export default function ForCompany() {
                 <div className='flex justify-center h-fit mb-3'>
                     <div className='grid h-auto sm:grid-cols-1 md:grid-cols-2 w-4/5 bg-[#0B0C0E] rounded-xl shadow-2xl'>
                         <div className=' rounded-lg w-[90%] justify-self-center  '>
-                        <article className='bg-[#0B0C0E] rounded-xl p-4'>
+                            <article className='bg-[#0B0C0E] rounded-xl p-2'>
                                 <h2 className='text-2xl mb-4 font-extrabold text-center'>Kontakt oss</h2>
-                                <ul className='grid grid-cols-1 xl:text-xl'>
+                                <ul className='grid grid-cols-1 xl:text-xl place-content-end md:gap-4 md:mt-[4rem] md:ml-[4rem]'>
                                     <ListIcon icon={<PhoneIcon />} text='988 15 727' />
                                     <ListIcon icon={<InboxIcon />} text='leder@startgjovik.no' />
                                     <ListIcon icon={<MapIcon />} 
