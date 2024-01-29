@@ -32,7 +32,7 @@ const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, descript
                 </div>
                 <div>
                     {eventFinished ? (
-                        <p className='bg-red-100 text-red-800 text-sm font-medium mr-2 px-3 py-2 rounded-lg dark:bg-red-900 dark:text-red-200 inline'>
+                        <p className='bg-red-100 text-red-800 text-sm font-medium mr-2 px-3 py-2 rounded-lg inline'>
                             ⌛️ Arrangementet er over!
                         </p>
                     ) : (
