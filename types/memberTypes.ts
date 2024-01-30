@@ -1,4 +1,4 @@
-export type StyreType = {
+export type MemberTypes = {
     alt: string | undefined;
     _id: string;
     title: string;
@@ -7,4 +7,5 @@ export type StyreType = {
     url: string;
     stilling: string;
     styre: Array<string>;
+    src: string;
 };

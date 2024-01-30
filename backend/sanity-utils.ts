@@ -2,7 +2,7 @@ import { createClient, groq } from 'next-sanity';
 import { EventCardType } from '@/types/EventCardType';
 import { EventPageType } from '@/types/EventPageType';
 import { VervType } from '@/types/Verv';
-import {StyreType} from '@/types/StyreType'
+import {MemberTypes} from '@/types/memberTypes'
 
 export async function getEventCards(): Promise<EventCardType[]> {
     const client = createClient({
@@ -90,7 +90,7 @@ export async function getVervs(): Promise<VervType[]> {
     );
 }
 
-export async function getStyreMedlemmer(): Promise<StyreType[]> {
+export async function getStartBoard(): Promise<MemberTypes[]> {
     const client = createClient({
         projectId: 'a42ubgcg',
         dataset: 'production',

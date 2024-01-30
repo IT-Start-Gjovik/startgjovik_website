@@ -1,4 +1,4 @@
-const styre = {
+const Board = {
     name: 'styre',
     title: 'Styre',
     type: 'document',
@@ -42,4 +42,4 @@ const styre = {
     ],
 };
 
-export default styre;
+export default Board;
