@@ -1,12 +1,8 @@
-import { createClient, groq } from 'next-sanity';
 import { EventCardType } from '@/types/EventCardType';
 import { EventPageType } from '@/types/EventPageType';
 import { VervType } from '@/types/Verv';
-<<<<<<< HEAD
-import {MemberTypes} from '@/types/memberTypes'
-=======
-import { StyreType } from '@/types/StyreType';
->>>>>>> origin/240-startstyresanity
+import { MemberTypes } from '@/types/memberTypes';
+import { createClient, groq } from 'next-sanity';
 
 export async function getEventCards(): Promise<EventCardType[]> {
     const client = createClient({
@@ -94,11 +90,7 @@ export async function getVervs(): Promise<VervType[]> {
     );
 }
 
-<<<<<<< HEAD
 export async function getStartBoard(): Promise<MemberTypes[]> {
-=======
-export async function getStyreMedlemmer(): Promise<StyreType[]> {
->>>>>>> origin/240-startstyresanity
     const client = createClient({
         projectId: 'a42ubgcg',
         dataset: 'production',
@@ -108,18 +100,14 @@ export async function getStyreMedlemmer(): Promise<StyreType[]> {
 
     return client.fetch(
         groq`*[_type == "styre"]{
-_id,
-title,
-url,
-"slug": slug.current,
-name,
-"image": image.asset->url,
-linkdn,
-stilling
-}`,
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/240-startstyresanity
+            _id,
+            title,
+            url,
+            "slug": slug.current,
+            name,
+            "image": image.asset->url,
+            linkdn,
+            stilling
+            }`,
     );
 }
