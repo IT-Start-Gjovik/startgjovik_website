@@ -12,9 +12,9 @@ export default function CarbonFootprint() {
                         <a href='https://www.websitecarbon.com/' target='_blank' className='text-blue-400'>
                             Website Carbon Badge
                         </a>{' '}
-                        på nettsiden. Dette emblemet indikerer hvor &quot;grønnere&quot; vår side er sammenlignet med andre, takket være våre miljøvennlige valg innen
-                        design og hosting av nettsiden. Vi kombinerer teknologi og bærekraft for å gjøre en forskjell, og badge-et vårt er et symbol på dette
-                        engasjementet.
+                        på nettsiden. Dette emblemet indikerer hvor &quot;grønnere&quot; vår side er sammenlignet med andre, takket være våre miljøvennlige valg
+                        innen design og hosting av nettsiden. Vi kombinerer teknologi og bærekraft for å gjøre en forskjell, og badge-et vårt er et symbol på
+                        dette engasjementet.
                     </p>
                 </article>
                 <div className='min-w-fit'>

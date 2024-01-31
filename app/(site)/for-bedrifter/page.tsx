@@ -90,7 +90,6 @@ export default function ForCompany() {
                         </div>
                     </div>
                 </div>
-
                 <Footer />
             </main>
         </div>

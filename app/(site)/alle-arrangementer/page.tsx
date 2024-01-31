@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import BackButton from '@/components/UI/backbutton';
-import Footer from '@/components/footer/footer';
-import EventBox from '@/components/events/eventBox';
-import SectionTitle from '@/components/events/sectionTitle';
-import PastEventBox from '@/components/events/pastEventBox';
-import { events } from '@/components/events/eventData';
 import { getPastEventCards } from '@/backend/sanity-utils';
+import BackButton from '@/components/UI/backbutton';
+import EventBox from '@/components/events/eventBox';
+import { events } from '@/components/events/eventData';
+import PastEventBox from '@/components/events/pastEventBox';
+import SectionTitle from '@/components/events/sectionTitle';
+import Footer from '@/components/footer/footer';
 import { EventCardType } from '@/types/EventCardType';
+import React, { useEffect, useState } from 'react';
 
 export default function AllEventsPage() {
     const [pastEvents, setPastEvents] = useState<EventCardType[]>([]);
