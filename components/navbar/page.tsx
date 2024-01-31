@@ -1,12 +1,12 @@
 'use client'
 
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { motion, Variants } from "framer-motion";
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import DropDownMenu from './dropDownMenu';
-import Image from 'next/image'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { motion, Variants } from "framer-motion";
 import { useEffect } from 'react';
+import DropDownMenu from './dropDownMenu';
 
 export const scrollIntoTheView = (id: string) => {
     let element = document.getElementById(id) as HTMLElement;
@@ -32,7 +32,7 @@ export default function Navbar() {
         { name: 'Tidligere', path: '/alle-arrangementer' },
       ];
 
-    const burgerMenyuItems = [
+    const burgerMenyItems = [
         { name: 'Hjem', path: '/' },
         { name: 'Bærekraft', path: '/baerekraft' },
         { name: 'For Bedrifter', path: '/for-bedrifter' },
@@ -67,15 +67,14 @@ export default function Navbar() {
       }, []);
 
     return (
-        <div className="bg-darkblue">
-            <nav className="flex items-center justify-between py-4 sm:pb-0 sm:pt-1 sm:pl-3 pl-5 text-white text-2xl font-semibold">
-                <div className='sm:block md:hidden lg:hidden xl:hidden 2xl:hidden'>
-                    <DropDownMenu menuItems={burgerMenyuItems} title="" menuIcon={burgerMenuIcon} textSize='text-2xl' />
+            <nav className="bg-darkblue flex items-center justify-between p-[0.3rem] md:p-6 text-white text-xl font-semibold">
+                <div className='block md:hidden'>
+                <DropDownMenu menuItems={burgerMenyItems} title="" menuIcon={burgerMenuIcon} textSize='text-xl' />
                 </div>
                 <ul className="flex space-x-7 -space-y-0 tracking-tight leading-none">
 
                     {homePageMenuItems.map((item, index) => (
-                        <motion.li key={index} className='sm:hidden md:block lg:block xl:block 2xl:block'
+                        <motion.li key={index} className='hidden md:block'
                             initial="initial"
                             variants={fadeInAnimation}
                             whileInView="animate"
@@ -84,12 +83,12 @@ export default function Navbar() {
                             }}
                             custom={index}
                             whileHover={{ scale: 1.1 }}
-                        >
+                            >
                             <Link key={index} href={item.path} className={`link ${pathname === item.path ? 'active-link' : ''} `}>{item.name}</Link>
                         </motion.li>
 
                     ))}
-                    <motion.li className='sm:hidden md:block lg:block xl:block 2xl:block'
+                    <motion.li className='hidden md:block'
                         initial="initial"
                         variants={fadeInAnimation}
                         whileInView="animate"
@@ -98,12 +97,11 @@ export default function Navbar() {
                         }}
                         custom={homePageMenuItems.length + 1}
                         whileHover={{ scale: 1.1 }}
-                    >
+                        >
                         <DropDownMenu menuItems={eventsMenuItems} title="Arrangementer" menuIcon={defualtMenuIcon} textSize='text-lg' />
                     </motion.li>
                 </ul>
             </nav>
-        </div>
     )
 }
 

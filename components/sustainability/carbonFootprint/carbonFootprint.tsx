@@ -4,7 +4,7 @@ import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
 export default function CarbonFootprint() {
     return (
         <section>
-            <h2 className='text-3xl md:text-5xl md:text-center text-center font-semibold'>Carbon Footprint</h2>
+            <h2 className='text-3xl md:text-5xl md:text-center font-semibold'>Carbon Footprint</h2>
             <div className='mt-5 flex  flex-col md:flex-row gap-10 items-center'>
                 <article className='bg-slate-900 hover:scale-110 hover:my-1 duration-1000 p-5 rounded-lg shadow-2xl shadow-slate-700'>
                     <p className='text-[16.5px] '>
