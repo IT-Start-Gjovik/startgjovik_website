@@ -1,8 +1,8 @@
-import { getStyreMedlemmer } from '@/backend/sanity-utils';
+import { getStartBoard } from '@/backend/sanity-utils';
 import { StyreType } from '@/types/StyreType';
 
 export async function Startstyre() {
-    const styreMedlemer = await getStyreMedlemmer();
+    const styreMedlemer = await getStartBoard();
 
     return (
         <section className='bg-gray-900'>
