@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
+ "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.1.1",
     "@portabletext/react": "^3.0.4",
@@ -21,11 +21,11 @@
     "eslint-config-next": "^14.1.0",
     "framer-motion": "^11.0.3",
     "mazemap-api": "^1.0.1",
-    "next": "13.5.4",
+    "next": "^13.5.4",
     "next-sanity": "^5.5.3",
     "postcss": "8.4.31",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.3.1",
     "react-websitecarbon-badge": "^1.0.6",
     "sanity": "^3.27.0",
