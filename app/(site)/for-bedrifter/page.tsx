@@ -6,6 +6,7 @@ import ListIcon from '@/components/listIcon/listIcon';
 import { InboxIcon, MapIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import Button from '@/components/Button/button';
 
 const Map = dynamic(() => import('@/components/map/map'), { ssr: false, loading: () => <Spinner /> });
 export default function ForCompany() {
@@ -34,6 +35,7 @@ export default function ForCompany() {
                                 Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide med engasjerte studenter fra NTNU Gjøvik. Dette gir
                                 dere muligheten til å utvikle nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon.
                             </p>
+                            <Button text='Les mer' link='/'/>
                         </article>
                     </div>
                 </div>
