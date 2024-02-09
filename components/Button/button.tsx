@@ -1,21 +1,21 @@
 import Link from "next/link";
-
+import { useState } from "react";
 
 interface ButtonProps {
     text: string;
     link: string;
-    disabled?: boolean;
 }
 
-export default function Button({ text, link, disabled }: ButtonProps) {
-
+export default function Button({ text, link }: ButtonProps) {
     return (
         <Link href={link}>
             <button
-                disabled={disabled}
-                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${disabled ? 'cursor-not-allowed' : ''}`}>
+                className={`ring-2 ring-[#B2C51F] bg-[#B2C51F] hover:bg-transparent text-white hover:text-[#B2C51F] 
+                py-2 px-4 rounded active:text-black  active:ring-black`}>
                 {text}
             </button>
         </Link>
     );
 }
+
+// ${disabled ? 'cursor-not-allowed' : ''}
