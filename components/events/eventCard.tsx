@@ -2,6 +2,7 @@ import getEnglishMonth from '@/utils/englishMonth';
 import { split } from 'lodash';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '../Button/button';
 
 // Interface for the event card
 interface EventProps {
@@ -23,9 +24,23 @@ const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, descript
     const eventFinished = eventDateTime && eventDateTime < currentDateTime;
 
     return (
-        <article className='flex flex-col flex-grow max-w-lg md:max-w-[370px] rounded-lg shadow bg-gray-800 hover:bg-gray-700'>
-            <Image src={imageUrl} alt='event image' layout='responsive' width={300} height={200} className='rounded-t-lg w-full object-cover max-h-[200px]' />
-            <div className='flex-grow rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between'>
+    <div className='flex flex-col flex-grow max-w-[345px] h-[515px]'>
+        <article className='flex h-[432px] bg-gray-900 rounded-[50px] overflow-hidden relative'>
+            <div className='relative flex-grow'>
+                <Image src={imageUrl} alt='event image' layout='fill' objectFit='cover' className='rounded-t-[50px] opacity-70 '/>
+                <div className='absolute top-0 left-0 p-4'>
+                    <p className='text-white'>{title}</p>
+                </div>
+            </div>
+        </article>
+        <Button text="PÅMELDING" link={`/arrangementer/${slug}`} adaptiv={true} />
+    </div>
+    );
+};
+
+export default EventCard;
+
+/* <div className='flex-grow rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between'>
                 <div>
                     <h5 className='mb-2 text-xl font-bold tracking-tight text-white'>{title}</h5>
                     <p className='mb-3 font-normal text-gray-400'>{description}</p>
@@ -58,9 +73,4 @@ const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, descript
                         </>
                     )}
                 </div>
-            </div>
-        </article>
-    );
-};
-
-export default EventCard;
+            </div> */
