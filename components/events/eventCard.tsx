@@ -24,17 +24,16 @@ const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, descript
     const eventFinished = eventDateTime && eventDateTime < currentDateTime;
 
     return (
-    <div className='flex flex-col flex-grow max-w-[345px] h-[515px]'>
-        <article className='flex h-[432px] bg-gray-900 rounded-[50px] overflow-hidden relative'>
-            <div className='relative flex-grow'>
+        <div className='flex flex-col flex-grow max-w-[345px] h-[515px]'>
+            <div className='flex flex-grow h-[432px] bg-gray-900 rounded-[50px] overflow-hidden relative'>
                 <Image src={imageUrl} alt='event image' layout='fill' objectFit='cover' className='rounded-t-[50px] opacity-70 '/>
-                <div className='absolute top-0 left-0 p-4'>
-                    <p className='text-white'>{title}</p>
+                <div className='absolute inset-0 flex flex-col items-center justify-end mb-5'>
+                    <p className='text-[36px] font-bold'>{title}</p>
+                    <p className='text-[24px]'>12/02</p>
                 </div>
             </div>
-        </article>
-        <Button text="PÅMELDING" link={`/arrangementer/${slug}`} adaptiv={true} />
-    </div>
+            <Button text="PÅMELDING" link={`/arrangementer/${slug}`} adaptiv={true} />
+        </div>
     );
 };
 
