@@ -20,6 +20,7 @@ const event = {
             name: "datetime",
             title: "Dato og tidspunkt på event",
             type: "datetime",
+            required: true,   
         },
         {
             name: "slug",

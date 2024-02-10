@@ -1,4 +1,3 @@
-import getEnglishMonth from '@/utils/englishMonth';
 import Image from 'next/image';
 import Button from '../Button/button';
 
@@ -14,14 +13,6 @@ interface EventProps {
 
 // Event card itself
 const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, description, slug }: EventProps) => {
-    // const [dayNum, monthNorwegian] = date ? split(date, ' ') : [null, null];
-    // const eventDateTime = date && time ? new Date(`${dayNum} ${getEnglishMonth(monthNorwegian as any)} ${new Date().getFullYear()} ${time}`) : null;
-
-    if (!date) return null;
-    const currentDateTime = new Date().toLocaleDateString('en-GB', {day: '2-digit', month: '2-digit'});
-    const eventFinished = currentDateTime >= date ? true : false;
-    if (eventFinished) return null;
-
     return (
         <div className='flex flex-col flex-grow max-w-[345px] h-[515px]'>
             <div className='flex flex-grow h-[432px] bg-gray-900 rounded-[50px] overflow-hidden relative'>
