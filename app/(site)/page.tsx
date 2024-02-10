@@ -51,22 +51,28 @@ export default function Home() {
 
                 {/** Line Breaker */}
                 <hr className='w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10' />
-                <div className='bg-white'>
-                {/**List of events */}
-                <div className='flex justify-center items-center'>
-                    <h3 className='font-sans text-gray-900 font-bold text-4xl px-10 sm:text-5xl'>📅 Kommende Arrangementer</h3>
-                </div>
+              
 
-                {/** Listing all events if there are any  */}
-                <div id='allEvents' className='flex flex-wrap justify-center  px-5 mt-20 gap-5'>
-                    {events && events.length > 0 ? (
-                        <>
-                            <EventCardList events={events} />
-                        </>
-                    ) : (
-                        <NoEvents />
-                    )}
-                </div>
+                {/**List of events */}
+                <div className='bg-white'>
+                    <div className='flex justify-center items-center'>
+                        <h3 className='text-[#132D4E] font-bold text-[64px] mt-8'>Kommende Arrangementer</h3>
+                    </div>
+
+                    {/** Listing all events if there are any  */}
+                    <div id='allEvents' className='flex flex-wrap justify-center gap-6 p-8  '>
+                        {events && events.length > 0 ? (
+                            <>
+                                <EventCardList events={events} />
+                            </>
+                        ) : (
+                            <NoEvents />
+                        )}
+                       
+                        {/* <EventCard title='test' date='10/02' imageUrl='/images/events/BCM.png' slug='/' description='test'/>
+                        <EventCard title='test' date='10/02' imageUrl='/images/events/BCM.png' slug='/' description='test'/>
+                        <EventCard title='test' date='10/02' imageUrl='/images/events/BCM.png' slug='/' description='test'/> */}
+                    </div>
                 </div>
             </main>
 
