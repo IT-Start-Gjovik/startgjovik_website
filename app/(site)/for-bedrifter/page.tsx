@@ -35,7 +35,6 @@ export default function ForCompany() {
                                 Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide med engasjerte studenter fra NTNU Gjøvik. Dette gir
                                 dere muligheten til å utvikle nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon.
                             </p>
-                            <Button text='Les mer' link='/'/>
                         </article>
                     </div>
                 </div>
