@@ -6,6 +6,7 @@ import ListIcon from '@/components/listIcon/listIcon';
 import { InboxIcon, MapIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import Button from '@/components/Button/button';
 
 const Map = dynamic(() => import('@/components/map/map'), { ssr: false, loading: () => <Spinner /> });
 export default function ForCompany() {
