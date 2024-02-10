@@ -41,9 +41,25 @@ export default function Navbar() {
         { name: 'Tidligere arrangementer', path: '/alle-arrangementer' },
     ];
 
-    const defualtMenuIcon = <ChevronDownIcon className='-mr-1 h-5 w-5 text-gray-400' aria-hidden='true' />;
+    const defualtMenuIcon = (
+        <ChevronDownIcon
+            className='-mr-1 h-5 w-5 text-gray-400'
+            aria-hidden='true'
+        />
+    );
 
-    const burgerMenuIcon = <Image src='/images/burger-menu.png' alt='Menu button' width={50} height={50} />;
+    const burgerMenuIcon = (
+        <svg
+            xmlns='http://www.w3.org/2000/svg'
+            x='0px'
+            y='0px'
+            width='50'
+            height='50'
+            viewBox='0 0 24 24'
+            fill='currentColor'>
+            <path d='M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z'></path>
+        </svg>
+    );
 
     const fadeInAnimation: Variants = {
         initial: {
@@ -67,41 +83,23 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className='bg-darkblue flex items-center justify-between p-[0.3rem] md:p-6 text-white text-xl font-semibold'>
-            <div className='block md:hidden'>
-                <DropDownMenu menuItems={burgerMenyItems} title='' menuIcon={burgerMenuIcon} textSize='text-xl' />
+        <nav className='bg-transparent flex justify-between mx-auto items-center max-w-[877px] min-w-[150px] p-5'>
+            <Link href={'/'}>
+                <Image
+                    src='/images/startLogo.png'
+                    alt='logo'
+                    width={130}
+                    height={130}
+                />
+            </Link>
+            <div>
+                <DropDownMenu
+                    menuItems={burgerMenyItems}
+                    title=''
+                    menuIcon={burgerMenuIcon}
+                    textSize='text-xl'
+                />
             </div>
-            <ul className='flex space-x-7 -space-y-0 tracking-tight leading-none'>
-                {homePageMenuItems.map((item, index) => (
-                    <motion.li
-                        key={index}
-                        className='hidden md:block'
-                        initial='initial'
-                        variants={fadeInAnimation}
-                        whileInView='animate'
-                        viewport={{
-                            once: true,
-                        }}
-                        custom={index}
-                        whileHover={{ scale: 1.1 }}>
-                        <Link key={index} href={item.path} className={`link ${pathname === item.path ? 'active-link' : ''} `}>
-                            {item.name}
-                        </Link>
-                    </motion.li>
-                ))}
-                <motion.li
-                    className='hidden md:block'
-                    initial='initial'
-                    variants={fadeInAnimation}
-                    whileInView='animate'
-                    viewport={{
-                        once: true,
-                    }}
-                    custom={homePageMenuItems.length + 1}
-                    whileHover={{ scale: 1.1 }}>
-                    <DropDownMenu menuItems={eventsMenuItems} title='Arrangementer' menuIcon={defualtMenuIcon} textSize='text-lg' />
-                </motion.li>
-            </ul>
         </nav>
     );
 }
