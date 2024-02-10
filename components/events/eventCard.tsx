@@ -20,7 +20,6 @@ const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, descript
     if (!date) return null;
     const currentDateTime = new Date().toLocaleDateString('en-GB', {day: '2-digit', month: '2-digit'});
     const eventFinished = currentDateTime >= date ? true : false;
-    console.log(eventFinished, currentDateTime, date)
     if (eventFinished) return null;
 
     return (
