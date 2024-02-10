@@ -58,7 +58,7 @@ export default function Home() {
                     <div className='flex justify-center items-center'>
                         <h3 className='text-[#132D4E] font-bold text-[64px] mt-8'>Kommende Arrangementer</h3>
                     </div>
-
+                    
                     {/** Listing all events if there are any  */}
                     <div id='allEvents' className='flex flex-wrap justify-center gap-6 p-8  '>
                         {events && events.length > 0 ? (
@@ -68,10 +68,6 @@ export default function Home() {
                         ) : (
                             <NoEvents />
                         )}
-                       
-                        {/* <EventCard title='test' date='10/02' imageUrl='/images/events/BCM.png' slug='/' description='test'/>
-                        <EventCard title='test' date='10/02' imageUrl='/images/events/BCM.png' slug='/' description='test'/>
-                        <EventCard title='test' date='10/02' imageUrl='/images/events/BCM.png' slug='/' description='test'/> */}
                     </div>
                 </div>
             </main>
