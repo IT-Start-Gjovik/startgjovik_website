@@ -24,6 +24,7 @@ export default function Home() {
         if (!events) {
             getEventCards()
                 .then((data) => {
+                    console.log(data);
                     setEvents(data);
                 })
                 .catch((error) => {
@@ -58,15 +59,13 @@ export default function Home() {
 
                 {/** Listing all events if there are any  */}
                 <div id='allEvents' className='flex flex-wrap justify-center  px-5 mt-20 gap-5'>
-                    {/* {events && events.length > 0 ? (
+                    {events && events.length > 0 ? (
                         <>
                             <EventCardList events={events} />
                         </>
                     ) : (
                         <NoEvents />
-                    )} */}
-
-                    <EventCard imageUrl='/images/events/BCM.png' title='BCM' description='testing' slug='test'/>
+                    )}
                 </div>
                 </div>
             </main>

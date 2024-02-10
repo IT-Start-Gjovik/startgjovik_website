@@ -2,7 +2,7 @@ const getDateTimeFormat = (date: string) => {
     const eventDate = new Date(date);
 
     const formatDate = (date: Date) =>
-        `${date.getDate()}. ${date.toLocaleString('no-NO', { month: 'long' })}`;
+        `${date.toLocaleString('en-GB', { day: '2-digit', month: '2-digit' })}`;
 
     const formatTime = (date: Date) => {
         const hours = String(date.getHours()).padStart(2, '0');
