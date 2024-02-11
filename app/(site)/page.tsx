@@ -3,7 +3,6 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/UI/logo';
 import NoEvents from '@/components/UI/noEventsFound';
-import EventCard from '@/components/events/eventCard';
 import EventCardList from '@/components/events/eventCardList';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/page';
@@ -15,6 +14,8 @@ import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { useEffect, useState } from 'react';
 import ErrorPage from './feilside/page';
+import Image from 'next/image';
+import Button from '@/components/Button/button';
 
 export default function Home() {
     const [events, setEvents] = useState<EventCardType[]>();
@@ -68,6 +69,31 @@ export default function Home() {
                         ) : (
                             <NoEvents />
                         )}
+                    </div>
+                </div>
+
+                {/** Join/work with us */}
+                <div className='bg-[#132D4E] h-[198px] w-full'>
+                </div>
+
+                {/** Sustainability */}
+                <div className='bg-white grid grid-cols-2 p-[100px]'>
+                    <div className='flex justify-end p-6'>
+                        <Image
+                            src='/images/sustainability/bærekraft.png'
+                            alt='placeholder'
+                            width={1200}
+                            height={620}
+                            objectFit='contain'
+                        />
+                    </div>
+                    <div className='p-6 '>
+                        <h1 className='text-[#132D4E] text-[64px] font-bold'>Bærekraft</h1>
+                        <p className='text-[30px] text-black'>
+                            Vi tror på kraften i ungdommelig kreativitet og engasjement for å
+                            forme en mer bærekraftig fremtid.
+                        </p>
+                        <Button text="LES MER OM BÆREKRAFT" link="/baerekraft" adaptiv={true}/>
                     </div>
                 </div>
             </main>
