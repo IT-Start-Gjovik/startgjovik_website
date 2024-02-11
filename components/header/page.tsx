@@ -2,7 +2,7 @@ import Navbar from '@/components/navbar/navbar';
 
 export default function Header() {
     return (
-        <header className='pb-5'>
+        <header>
             {/** Navigation bar */}
             <Navbar />
         </header>
