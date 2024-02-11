@@ -3,6 +3,7 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/UI/logo';
 import NoEvents from '@/components/UI/noEventsFound';
+import EventCard from '@/components/events/eventCard';
 import EventCardList from '@/components/events/eventCardList';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/page';
@@ -14,7 +15,6 @@ import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { useEffect, useState } from 'react';
 import ErrorPage from './feilside/page';
-import EventCard from '@/components/events/eventCard';
 
 export default function Home() {
     const [events, setEvents] = useState<EventCardType[]>();
@@ -37,7 +37,7 @@ export default function Home() {
     }
 
     return (
-        <div className='flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
+        <div className='flex flex-col overflow-y-auto min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             {/** Header */}
             <Header />
             <main className='min-h-screen'>
