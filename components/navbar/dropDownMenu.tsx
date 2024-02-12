@@ -14,7 +14,7 @@ export default function DropDownMenu({
 }) {
     return (
         <aside
-            className={`fixed top-0  w-full h-screen p-4 pt-0 right-0 md:max-w-[426px] overflow-y-auto  text-white ease-in-out duration-500 bg-bg-primary-dark ${
+            className={`fixed top-0  w-full h-screen p-4 pt-0 right-0 md:max-w-[426px] overflow-y-auto  text-white ease-in-out duration-500 bg-bg-primary-dark z-50 ${
                 sidebar ? 'translate-x-0 ' : 'translate-x-full'
             }`}>
             <button
