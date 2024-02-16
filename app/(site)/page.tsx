@@ -10,6 +10,7 @@ import Header from '@/components/header/page';
 import Hero from '@/components/heroSection/hero';
 import HeaderJumbotron from '@/components/jumbotron/jumbotron';
 import LoadingPage from '@/components/loadingPage/loadingPage';
+import MiddleSection from '@/components/middleSection/middleSection';
 import { EventCardType } from '@/types/EventCardType';
 import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
@@ -42,25 +43,24 @@ export default function Home() {
             <Header />
             <main className='min-h-screen'>
                 <Logo />
-
                 {/** Paragraph for introduction */}
                 <HeaderJumbotron />
-
                 {/**Cards with info about Start Gjøvik */}
                 <Hero />
-
                 {/** Line Breaker */}
                 <hr className='w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10' />
-              
-
                 {/**List of events */}
                 <div className='bg-white'>
                     <div className='flex justify-center items-center'>
-                        <h3 className='text-[#132D4E] font-bold text-[64px] mt-8'>Kommende Arrangementer</h3>
+                        <h3 className='text-[#132D4E] font-bold text-[58px] mt-8'>
+                            Kommende Arrangementer
+                        </h3>
                     </div>
-                    
+
                     {/** Listing all events if there are any  */}
-                    <div id='allEvents' className='flex flex-wrap justify-center gap-6 p-8  '>
+                    <div
+                        id='allEvents'
+                        className='flex flex-wrap justify-center gap-6 p-8  '>
                         {events && events.length > 0 ? (
                             <>
                                 <EventCardList events={events} />
@@ -70,6 +70,7 @@ export default function Home() {
                         )}
                     </div>
                 </div>
+                <MiddleSection />
             </main>
 
             <Footer />
