@@ -15,7 +15,7 @@ import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { useEffect, useState } from 'react';
 import ErrorPage from './feilside/page';
-import sustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
+import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
 
 export default function Home() {
     const [events, setEvents] = useState<EventCardType[]>();
@@ -70,16 +70,12 @@ export default function Home() {
                         )}
                     </div>
                 </div>
-
-                {/** Join/work with us */}
-                <div className='bg-[#132D4E] h-[198px] w-full'>
-                </div>
-            
-                {/** Sustainability */}
-                <sustainabilitySection />
                 
                 {/** Middle section */}
                 <MiddleSection />
+
+                {/** Sustainability */}
+                <SustainabilitySection />
             </main>
 
             <Footer />
