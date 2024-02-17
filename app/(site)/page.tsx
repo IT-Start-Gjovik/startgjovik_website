@@ -7,6 +7,7 @@ import EventCard from '@/components/events/eventCard';
 import EventCardList from '@/components/events/eventCardList';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/page';
+import FrontPage from '@/components/frontPage/frontPage';
 import Hero from '@/components/heroSection/hero';
 import HeaderJumbotron from '@/components/jumbotron/jumbotron';
 import LoadingPage from '@/components/loadingPage/loadingPage';
@@ -42,13 +43,7 @@ export default function Home() {
             {/** Header */}
             <Header />
             <main className='min-h-screen'>
-                <Logo />
-                {/** Paragraph for introduction */}
-                <HeaderJumbotron />
-                {/**Cards with info about Start Gjøvik */}
-                <Hero />
-                {/** Line Breaker */}
-                <hr className='w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10' />
+                <FrontPage />
                 {/**List of events */}
                 <div className='bg-white'>
                     <div className='flex justify-center items-center'>
