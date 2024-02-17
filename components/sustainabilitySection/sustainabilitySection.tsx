@@ -4,19 +4,20 @@ import Image from "next/image";
 export default function SustainabilitySection() {
     return (
         <>
-        <div className='bg-white grid grid-cols-2 p-4 md:px-10 lg:px-40 py-6'>
-            <div className='flex justify-end p-6 '>
+        <div className='bg-white grid sm:grid-cols-1 xl:grid-cols-2 gap-7 p-4 md:px-10 lg:px-40 py-24'>
+            <div className='flex justify-center items-center'>
                 <Image
                     src='/images/sustainability/bærekraft.png'
-                    alt='placeholder'
+                    alt='bærekraftig bilde'
                     width={1200}
                     height={620}
-                    objectFit='cover'
+                    className="md:max-w-[35rem]"
+                    objectFit="cover"
                 />
             </div>
-            <div className=' '>
-                <h1 className='text-[#132D4E] text-[64px] font-bold'>Bærekraft</h1>
-                <p className='text-[30px] text-black'>
+            <div>
+                <h1 className='text-[#132D4E] xl:text-[64px] font-bold text-3xl mb-4'>Bærekraft</h1>
+                <p className='xl:text-[30px] sm:text-small text-black'>
                     Vi tror på kraften i ungdommelig kreativitet og engasjement for å
                     forme en mer bærekraftig fremtid.
                 </p>
