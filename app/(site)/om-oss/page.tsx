@@ -12,9 +12,6 @@ export default function AboutUsPage() {
             <Logo />
             <Aboutstart />
             <StartMembers />
-            <div className='fixed top-0 right-0 m-4'>
-                <BackButton link='/' text='Tilbake' />
-            </div>
             <Footer />
         </main>
     );
