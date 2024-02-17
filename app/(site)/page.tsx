@@ -3,7 +3,6 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/UI/logo';
 import NoEvents from '@/components/UI/noEventsFound';
-import EventCard from '@/components/events/eventCard';
 import EventCardList from '@/components/events/eventCardList';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/page';
@@ -16,6 +15,7 @@ import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { useEffect, useState } from 'react';
 import ErrorPage from './feilside/page';
+import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
 
 export default function Home() {
     const [events, setEvents] = useState<EventCardType[]>();
@@ -70,7 +70,12 @@ export default function Home() {
                         )}
                     </div>
                 </div>
+                
+                {/** Middle section */}
                 <MiddleSection />
+
+                {/** Sustainability */}
+                <SustainabilitySection />
             </main>
 
             <Footer />
