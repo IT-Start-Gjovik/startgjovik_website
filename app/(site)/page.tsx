@@ -3,21 +3,21 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/UI/logo';
 import NoEvents from '@/components/UI/noEventsFound';
+import EventSection from '@/components/eventSection/eventSection';
 import EventCardList from '@/components/events/eventCardList';
 import Footer from '@/components/footer/footer';
-import Header from '@/components/header/page';
 import FrontPage from '@/components/frontPage/frontPage';
+import Header from '@/components/header/page';
 import Hero from '@/components/heroSection/hero';
 import HeaderJumbotron from '@/components/jumbotron/jumbotron';
 import LoadingPage from '@/components/loadingPage/loadingPage';
 import MiddleSection from '@/components/middleSection/middleSection';
+import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
 import { EventCardType } from '@/types/EventCardType';
 import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { useEffect, useState } from 'react';
 import ErrorPage from './feilside/page';
-import EventSection from '@/components/eventSection/eventSection';
-import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
 
 export default function Home() {
     const [events, setEvents] = useState<EventCardType[]>();
@@ -44,17 +44,8 @@ export default function Home() {
             {/** Header */}
             <Header />
             <main className='min-h-screen'>
-
                 <FrontPage />
                 {/**List of events */}
-                <div className='bg-white'>
-                    <div className='flex justify-center items-center'>
-                        <h3 className='text-[#132D4E] font-bold text-[58px] mt-8'>
-                            Kommende Arrangementer
-                        </h3>
-                    </div>
-                
-                {/** Events */}
                 <EventSection events={events}></EventSection>
 
                 {/** Middle Section */}
