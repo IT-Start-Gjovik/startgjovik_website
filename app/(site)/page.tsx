@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { useEffect, useState } from 'react';
 import ErrorPage from './feilside/page';
+import EventSection from '@/components/eventSection/eventSection';
 import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
 
 export default function Home() {
@@ -49,29 +50,11 @@ export default function Home() {
                 <Hero />
                 {/** Line Breaker */}
                 <hr className='w-4/5 h-1 mx-auto my-20 bg-gray-100 border-0 rounded md:my-10' />
-                {/**List of events */}
-                <div className='bg-white'>
-                    <div className='flex justify-center items-center'>
-                        <h3 className='text-[#132D4E] font-bold text-[58px] mt-8'>
-                            Kommende Arrangementer
-                        </h3>
-                    </div>
-
-                    {/** Listing all events if there are any  */}
-                    <div
-                        id='allEvents'
-                        className='flex flex-wrap justify-center gap-6 p-8  '>
-                        {events && events.length > 0 ? (
-                            <>
-                                <EventCardList events={events} />
-                            </>
-                        ) : (
-                            <NoEvents />
-                        )}
-                    </div>
-                </div>
                 
-                {/** Middle section */}
+                {/** Events */}
+                <EventSection events={events}></EventSection>
+
+                {/** Middle Section */}
                 <MiddleSection />
 
                 {/** Sustainability */}
