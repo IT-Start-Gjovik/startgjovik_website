@@ -3,7 +3,6 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import Logo from '@/components/UI/logo';
 import NoEvents from '@/components/UI/noEventsFound';
-import EventCard from '@/components/events/eventCard';
 import EventCardList from '@/components/events/eventCardList';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/page';
@@ -17,6 +16,8 @@ import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { useEffect, useState } from 'react';
 import ErrorPage from './feilside/page';
+import EventSection from '@/components/eventSection/eventSection';
+import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
 
 export default function Home() {
     const [events, setEvents] = useState<EventCardType[]>();
@@ -43,6 +44,7 @@ export default function Home() {
             {/** Header */}
             <Header />
             <main className='min-h-screen'>
+
                 <FrontPage />
                 {/**List of events */}
                 <div className='bg-white'>
@@ -51,21 +53,15 @@ export default function Home() {
                             Kommende Arrangementer
                         </h3>
                     </div>
+                
+                {/** Events */}
+                <EventSection events={events}></EventSection>
 
-                    {/** Listing all events if there are any  */}
-                    <div
-                        id='allEvents'
-                        className='flex flex-wrap justify-center gap-6 p-8  '>
-                        {events && events.length > 0 ? (
-                            <>
-                                <EventCardList events={events} />
-                            </>
-                        ) : (
-                            <NoEvents />
-                        )}
-                    </div>
-                </div>
+                {/** Middle Section */}
                 <MiddleSection />
+
+                {/** Sustainability */}
+                <SustainabilitySection />
             </main>
 
             <Footer />
