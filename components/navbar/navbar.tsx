@@ -14,7 +14,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className='bg-transparent flex justify-between mx-auto items-center gap-5 max-w-[1024px] overflow-y-auto overflow-x-hidden min-w-[150px] p-5 md:p-10'>
+        <nav className='bg-transparent absolute top-0 left-0 right-0 z-10 flex justify-between mx-auto items-center gap-5 max-w-[1132px] p-5 md:p-10 w-full'>
             {/* Start Logo START */}
             <Link href={'/'} onClick={showSidebar}>
                 <Image
