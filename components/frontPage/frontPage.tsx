@@ -11,7 +11,7 @@ export default function FrontPage() {
                 style={{
                     height: '35%',
                 }}>
-                    <div className='flex flex-col lg:mt-[150px] mt-[120px] items-center '>
+                    <div className='flex flex-col lg:mt-[150px] mt-[110px] items-center '>
                         <p className='text-[18px] md:text-[28px] text-center'>
                             En studentorganisasjon med lidenskap for entreprenørskap
                             og bærekraftig utvikling
