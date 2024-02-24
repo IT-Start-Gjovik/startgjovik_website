@@ -44,7 +44,7 @@ export default function Home() {
             {/** Header */}
             <Header />
             <main className='min-h-screen'>
-                <FrontPage />
+                <FrontPage/>
                 {/**List of events */}
                 <EventSection events={events}></EventSection>
 
