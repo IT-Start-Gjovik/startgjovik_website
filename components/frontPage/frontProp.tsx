@@ -1,5 +1,5 @@
 import Logo from '@/components/UI/logo';
-
+import Image from 'next/image';
 interface FrontPageProps { 
     path: string;
     title: string; 
@@ -10,13 +10,8 @@ interface FrontPageProps {
 export default function Frontprop({ path, logo, title, color} : FrontPageProps) {
     return (
         <>
-            <div
-            className='flex flex-col items-center bg-cover bg-center relative sm:h-[140vh] h-[120vh]'
-            style={{
-                backgroundImage: `url('${path}')`,
-               
-            }}>
-
+            <div className='flex flex-col items-center bg-cover bg-center relative sm:h-[140vh] h-[120vh]'>
+                <Image src={path} alt='' className='blur-sm' fill />
                 <div className='flex flex-col items-center justify-center pt-40 md:pt-60 px-10'>
                     <h2 className='font-bold text-[32px] md:text-[52px] text-center'>
                         {title}
