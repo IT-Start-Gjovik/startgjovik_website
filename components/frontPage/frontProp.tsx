@@ -11,12 +11,12 @@ export default function Frontprop({ path, logo, title, color} : FrontPageProps) 
     return (
         <>
             <div className='flex flex-col items-center bg-cover bg-center relative sm:h-[140vh] h-[120vh]'>
-                <Image src={path} alt='' className='blur-sm' fill />
+                <Image src={path} alt='' className='bg-[#132D4E] opacity-60 object-cover' fill />
                 <div className='flex flex-col items-center justify-center pt-40 md:pt-60 px-10'>
-                    <h2 className='font-bold text-[32px] md:text-[52px] text-center'>
+                    <h2 className={`font-bold text-center ${logo ? 'text-[32px] md:text-[52px]' : 'text-[52px] md:text-[120px]'} z-20`}>
                         {title}
                     </h2>
-                    <div className='flex justify-center md:mb-8'>
+                    <div className='flex justify-center md:mb-8 z-20'>
                         {logo && <Logo />}
                     </div>
                 </div>

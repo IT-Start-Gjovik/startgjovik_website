@@ -1,10 +1,15 @@
 import Image from "next/image"
+import Frontprop from "../frontPage/frontProp"
 
 export default function ForCompanyHero() {
     return (
         <>
-         {/* Introduction */}
-            <div className='flex justify-center h-fit mb-3'>
+            {/* Introduction */}
+            <Frontprop path="/images/for-company/Front.png" color="#ffffff" title="For bedrifter"/>
+        </>
+    )
+}
+{/* <div className='flex justify-center h-fit mb-3'>
                 <div className='grid w-4/5 sm:grid-cols-1 xl:grid-cols-2 h-auto p-7 shadow-slate-700 bg-slate-900 rounded-xl shadow-2xl xl:justify-self-start'>
                     <div className='flex items-center justify-center rounded-lg relative h-auto'>
                         <Image
@@ -24,7 +29,4 @@ export default function ForCompanyHero() {
                         </p>
                     </article>
                 </div>
-            </div>
-        </>
-    )
-}
+            </div> */}
