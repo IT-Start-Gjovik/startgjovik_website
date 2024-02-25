@@ -4,8 +4,26 @@ import Frontprop from "../frontPage/frontProp"
 export default function ForCompanyHero() {
     return (
         <>
-            {/* Introduction */}
-            <Frontprop path="/images/for-company/Front.png" color="#ffffff" title="For bedrifter"/>
+            <div className="relative">
+                {/* Introduction */}
+                <Frontprop path="/images/for-company/Front.png" color="#ffffff" title="For bedrifter"/>
+                <div
+                className='w-full absolute bottom-0'
+                style={{
+                    height: '35%',
+                }}>
+                    <div className='flex flex-col lg:mt-[150px] mt-[110px] items-center h-[500px] bg-white'>
+                        <h1 className='text-black text-center font-bold text-[40px]'>
+                            Hva får du ut av et samarbeid med oss?
+                        </h1>
+                        <p className="text-black w-auto">
+                            Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide 
+                            med engasjerte studenter fra NTNU Gjøvik. Dette gir dere muligheten til å utvikle 
+                            nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon.!
+                        </p>
+                    </div>
+            </div>
+            </div>
         </>
     )
 }
