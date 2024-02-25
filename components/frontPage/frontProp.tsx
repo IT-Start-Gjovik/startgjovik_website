@@ -8,17 +8,19 @@ interface FrontPageProps {
 }
 
 export default function Frontprop({ path, logo, title, color} : FrontPageProps) {
+    console.log(logo);
     return (
         <>
             <div className='flex flex-col items-center bg-cover bg-center relative sm:h-[140vh] h-[120vh]'>
-                <Image src={path} alt='' className='blur-sm' fill />
+                <Image src={path} alt='' className='bg-[#132D4E] opacity-70' fill />
                 <div className='flex flex-col items-center justify-center pt-40 md:pt-60 px-10'>
-                    <h2 className='font-bold text-[32px] md:text-[52px] text-center'>
+                    <h2 className='font-bold text-[32px] md:text-[52px] text-center z-20'>
                         {title}
                     </h2>
-                    <div className='flex justify-center md:mb-8'>
+                    <div className='flex justify-center md:mb-8 z-20'>
                         {logo && <Logo />}
                     </div>
+                    
                 </div>
                 <div
                     className='w-full absolute bottom-0'
