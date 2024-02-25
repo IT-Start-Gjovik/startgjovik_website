@@ -8,7 +8,6 @@ interface FrontPageProps {
 }
 
 export default function Frontprop({ path, logo, title, color} : FrontPageProps) {
-    console.log(logo);
     return (
         <>
             <div className='flex flex-col items-center bg-cover bg-center relative sm:h-[140vh] h-[120vh]'>
