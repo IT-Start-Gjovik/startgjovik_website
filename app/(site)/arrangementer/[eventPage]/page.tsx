@@ -8,8 +8,7 @@ import LoadingPage from '@/components/loadingPage/loadingPage';
 import { EventPageType } from '@/types/EventPageType';
 import getDateTimeFormat from '@/utils/date';
 import { PortableText } from '@portabletext/react';
-import { error } from 'console';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 // Props for the event page
@@ -46,7 +45,11 @@ export default function PageForEvent({ params }: Props) {
     let isOver: Boolean = new Date() > new Date(eventPage.datetime);
 
     const EventOverBadge = () => {
-        return isOver ? <span className='bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-1.5 rounded '>Påmelding Lukket!</span> : null;
+        return isOver ? (
+            <span className='bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-1.5 rounded '>
+                Påmelding Lukket!
+            </span>
+        ) : null;
     };
 
     return (
@@ -67,7 +70,10 @@ export default function PageForEvent({ params }: Props) {
                     </div>
 
                     <div className='flex justify-left gap-2'>
-                        <RegistrerButton isEventOverBoolean={isOver ? true : false} urlToForm={eventPage.url} />
+                        <RegistrerButton
+                            isEventOverBoolean={isOver ? true : false}
+                            urlToForm={eventPage.url}
+                        />
 
                         <BackButton link='/' text='Tilbake' />
                     </div>
