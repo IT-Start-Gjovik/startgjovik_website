@@ -3,8 +3,9 @@
 import { getEventCards } from '@/backend/sanity-utils';
 import EventSection from '@/components/eventSection/eventSection';
 import Footer from '@/components/footer/footer';
-import FrontPage from '@/components/frontPage/frontPage';
 import Header from '@/components/header/page';
+import Hero from '@/components/hero/hero';
+import HomeHeroContent from '@/components/home/homeHeroContent';
 import LoadingPage from '@/components/loadingPage/loadingPage';
 import MiddleSection from '@/components/middleSection/middleSection';
 import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
@@ -12,6 +13,14 @@ import { EventCardType } from '@/types/EventCardType';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+const homePageProps = {
+    title: 'VELKOMMEN TIL',
+    color: '#132D4E',
+    textColor: 'white',
+    imageSrc: '/images/start_casebreaker.png',
+    logo: true,
+    content: <HomeHeroContent />,
+};
 
 export default function Home() {
     const [events, setEvents] = useState<EventCardType[]>();
@@ -38,7 +47,7 @@ export default function Home() {
             {/** Header */}
             <Header />
             <main className='min-h-screen'>
-                <FrontPage/>
+                <Hero {...homePageProps} />
                 {/**List of events */}
                 <EventSection events={events}></EventSection>
 
