@@ -1,4 +1,3 @@
-import { log } from 'console';
 import Image from 'next/image';
 import Logo from '../UI/logo';
 import HeroSection from './heroSection';
@@ -30,8 +29,8 @@ export default function Hero({
                     fill
                 />
                 <div
-                    className={`flex flex-col items-center justify-center pt-${
-                        !logo ? '24' : '40'
+                    className={`flex flex-col items-center justify-center ${
+                        logo ? 'pt-36' : 'pt-20'
                     } z-50 min-w-[375px] px-10`}>
                     <h2
                         className={`font-bold text-center text-slate-50 ${
@@ -42,7 +41,7 @@ export default function Hero({
                         {title}
                     </h2>
                     {logo && (
-                        <div className='flex justify-center  z-20'>
+                        <div className='flex justify-center z-20'>
                             <Logo />
                         </div>
                     )}

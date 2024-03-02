@@ -3,7 +3,6 @@ import Footer from '@/components/footer/footer';
 import Header from '@/components/header/page';
 import Hero from '@/components/hero/hero';
 import CarbonFootprint from '@/components/sustainability/carbonFootprint/carbonFootprint';
-import SustainabilityGoal from '@/components/sustainability/sustainabilityGoal';
 import SustainabilityGoalsContainer from '@/components/sustainability/sustainabilityGoalsContainer';
 import SustainabilityHeroContent from '@/components/sustainability/sustainabilityHeroContent';
 
