@@ -6,18 +6,40 @@ interface SustainabilityImageProps {
     description: string;
     imageSrc: string;
     linkUrl: string;
+    backgroundColor?: string;
+    isImageLeft?: boolean;
 }
 
-export default function SustainabilityGoal({ title, description, imageSrc, linkUrl }: SustainabilityImageProps) {
+export default function SustainabilityGoal({
+    title,
+    description,
+    imageSrc,
+    linkUrl,
+    backgroundColor,
+    isImageLeft = true,
+}: SustainabilityImageProps) {
     return (
-        <div className='w-fit m-auto sm:m-0 flex flex-col items-center justify-center hover:scale-105 duration-500 border-b border-l border-r border-solid rounded-2xl py-1'>
-            <Link href={linkUrl} target='_blank' rel='noopener noreferrer' aria-label={`Read more about ${title}`}>
-                <div className='relative overflow-hidden rounded-xl mb-2 max-w-fit'>
-                    <Image src={imageSrc} width={280} height={280} alt={`Bilde av bærekraftsmål: ${title}`} className=' transition-opacity duration-1000' />
-                    <div className='absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-opacity duration-1000'></div>
-                </div>
+        <div
+            className={`flex flex-col md:${
+                isImageLeft ? 'flex-row-reverse' : 'flex-row'
+            } min-w-[375px] py-14 items-center gap-5 md:gap-10 ${
+                !isImageLeft && 'md:gap-20'
+            } justify-center bg-${backgroundColor}`}>
+            <Link href={linkUrl} target='_blank' rel='noopener noreferrer'>
+                <Image
+                    src={imageSrc}
+                    width={280}
+                    height={280}
+                    alt={`Bilde av bærekraftsmål: ${title}`}
+                    className='hover:opacity-80 rounded-lg'
+                />
             </Link>
-            <p className='flex-1 max-w-[280px] text-center px-1 overflow-x-clip text-lg'>{description}</p>
+            <p
+                className={`max-w-[505px] text-center md:text-start px-2 text-xl md:text-2xl text-${
+                    backgroundColor === 'bg-primary' ? 'black' : 'white'
+                }`}>
+                {description}
+            </p>
         </div>
     );
 }
