@@ -21,7 +21,7 @@ export default function Hero({
 }: HeroProps) {
     return (
         <div className='relative'>
-            <div className='w-full bottom-0 sm:h-[140vh] h-[120vh]'>
+            <div className='w-full bottom-0 sm:h-[140vh] h-[120vh]]'>
                 <Image
                     src={imageSrc}
                     alt=''
