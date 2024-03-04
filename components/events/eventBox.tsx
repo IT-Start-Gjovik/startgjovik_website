@@ -14,7 +14,7 @@ type EventBoxProps = {
 const EventBox: React.FC<EventBoxProps> = ({ imageUrl, title, alt, link }) => {
     return (
         <div className='group flex flex-col items-center py-8 px-5 md:px-6 bg-[#132d4e] rounded-lg shadow-xl transition duration-500 hover:shadow-2xl mx-4 my-4'>
-            <div className='w-32 h-32 md:w-40 md:h-40 bg-[#f5f5f5] rounded-full p-2 group-hover:rotate-6 transition-transform duration-300'>
+            <div className='w-32 h-32 md:w-40 md:h-40 bg-white rounded-full p-2 group-hover:rotate-6 transition-transform duration-300'>
                 <Image
                     src={imageUrl}
                     alt={alt}
