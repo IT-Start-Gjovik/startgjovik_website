@@ -28,9 +28,12 @@ export default function Hero({
                     className='bg-bg-primary-dark opacity-60 object-cover'
                     fill
                 />
-                <div className='flex flex-col items-center justify-center pt-40 md:pt-54 px-10'>
+                <div
+                    className={`flex flex-col items-center justify-center ${
+                        logo ? 'pt-36' : 'pt-20'
+                    } z-50 min-w-[375px] px-10`}>
                     <h2
-                        className={`font-bold text-center ${
+                        className={`font-bold text-center text-slate-50 ${
                             logo
                                 ? 'text-[32px] md:text-[52px]'
                                 : 'text-[52px] md:text-[120px]'
@@ -38,7 +41,7 @@ export default function Hero({
                         {title}
                     </h2>
                     {logo && (
-                        <div className='flex justify-center  z-20'>
+                        <div className='flex justify-center z-20'>
                             <Logo />
                         </div>
                     )}

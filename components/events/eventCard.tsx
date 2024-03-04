@@ -12,17 +12,34 @@ interface EventProps {
 }
 
 // Event card itself
-const EventCard: React.FC<EventProps> = ({ date, title, imageUrl, time, description, slug }: EventProps) => {
+const EventCard: React.FC<EventProps> = ({
+    date,
+    title,
+    imageUrl,
+    time,
+    description,
+    slug,
+}: EventProps) => {
     return (
         <div className='flex flex-col flex-grow max-w-[345px] h-[515px] p-1'>
             <div className='flex flex-grow h-[432px] bg-[#132D4E] rounded-[50px] overflow-hidden relative'>
-                <Image src={imageUrl} alt='event image' layout='fill' objectFit='cover' className='rounded-t-[50px] opacity-70 '/>
+                <Image
+                    src={imageUrl}
+                    alt='event image'
+                    layout='fill'
+                    objectFit='cover'
+                    className='rounded-t-[50px] opacity-70 '
+                />
                 <div className='absolute inset-0 flex flex-col items-center justify-end mb-5'>
                     <p className='text-[36px] font-bold text-center'>{title}</p>
-                    <p className='text-[24px]'>{date}   </p>
+                    <p className='text-[24px]'>{date} </p>
                 </div>
             </div>
-            <Button text="PÅMELDING" link={`/arrangementer/${slug}`} adaptiv={true} />
+            <Button
+                text='PÅMELDING'
+                link={`/arrangementer/${slug}`}
+                adaptiv={true}
+            />
         </div>
     );
 };
