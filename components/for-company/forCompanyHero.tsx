@@ -3,14 +3,16 @@
 export default function ForCompanyHero() {
     return (
         <>
-        <h1 className='text-2xl md:text-4xl font-extrabold pt-5 px-5 '>
-            Hva får du ut av et samarbeid med oss?
-        </h1>
-        <p className="text-[16px] mt-2 md:text-xl">
-        Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide 
-        med engasjerte studenter fra NTNU Gjøvik. Dette gir dere muligheten til å utvikle 
-        nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon.!
-        </p>
+        <div className="w-[1132px] flex flex-col items-center justify-center ">
+            <h1 className='text-2xl md:text-4xl w-auto font-extrabold pt-5 px-5 '>
+                Hva får du ut av et samarbeid med oss?
+            </h1>
+            <p className="text-[16px] mt-2 w-auto md:text-xl">
+            Start Gjøvik tilbyr bedrifter og organisasjoner muligheten til å samarbeide 
+            med engasjerte studenter fra NTNU Gjøvik. Dette gir dere muligheten til å utvikle 
+            nye fremtidige medarbeidere og samarbeidspartnere til deres bedrift eller organisasjon!
+            </p>
+        </div>
         </>
     )
 }
