@@ -3,6 +3,7 @@ import Footer from '@/components/footer/footer';
 import Header from '@/components/header/page';
 import Hero from '@/components/hero/hero';
 import CarbonFootprint from '@/components/sustainability/carbonFootprint/carbonFootprint';
+import SustainabilityGoalsContainer from '@/components/sustainability/sustainabilityGoalsContainer';
 import SustainabilityHeroContent from '@/components/sustainability/sustainabilityHeroContent';
 
 const sustainabilityHeroProps = {
@@ -18,8 +19,9 @@ export default function BaerekraftPage() {
     return (
         <div className='flex flex-col overflow-y-auto min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             <Header />
-            <main className=' min-h-screen'>
+            <main className='min-h-screen'>
                 <Hero {...sustainabilityHeroProps} />
+                <SustainabilityGoalsContainer />
                 <CarbonFootprint />
             </main>
             <Footer />

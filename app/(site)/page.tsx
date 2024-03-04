@@ -8,7 +8,7 @@ import Hero from '@/components/hero/hero';
 import HomeHeroContent from '@/components/home/homeHeroContent';
 import LoadingPage from '@/components/loadingPage/loadingPage';
 import MiddleSection from '@/components/middleSection/middleSection';
-import SustainabilitySection from '@/components/sustainabilitySection/sustainabilitySection';
+import SustainabilitySection from '@/components/sustainability/sustainabilitySection';
 import { EventCardType } from '@/types/EventCardType';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
