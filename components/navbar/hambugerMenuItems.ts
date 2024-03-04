@@ -1,7 +1,7 @@
 export const mainMenuItems = [
     { name: 'Hjem', path: '/' },
     { name: 'Om oss', path: '/om-oss' },
-    { name: 'Våre arrangementer', path: '/#allEvents' },
+    { name: 'Våre arrangementer', path: '/alle-arrangementer' },
     { name: 'Tidligere arrangementer', path: '/alle-arrangementer' },
     { name: 'For bedrifter', path: '/for-bedrifter' },
     { name: 'Bli med', path: '/bli-medlem' },
