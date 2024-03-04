@@ -46,9 +46,6 @@ export default function AllEventsPage() {
                         <EventBox key={event.id} {...event} />
                     ))}
                 </section>
-                <div className='fixed top-0 right-0 m-4'>
-                    <BackButton link='/' text='Tilbake til hovedsiden' />
-                </div>
             </main>
             <Footer />
         </div>
