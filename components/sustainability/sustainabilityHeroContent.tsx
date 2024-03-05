@@ -6,7 +6,7 @@ export default function SustainabilityHeroContent() {
             <h2 className='text-2xl md:text-4xl font-medium pt-5 px-5 md:px-0 self-start'>
                 Inspirerer til endring
             </h2>
-            <p className='text-[18px] mt-2 md:text-2xl'>
+            <p className='text-lg mt-2 md:text-xl'>
                 Vi tror på kraften i ungdommelig kreativitet og engasjement for å
                 forme en mer bærekraftig fremtid. Vår dedikasjon til bærekraft
                 reflekteres i hvordan vi tilnærmer oss alle våre prosjekter og
