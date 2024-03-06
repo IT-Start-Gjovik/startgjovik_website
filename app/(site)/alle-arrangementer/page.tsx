@@ -1,7 +1,6 @@
 'use client';
 
 import { getPastEventCards } from '@/backend/sanity-utils';
-import BackButton from '@/components/UI/backbutton';
 import EventBox from '@/components/events/eventBox';
 import { events } from '@/components/events/eventData';
 import Footer from '@/components/footer/footer';
