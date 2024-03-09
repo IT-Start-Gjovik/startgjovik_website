@@ -32,10 +32,10 @@ export default function ImageTextContainer({
                 rel='noopener noreferrer'>
                 <Image
                     src={imageSrc}
-                    width={280}
-                    height={280}
+                    width={400}
+                    height={400}
                     alt={`${title || 'bildetekst'}`}
-                    className='hover:opacity-80 rounded-lg'
+                    className={`rounded-xl ${linkUrl ? 'hover:opacity-80' : ''}`}
                 />
             </Link>
             <div
