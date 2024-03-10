@@ -21,8 +21,8 @@ export default function ForCompany() {
             <Header />
             <main>
                 <Hero {...forCompanyProps} />
-                {/* <ForCompanyInfo />
-                <ForCompanyMap /> */}
+                <ForCompanyInfo />
+                {/* <ForCompanyMap /> */}
             </main>
             <Footer />
         </div>
