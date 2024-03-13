@@ -24,29 +24,31 @@ export default function ImageTextContainer({
             className={`flex flex-col ${
                 isImageLeft ? 'md:flex-row-reverse' : 'md:flex-row'
             } min-w-[375px] py-14 px-5 items-center gap-5 md:gap-10 justify-center ${backgroundColor}`}>
+            <div className='w-[300px] h-[300px] relative'>
             {
                 linkUrl ? (
                 <Link
                     href={linkUrl}
-                    target={linkUrl ? '_blank' : '_self'}
+                    target={linkUrl}
                     rel='noopener noreferrer'>
                     <Image
                         src={imageSrc}
-                        width={400}
-                        height={400}
+                        layout='fill'
+                        objectFit='cover'
                         alt={`${title || 'bildetekst'}`}
-                        className={`rounded-xl ${linkUrl ? 'hover:opacity-80' : ''}`}
+                        className={`rounded-xl hover:opacity-80`}
                     />
                 </Link>
                 ): (
                 <Image
                     src={imageSrc}
-                    width={400}
-                    height={400}
+                    layout='fill'
+                    objectFit='cover'
                     alt={`${title || 'bildetekst'}`}
                     className={`rounded-xl`}
                 />
             )}
+            </div>
             <div
                 className={`px-2 text-${
                     backgroundColor == 'bg-bg-primary' ? 'black' : 'white'
