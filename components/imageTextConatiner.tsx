@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 interface imageTextContainerProps {
     title?: string;
@@ -19,25 +18,35 @@ export default function ImageTextContainer({
     backgroundColor,
     isImageLeft = true,
 }: imageTextContainerProps) {
-    const currentPath = usePathname();
 
     return (
         <div
             className={`flex flex-col ${
                 isImageLeft ? 'md:flex-row-reverse' : 'md:flex-row'
             } min-w-[375px] py-14 px-5 items-center gap-5 md:gap-10 justify-center ${backgroundColor}`}>
-            <Link
-                href={linkUrl || currentPath}
-                target={linkUrl ? '_blank' : '_self'}
-                rel='noopener noreferrer'>
+            {
+                linkUrl ? (
+                <Link
+                    href={linkUrl}
+                    target={linkUrl ? '_blank' : '_self'}
+                    rel='noopener noreferrer'>
+                    <Image
+                        src={imageSrc}
+                        width={400}
+                        height={400}
+                        alt={`${title || 'bildetekst'}`}
+                        className={`rounded-xl ${linkUrl ? 'hover:opacity-80' : ''}`}
+                    />
+                </Link>
+                ): (
                 <Image
                     src={imageSrc}
                     width={400}
                     height={400}
                     alt={`${title || 'bildetekst'}`}
-                    className={`rounded-xl ${linkUrl ? 'hover:opacity-80' : ''}`}
+                    className={`rounded-xl`}
                 />
-            </Link>
+            )}
             <div
                 className={`px-2 text-${
                     backgroundColor == 'bg-bg-primary' ? 'black' : 'white'
