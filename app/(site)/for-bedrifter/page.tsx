@@ -22,7 +22,7 @@ export default function ForCompany() {
             <main>
                 <Hero {...forCompanyProps} />
                 <ForCompanyInfo />
-                {/* <ForCompanyMap /> */}
+                <ForCompanyMap />
             </main>
             <Footer />
         </div>
