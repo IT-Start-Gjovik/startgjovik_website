@@ -6,7 +6,7 @@ interface ListIconProps {
 }
 
 
-export default function ListIcon({icon, text, link}: ListIconProps) {    
+export default function ListIcon({icon, text, link}: ListIconProps) {   
     if (link) {
         return (
             <li className="inline-flex mb-4">
