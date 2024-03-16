@@ -7,10 +7,10 @@ const Map = dynamic(() => import('@/components/map/map'), { ssr: false, loading:
 export default function ForCompanyMap() { 
     return (
         <>
-        <div className='bg-white flex flex-row w-full py-14 px-5 items-center gap-5 md:gap-10 justify-center'>
+        <div className='bg-white flex flex-col md:flex-row w-full py-2 md:py-14 px-5 items-center gap-5 md:gap-10 justify-center'>
             <article className='text-black'>
-                <h2 className='text-[40px] mb-4 font-extrabold'>Kontakt oss</h2>
-                <ul className='grid xl:text-xl'>
+                <h2 className='text-[40px] mb-4 font-extrabold text-center md:text-left'>Kontakt oss</h2>
+                <ul className='grid xl:text-xl px-10 md:px-0'>
                     <ListIcon icon={<PhoneIcon />} text='988 15 727' />
                     <ListIcon icon={<InboxIcon />} text='leder@startgjovik.no' link='mailto:leder@startgjovik.no'/>
                     <ListIcon
@@ -23,7 +23,7 @@ export default function ForCompanyMap() {
                     />
                 </ul>
             </article>
-            <div className='p-4 rounded-lg w-[500px] h-[400px]'>
+            <div className='p-4 rounded-lg w-[380px] h-[350px] md:w-[500px] md:h-[400px]'>
                 <Map />
             </div>
         </div>
