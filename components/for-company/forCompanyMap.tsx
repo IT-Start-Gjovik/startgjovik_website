@@ -9,7 +9,7 @@ export default function ForCompanyMap() {
         <>
         <div className='bg-white flex flex-row w-full py-14 px-5 items-center gap-5 md:gap-10 justify-center'>
             <article className='text-black'>
-                <h2 className='text-2xl mb-4 font-extrabold'>Kontakt oss</h2>
+                <h2 className='text-[40px] mb-4 font-extrabold'>Kontakt oss</h2>
                 <ul className='grid xl:text-xl'>
                     <ListIcon icon={<PhoneIcon />} text='988 15 727' />
                     <ListIcon icon={<InboxIcon />} text='leder@startgjovik.no' link='mailto:leder@startgjovik.no'/>
