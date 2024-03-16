@@ -10,25 +10,32 @@ export default function HeroSection({
     content,
 }: HeroSectionProps) {
     return (
-        <div className='w-full absolute bottom-0 h-min text-black min-w-[375px]'>
-            <div
+        <div className='relative z-10 p-4  mx-auto text-center '>
+            <div className='relative z-10 mx-auto'>
+                <div className='bg-gradient-to-r from-black via-transparent to-black'>
+                    <div className='bg-white p-4 text-center max-w-full mx-auto'>
+                        {' '}
+                        {/* <div
                 className='w-full absolute overflow-hidden opacity-50'
                 style={{
                     backgroundColor: color,
                     height: '100%',
                     clipPath: 'ellipse(70% 100% at 50% 100%)',
-                }}></div>
-            <div
+                }}></div> */}
+                        {/* <div
                 className='w-full relative overflow-hidden'
                 style={{
                     backgroundColor: color,
                     height: '100%',
                     clipPath: 'ellipse(70% 90% at 50% 100%)',
                 }}>
-                <section
-                    className={`flex flex-col items-center min-w-[375px] max-w-[1132px] mx-auto lg:mt-[150px] mt-[110px] py-10 px-10 text-${textColor}`}>
-                    {content}
-                </section>
+                    </div> */}
+                        <section
+                            className={`flex flex-col py-5 px-5  items-center min-w-[375px] max-w-[1132px] mx-auto text-${textColor}`}>
+                            {content}
+                        </section>
+                    </div>
+                </div>
             </div>
         </div>
     );

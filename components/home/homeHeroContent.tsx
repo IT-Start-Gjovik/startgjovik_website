@@ -1,12 +1,13 @@
 import Button from '../Button/button';
+import HeroHeader from '../hero/heroHeader';
 
 export default function HomeHeroContent() {
     return (
         <>
-            <p className='text-xl md:text-2xl font-bold text-center'>
-                En studentorganisasjon med lidenskap for entreprenørskap og
-                bærekraftig utvikling
-            </p>
+            <HeroHeader
+                header='En studentorganisasjon med lidenskap for entreprenørskap og
+                bærekraftig utvikling'
+            />
             <Button text='LES MER OM OSS' link='/om-oss' />
         </>
     );

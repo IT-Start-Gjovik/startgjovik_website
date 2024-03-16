@@ -3,12 +3,12 @@
 import { getPastEventCards } from '@/backend/sanity-utils';
 import EventBox from '@/components/events/eventBox';
 import { events } from '@/components/events/eventData';
+import EventHeroContent from '@/components/events/eventHeroContent';
 import Footer from '@/components/footer/footer';
-import { EventCardType } from '@/types/EventCardType';
-import React, { useEffect, useState } from 'react';
 import Header from '@/components/header/page';
 import Hero from '@/components/hero/hero';
-import EventHeroContent from '@/components/events/eventHeroContent';
+import { EventCardType } from '@/types/EventCardType';
+import React, { useEffect, useState } from 'react';
 
 const eventHeroProps = {
     title: 'Våre arrangementer',

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Logo from '../UI/logo';
 import HeroSection from './heroSection';
+import HeroTitle from './heroTitle';
 
 interface HeroProps {
     color: string;
@@ -20,26 +21,23 @@ export default function Hero({
     textColor,
 }: HeroProps) {
     return (
-        <div className='relative'>
-            <div className='w-full bottom-0 sm:h-[140vh] h-[120vh]'>
-                <Image
-                    src={imageSrc}
-                    alt=''
-                    className='bg-bg-primary-dark opacity-60 object-cover'
-                    fill
-                />
+        <div
+            className='h-screen'
+            style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url(${imageSrc})`,
+                backdropFilter: 'blur(10px)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                position: 'relative',
+                width: '100%',
+            }}>
+            <div style={{ position: 'absolute', bottom: 0, width: '100%' }}>
                 <div
                     className={`flex flex-col items-center justify-center ${
                         logo ? 'pt-36' : 'pt-20'
                     } z-50 min-w-[375px] px-10`}>
-                    <h2
-                        className={`font-bold text-center text-slate-50 ${
-                            logo
-                                ? 'text-[32px] md:text-[52px]'
-                                : 'text-[52px] md:text-[120px]'
-                        } z-20`}>
-                        {title}
-                    </h2>
+                    <HeroTitle title={title} hasLogo={logo} />
                     {logo && (
                         <div className='flex justify-center z-20'>
                             <Logo />
