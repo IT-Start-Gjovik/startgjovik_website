@@ -12,10 +12,10 @@ export default function ForCompanyMap() {
                 <h2 className='text-2xl mb-4 font-extrabold'>Kontakt oss</h2>
                 <ul className='grid xl:text-xl'>
                     <ListIcon icon={<PhoneIcon />} text='988 15 727' />
-                    <ListIcon icon={<InboxIcon />} text='leder@startgjovik.no' />
+                    <ListIcon icon={<InboxIcon />} text='leder@startgjovik.no' link='mailto:leder@startgjovik.no'/>
                     <ListIcon
                         icon={<MapIcon />}
-                        text='Teknologivegen 22, Innovatoriet, Gjøvik, Norway'
+                        text='Teknologivegen 22, Innovatoriet, Gjøvik'
                         link='https://www.google.com/maps/place/Teknologivegen+22,
                               +2815+Gj%C3%B8vik/@60.7896213,10.6814803,18z/data=!4m6!
                               3m5!1s0x4641da14f80b6889:0x1145aeb60303d692!8m2!3d60.7888182!
@@ -23,7 +23,7 @@ export default function ForCompanyMap() {
                     />
                 </ul>
             </article>
-            <div className='p-4 rounded-lg w-[600px] h-[500px]'>
+            <div className='p-4 rounded-lg w-[500px] h-[400px]'>
                 <Map />
             </div>
         </div>
