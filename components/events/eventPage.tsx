@@ -1,10 +1,10 @@
-import SectionTitle from '@/components/events/sectionTitle';
 import { events } from '@/components/events/eventData';
+import SectionTitle from '@/components/events/sectionTitle';
 import Footer from '@/components/footer/footer';
-import Image from 'next/image';
-import ErrorPage from '../../app/(site)/feilside/page';
-import Link from 'next/link';
 import Header from '@/components/header/page';
+import Image from 'next/image';
+import Link from 'next/link';
+import ErrorPage from '../../app/(site)/feilside/page';
 
 type EventPageProps = {
     eventId: string;
@@ -26,7 +26,7 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
         <div className='bg-[#132D4E] min-h-screen'>
             <Header />
             <div className='container mx-auto px-4 py-10'>
-                <div className='mb-10'>
+                <div className='mt-20 mb-10'>
                     <SectionTitle title={event.title} />
                 </div>
                 <div className='max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden mb-20'>
