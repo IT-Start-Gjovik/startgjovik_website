@@ -21,7 +21,7 @@ const EventCard: React.FC<EventProps> = ({
     slug,
 }: EventProps) => {
     return (
-        <div className='flex flex-col flex-grow max-w-[345px] h-[515px] p-1'>
+        <div className='flex flex-col flex-grow min-w-[337px] max-w-[338px] h-[515px] p-1'>
             <div className='flex flex-grow h-[432px] bg-[#132D4E] rounded-[50px] overflow-hidden relative'>
                 <Image
                     src={imageUrl}

@@ -3,16 +3,24 @@ import { InboxIcon, MapIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import dynamic from 'next/dynamic';
 import Spinner from '@/components/UI/Spinner';
 
-const Map = dynamic(() => import('@/components/map/map'), { ssr: false, loading: () => <Spinner /> });
-export default function ForCompanyMap() { 
+const Map = dynamic(() => import('@/components/map/map'), {
+    ssr: false,
+    loading: () => <Spinner />,
+});
+export default function ForCompanyMap() {
     return (
-        <>
         <div className='bg-white flex flex-col md:flex-row w-full py-2 md:py-14 px-5 items-center gap-5 md:gap-10 justify-center'>
             <article className='text-black'>
-                <h2 className='text-[40px] mb-4 font-extrabold text-center md:text-left'>Kontakt oss</h2>
+                <h2 className='text-[40px] mb-4 font-bold text-center md:text-left'>
+                    Kontakt oss
+                </h2>
                 <ul className='grid xl:text-xl px-10 md:px-0'>
                     <ListIcon icon={<PhoneIcon />} text='988 15 727' />
-                    <ListIcon icon={<InboxIcon />} text='leder@startgjovik.no' link='mailto:leder@startgjovik.no'/>
+                    <ListIcon
+                        icon={<InboxIcon />}
+                        text='leder@startgjovik.no'
+                        link='mailto:leder@startgjovik.no'
+                    />
                     <ListIcon
                         icon={<MapIcon />}
                         text='Teknologivegen 22, Innovatoriet, Gjøvik'
@@ -27,6 +35,5 @@ export default function ForCompanyMap() {
                 <Map />
             </div>
         </div>
-        </>
     );
 }

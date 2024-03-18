@@ -18,36 +18,31 @@ export default function ImageTextContainer({
     backgroundColor,
     isImageLeft = true,
 }: imageTextContainerProps) {
-
     return (
         <div
             className={`flex flex-col ${
                 isImageLeft ? 'md:flex-row-reverse' : 'md:flex-row'
             } min-w-[375px] py-14 px-5 items-center gap-5 md:gap-10 justify-center ${backgroundColor}`}>
             <div className='w-[300px] h-[300px] relative'>
-            {
-                linkUrl ? (
-                <Link
-                    href={linkUrl}
-                    target={linkUrl}
-                    rel='noopener noreferrer'>
+                {linkUrl ? (
+                    <Link href={linkUrl} target={linkUrl} rel='noopener noreferrer'>
+                        <Image
+                            src={imageSrc}
+                            layout='fill'
+                            objectFit='cover'
+                            alt={`${title || 'bildetekst'}`}
+                            className={`rounded-xl hover:opacity-80`}
+                        />
+                    </Link>
+                ) : (
                     <Image
                         src={imageSrc}
                         layout='fill'
                         objectFit='cover'
                         alt={`${title || 'bildetekst'}`}
-                        className={`rounded-xl hover:opacity-80`}
+                        className={`rounded-xl`}
                     />
-                </Link>
-                ): (
-                <Image
-                    src={imageSrc}
-                    layout='fill'
-                    objectFit='cover'
-                    alt={`${title || 'bildetekst'}`}
-                    className={`rounded-xl`}
-                />
-            )}
+                )}
             </div>
             <div
                 className={`px-2 text-${
@@ -55,7 +50,7 @@ export default function ImageTextContainer({
                 } `}>
                 {title && (
                     <h2
-                        className={`text-3xl md:text-4xl mb-5 font-bold text-center md:text-start `}>
+                        className={`text-3xl md:text-4xl mb-5 font-semibold text-center md:text-start `}>
                         {title}
                     </h2>
                 )}

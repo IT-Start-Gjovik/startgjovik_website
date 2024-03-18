@@ -1,15 +1,12 @@
-import BackButton from '@/components/UI/backbutton';
-import { AboutStart } from '@/components/aboutStart/aboutstartText';
-import Footer from '@/components/footer/footer';
-import Header from '@/components/header/page';
-import { StartMembers } from '@/components/startMembers/startBoardList';
 import AboutHeroContent from '@/components/aboutStart/aboutHeroContent';
+import { AboutStart } from '@/components/aboutStart/aboutstartText';
 import Hero from '@/components/hero/hero';
+import { StartMembers } from '@/components/startMembers/startBoardList';
 
 const aboutHeroProps = {
     title: 'Om oss',
     color: '#132D4E',
-    textColor: '#FFFFFF',
+    textColor: '#',
     imageSrc: '/images/events/BCM.png',
     logo: false,
     content: <AboutHeroContent />,
@@ -18,11 +15,9 @@ const aboutHeroProps = {
 export default function AboutUsPage() {
     return (
         <main className='bg-gray-900 min-h-screen text-white'>
-            <Header />
             <Hero {...aboutHeroProps} />
             <AboutStart />
             <StartMembers />
-            <Footer />
         </main>
     );
 }

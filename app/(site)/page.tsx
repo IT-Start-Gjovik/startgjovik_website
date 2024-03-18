@@ -2,8 +2,6 @@
 
 import { getEventCards } from '@/backend/sanity-utils';
 import EventSection from '@/components/eventSection/eventSection';
-import Footer from '@/components/footer/footer';
-import Header from '@/components/header/page';
 import Hero from '@/components/hero/hero';
 import HomeHeroContent from '@/components/home/homeHeroContent';
 import LoadingPage from '@/components/loadingPage/loadingPage';
@@ -45,7 +43,6 @@ export default function Home() {
     return (
         <div className='flex flex-col overflow-y-auto min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             {/** Header */}
-            <Header />
             <main className='min-h-screen'>
                 <Hero {...homePageProps} />
                 {/**List of events */}
@@ -57,8 +54,6 @@ export default function Home() {
                 {/** Sustainability */}
                 <SustainabilitySection />
             </main>
-
-            <Footer />
         </div>
     );
 }

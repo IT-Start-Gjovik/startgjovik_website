@@ -9,8 +9,9 @@ export default function HeroSection({
     textColor,
     content,
 }: HeroSectionProps) {
+    console.log('HeroSectionProps:', color, textColor, content);
     return (
-        <div className='relative z-10  text-center w-full bottom-0 h-full text-black '>
+        <div className='relative z-10 text-center w-full bottom-0 h-full '>
             <div
                 className='w-full absolute overflow-hidden opacity-50'
                 style={{
@@ -26,7 +27,7 @@ export default function HeroSection({
                     clipPath: 'ellipse(70% 90% at 50% 100%)',
                 }}>
                 <section
-                    className={`flex flex-col py-5 px-5  items-center min-w-[375px] max-w-[1132px] mx-auto text-${textColor}`}>
+                    className={`flex flex-col py-20 pb-5 px-8 items-center min-w-[375px] max-w-[1132px] mx-auto text-${textColor}`}>
                     {content}
                 </section>
             </div>

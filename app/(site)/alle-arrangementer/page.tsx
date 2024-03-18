@@ -4,8 +4,6 @@ import { getPastEventCards } from '@/backend/sanity-utils';
 import EventBox from '@/components/events/eventBox';
 import { events } from '@/components/events/eventData';
 import EventHeroContent from '@/components/events/eventHeroContent';
-import Footer from '@/components/footer/footer';
-import Header from '@/components/header/page';
 import Hero from '@/components/hero/hero';
 import { EventCardType } from '@/types/EventCardType';
 import React, { useEffect, useState } from 'react';
@@ -36,19 +34,15 @@ export default function AllEventsPage() {
     }, []);
 
     return (
-        <div>
-            <Header />
-            <main>
-                <Hero {...eventHeroProps} />
-                <div className='bg-[#f5f5f5]'>
-                    <section className='grid md:grid-cols-3 gap-8 py-8 w-full max-w-5xl mx-auto px-4 md:px-0'>
-                        {events.map((event) => (
-                            <EventBox key={event.id} {...event} />
-                        ))}
-                    </section>
-                </div>
-            </main>
-            <Footer />
-        </div>
+        <main>
+            <Hero {...eventHeroProps} />
+            <div className='bg-[#f5f5f5]'>
+                <section className='grid md:grid-cols-3 gap-8 py-8 w-full max-w-5xl mx-auto px-4 md:px-0'>
+                    {events.map((event) => (
+                        <EventBox key={event.id} {...event} />
+                    ))}
+                </section>
+            </div>
+        </main>
     );
 }

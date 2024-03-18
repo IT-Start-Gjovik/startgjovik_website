@@ -16,7 +16,7 @@ export default function SustainabilitySection() {
                     />
                 </div>
                 <div>
-                    <h1 className='text-[#132D4E] xl:text-[64px] font-bold text-3xl mb-4'>
+                    <h1 className='text-[#132D4E] font-medium text-3xl md:text-5xl mb-4'>
                         Bærekraft
                     </h1>
                     <p className='xl:text-[30px] sm:text-small text-black'>
