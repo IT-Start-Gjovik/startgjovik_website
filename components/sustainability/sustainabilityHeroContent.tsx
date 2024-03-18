@@ -24,9 +24,9 @@ export default function SustainabilityHeroContent() {
             <Image
                 src='/images/sustainability/sustainability-hero-text.jpg'
                 alt=''
-                width={1123}
-                height={256}
-                className='my-6'
+                width={1920}
+                height={100}
+                className='my-6 max-h-[100px]'
             />
         </>
     );

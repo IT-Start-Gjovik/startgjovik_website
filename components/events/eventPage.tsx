@@ -1,93 +1,81 @@
-import SectionTitle from '@/components/events/sectionTitle';
 import { events } from '@/components/events/eventData';
+import SectionTitle from '@/components/events/sectionTitle';
 import Footer from '@/components/footer/footer';
+import Header from '@/components/header/page';
 import Image from 'next/image';
-import ErrorPage from '../../app/(site)/feilside/page';
 import Link from 'next/link';
+import ErrorPage from '../../app/(site)/feilside/page';
 
-// Define a prop type for the component
 type EventPageProps = {
     eventId: string;
 };
 
-// Create the EventPage component
 const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
     const event = events.find((event) => event.id === eventId);
     if (!event) return <ErrorPage />;
 
-    // Function to transform event description text into paragraphs with line breaks
     const getDescriptionWithLineBreaks = (text: string): JSX.Element[] => {
         return text.split('\n').map((item: string, key: number) => (
-            <span key={key}>
+            <span key={key} className='block mb-4 last:mb-0'>
                 {item}
-                <br />
-                <br />
             </span>
         ));
     };
 
     return (
-        <div className='bg-gradient-to-r from-gray-800 via-gray-900 to-black'>
+        <div className='bg-[#132D4E] min-h-screen'>
+            <Header />
             <div className='container mx-auto px-4 py-10'>
-                {' '}
-                <div className='mb-10'>
-                    {' '}
-                    <SectionTitle title={event.title} />{' '}
-                    {/* Render the section title with the event's title */}
+                <div className='mt-20 mb-10'>
+                    <SectionTitle title={event.title} />
                 </div>
-                {/* Container for the event detail card with a maximum width and rounded corners */}
-                <div className='max-w-7xl mx-auto rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105'>
-                    {/* Flex container to align image and content side by side on medium screens and larger */}
-                    <div className='flex flex-col md:flex-row md:items-center bg-white'>
-                        {/* Container for the event image with padding and responsive layout */}
-                        <div className='md:flex-shrink-0 md:w-1/2 p-4'>
+                <div className='max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden mb-20'>
+                    <div className='flex flex-col md:flex-row'>
+                        <div className='md:flex-shrink-0'>
                             <Image
                                 src={event.imageUrl}
                                 alt={event.alt}
                                 width={400}
                                 height={400}
                                 layout='responsive'
-                                className='rounded-l-xl'
+                                className='object-cover object-center rounded-l-xl'
                             />
                         </div>
-                        {/* Container for the event content with text styling and gradient background */}
-                        <div className='md:w-1/2 p-8 text-white bg-gradient-to-r from-blue-500 to-teal-500 rounded-r-xl'>
-                            {/* Event subtitle and description with margin bottom for spacing */}
-                            <div>
-                                <h3 className='text-2xl font-bold mb-6'>
-                                    {event.subtitle}
-                                </h3>
-                                <p className='whitespace-pre-line mb-6'>
-                                    {getDescriptionWithLineBreaks(event.description)}
-                                </p>
+                        <div className='p-8 text-gray-800'>
+                            <h3
+                                className='text-2xl font-bold mb-4'
+                                style={{ color: '#132D4E' }}>
+                                {event.subtitle}
+                            </h3>
+                            <div
+                                className='text-base leading-relaxed'
+                                style={{ color: '#4a4a4a' }}>
+                                {getDescriptionWithLineBreaks(event.description)}
                             </div>
-                            {/* Link to return to the events list */}
-                            <div className='pt-4'>
-                                <Link
-                                    href='/alle-arrangementer'
-                                    passHref
-                                    className='inline-flex items-center px-4 py-2 bg-white text-gray-800 rounded-full font-medium transition duration-300 transform hover:-translate-y-1 hover:bg-opacity-90 shadow-md'>
-                                    <svg
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        className='h-5 w-5 mr-2 text-blue-500'
-                                        fill='none'
-                                        viewBox='0 0 24 24'
-                                        stroke='currentColor'>
-                                        <path
-                                            strokeLinecap='round'
-                                            strokeLinejoin='round'
-                                            strokeWidth={2}
-                                            d='M15 19l-7-7 7-7'
-                                        />
-                                    </svg>
-                                    Tilbake
-                                </Link>
-                            </div>
+                            <Link
+                                href='/alle-arrangementer'
+                                passHref
+                                className='mt-6 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#B2C51F] hover:bg-0f2540 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-132D4E transition duration-300'>
+                                Tilbake
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    className='ml-2 h-5 w-5'
+                                    fill='none'
+                                    viewBox='0 0 24 24'
+                                    stroke='currentColor'>
+                                    <path
+                                        strokeLinecap='round'
+                                        strokeLinejoin='round'
+                                        strokeWidth={2}
+                                        d='M15 19l-7-7 7-7'
+                                    />
+                                </svg>
+                            </Link>
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
+            <Footer />
         </div>
     );
 };

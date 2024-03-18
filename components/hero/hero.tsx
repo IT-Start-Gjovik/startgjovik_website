@@ -22,7 +22,7 @@ export default function Hero({
 }: HeroProps) {
     return (
         <div
-            className='h-screen'
+            className='h-screen w-full'
             style={{
                 background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url(${imageSrc})`,
                 backdropFilter: 'blur(10px)',
@@ -32,7 +32,7 @@ export default function Hero({
                 position: 'relative',
                 width: '100%',
             }}>
-            <div style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+            <div className='absolute bottom-0 w-screen '>
                 <div
                     className={`flex flex-col items-center justify-center ${
                         logo ? 'pt-36' : 'pt-20'

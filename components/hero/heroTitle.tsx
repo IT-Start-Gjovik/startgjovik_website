@@ -9,8 +9,8 @@ export default function HeroTitle({
         <h2
             className={`font-semibold text-center text-slate-50 ${
                 hasLogo
-                    ? 'text-[32px] md:text-[52px]'
-                    : 'text-[52px] md:text-[120px]'
+                    ? 'text-[25px] md:text-[40px]'
+                    : 'text-[40px] md:text-[100px]'
             } z-20`}>
             {title}
         </h2>

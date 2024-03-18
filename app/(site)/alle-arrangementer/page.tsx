@@ -36,15 +36,17 @@ export default function AllEventsPage() {
     }, []);
 
     return (
-        <div className='bg-[#f5f5f5]'>
+        <div>
             <Header />
             <main>
                 <Hero {...eventHeroProps} />
-                <section className='grid md:grid-cols-3 gap-8 my-8 w-full max-w-5xl mx-auto px-4 md:px-0'>
-                    {events.map((event) => (
-                        <EventBox key={event.id} {...event} />
-                    ))}
-                </section>
+                <div className='bg-[#f5f5f5]'>
+                    <section className='grid md:grid-cols-3 gap-8 py-8 w-full max-w-5xl mx-auto px-4 md:px-0'>
+                        {events.map((event) => (
+                            <EventBox key={event.id} {...event} />
+                        ))}
+                    </section>
+                </div>
             </main>
             <Footer />
         </div>
