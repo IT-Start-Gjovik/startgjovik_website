@@ -12,9 +12,18 @@ export default function DropDownMenu({
     sidebar: boolean;
     showSidebar: () => void;
 }) {
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+    if (sidebar) {
+        main?.setAttribute('style', 'filter: brightness(0.5)');
+        footer?.setAttribute('style', 'filter: brightness(0.5)');
+    } else {
+        main?.removeAttribute('style');
+        footer?.removeAttribute('style');
+    }
     return (
         <aside
-            className={`fixed top-0  w-full h-screen p-4 pt-0 right-0 md:max-w-[426px] overflow-y-auto  text-white ease-in-out duration-500 bg-bg-primary-dark z-50 ${
+            className={`fixed top-0 w-full  h-screen p-4 pt-0 right-0 md:max-w-[426px] overflow-y-auto  text-white ease-in-out duration-500 bg-bg-primary-dark z-50 ${
                 sidebar ? 'translate-x-0 ' : 'translate-x-full'
             }`}>
             <button

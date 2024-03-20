@@ -25,7 +25,6 @@ export default function Hero({
             className='h-screen w-full'
             style={{
                 background: `linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.2)), url(${imageSrc})`,
-                backdropFilter: 'blur(10px)',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
