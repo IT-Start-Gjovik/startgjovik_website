@@ -1,8 +1,8 @@
-import React from 'react';
 import JoinList from '@/components/JoinList/joinlist';
 import BackButton from '@/components/UI/backbutton';
 import ChecklistItem from '@/components/UI/checklistitem';
 import Footer from '@/components/footer/footer';
+import React from 'react';
 
 export default function JoinPage() {
     return (
@@ -13,7 +13,9 @@ export default function JoinPage() {
 
             <div className='flex flex-col items-center mt-10 gap-10'>
                 <section className='px-1'>
-                    <h2 className='mb-2 text-lg font-semibold text-white'>Hvem burde søke? 🤔</h2>
+                    <h2 className='mb-2 text-lg font-semibold text-white'>
+                        Hvem burde søke? 🤔
+                    </h2>
                     <ul className='max-w-md space-y-1 list-inside text-gray-400'>
                         <ChecklistItem text='Du er engasjert!' />
                         <ChecklistItem text='Du liker å ta ansvar!' />
@@ -23,7 +25,9 @@ export default function JoinPage() {
                 </section>
 
                 <section className='px-1'>
-                    <h2 className='mb-2 text-lg font-semibold text-white'>Fordeler ✨</h2>
+                    <h2 className='mb-2 text-lg font-semibold text-white'>
+                        Fordeler ✨
+                    </h2>
                     <ul className='max-w-md space-y-1 list-inside text-gray-400'>
                         <ChecklistItem text="Styrk CV'en din 📝" />
                         <ChecklistItem text='Delta på intern teambuilding!' />
@@ -32,11 +36,7 @@ export default function JoinPage() {
                 </section>
 
                 <JoinList />
-
-                <BackButton link='/' text='Tilbake til hovedsiden' />
             </div>
-
-            <Footer />
         </main>
     );
 }
