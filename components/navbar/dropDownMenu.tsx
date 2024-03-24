@@ -1,4 +1,7 @@
+'use client';
 import Link from 'next/link';
+
+import React, { useEffect, useState } from 'react';
 import {
     mainMenuItems,
     secondaryMenuItems,
@@ -12,15 +15,25 @@ export default function DropDownMenu({
     sidebar: boolean;
     showSidebar: () => void;
 }) {
-    const main = document.querySelector('main');
-    const footer = document.querySelector('footer');
-    if (sidebar) {
-        main?.setAttribute('style', 'filter: brightness(0.5)');
-        footer?.setAttribute('style', 'filter: brightness(0.5)');
-    } else {
-        main?.removeAttribute('style');
-        footer?.removeAttribute('style');
-    }
+    useEffect(() => {
+        // This code will only run on the client side
+        const main = document.querySelector('main');
+        const footer = document.querySelector('footer');
+
+        if (sidebar) {
+            main?.setAttribute('style', 'filter: brightness(0.5)');
+            footer?.setAttribute('style', 'filter: brightness(0.5)');
+        } else {
+            main?.removeAttribute('style');
+            footer?.removeAttribute('style');
+        }
+
+        // Cleanup function to remove styles when the component unmounts or updates
+        return () => {
+            main?.removeAttribute('style');
+            footer?.removeAttribute('style');
+        };
+    }, [sidebar]); // Dependency array, this effect runs when `isSidebarActive` changesdency array, this effect runs when `isSidebarActive` changes
     return (
         <aside
             className={`fixed top-0 w-full  h-screen p-4 pt-0 right-0 md:max-w-[426px] overflow-y-auto  text-white ease-in-out duration-500 bg-bg-primary-dark z-50 ${

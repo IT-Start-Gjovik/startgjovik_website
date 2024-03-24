@@ -20,14 +20,15 @@ export default function SustainabilityHeroContent() {
                 og realisere ideer som ikke bare fremmer økonomisk vekst, men også
                 ivaretar miljømessige og sosiale hensyn.
             </HeroText>
-
-            <Image
-                src='/images/sustainability/sustainability-hero-text.jpg'
-                alt=''
-                width={1920}
-                height={100}
-                className='my-6 max-h-[100px]'
-            />
+            <div className='max-h-[300px] w-full'>
+                <Image
+                    src='/images/sustainability/sustainability-hero-text.jpg'
+                    alt=''
+                    width={1080}
+                    height={200}
+                    className='object-cover md:object-none h-28 md:h-64 py-3'
+                />
+            </div>
         </>
     );
 }

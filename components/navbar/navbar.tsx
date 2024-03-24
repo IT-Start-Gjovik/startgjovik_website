@@ -10,7 +10,6 @@ export default function Navbar() {
 
     const showSidebar = () => {
         setSidebar(!sidebar);
-        document.body.style.backgroundColor = 'rgba(0,0,0,0.4) !important';
     };
 
     return (

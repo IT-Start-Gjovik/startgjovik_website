@@ -14,15 +14,15 @@ export default function ForCompanyHero() {
                 muligheten til å utvikle nye fremtidige medarbeidere og
                 samarbeidspartnere til deres bedrift eller organisasjon!
             </HeroText>
-
-            <Image
-                src='/images/for-company/hero.png'
-                alt=''
-                width={1123}
-                height={256}
-                objectFit='contain'
-                className='my-6 max-h-96 md:max-h-96 lg:max-h-96 xl:max-h-96'
-            />
+            <div className='max-h-[300px] w-full'>
+                <Image
+                    src='/images/for-company/hero.png'
+                    alt=''
+                    width={1080}
+                    height={200}
+                    className='object-cover md:object-none h-28 md:h-64 py-3'
+                />
+            </div>
         </>
     );
 }
