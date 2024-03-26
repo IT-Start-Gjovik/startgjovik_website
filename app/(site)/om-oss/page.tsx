@@ -7,7 +7,7 @@ const aboutHeroProps = {
     title: 'Om oss',
     color: '#132D4E',
     textColor: '#',
-    imageSrc: '/images/events/BCM.png',
+    imageSrc: '/images/events/BMC2.jpeg',
     logo: false,
     content: <AboutHeroContent />,
 };
