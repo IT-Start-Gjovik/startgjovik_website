@@ -21,17 +21,18 @@ export default function Hero({
     textColor,
 }: HeroProps) {
     return (
-        <div
-            className='h-screen w-full'
-            style={{
-                background: `linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.2)), url(${imageSrc})`,
-                backgroundRepeat: 'repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                position: 'relative',
-                width: '100%',
-            }}>
-            <div className='absolute bottom-0 w-screen '>
+        <>
+            {/* HERO BACKGROUND + LOGO/TITLE  */}
+            <div
+                className='h-screen w-full'
+                style={{
+                    background: `linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.2)), url(${imageSrc})`,
+                    backgroundRepeat: 'repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    position: 'relative',
+                    width: '100%',
+                }}>
                 <div
                     className={`flex flex-col items-center justify-center ${
                         logo ? 'pt-36' : 'pt-20'
@@ -43,12 +44,21 @@ export default function Hero({
                         </div>
                     )}
                 </div>
+            </div>
+            {/* HERO CONTENT BACKGROUND IMAGE (WHITE/DARKBLUE)             */}
+            <div className='h-screen -mt-28 relative flex flex-col justify-center items-center bg-contain bg-no-repeat'>
+                <Image
+                    src='/images/hero-background-white.png'
+                    layout='fill'
+                    alt={''}
+                    className='z-[10] '
+                />
                 <HeroSection
                     color={color}
                     textColor={textColor || 'white'}
                     content={content}
                 />
             </div>
-        </div>
+        </>
     );
 }
