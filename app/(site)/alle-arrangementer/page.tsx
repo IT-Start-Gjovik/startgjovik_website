@@ -45,6 +45,5 @@ export default function AllEventsPage() {
                 </section>
             </div>
         </main>
-
     );
 }
