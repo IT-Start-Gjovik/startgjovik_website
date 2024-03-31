@@ -10,6 +10,7 @@ const aboutHeroProps = {
     imageSrc: '/images/events/BCM.png',
     logo: false,
     content: <AboutHeroContent />,
+    contentBackground: '/images/hero-background-white.png',
 };
 
 export default function AboutUsPage() {

@@ -18,6 +18,7 @@ const homePageProps = {
     imageSrc: '/images/start_casebreaker.png',
     logo: true,
     content: <HomeHeroContent />,
+    contentBackground: '/images/hero-background-upsidedown-blue.png',
 };
 
 export default function Home() {

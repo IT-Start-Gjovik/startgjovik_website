@@ -8,6 +8,7 @@ const sustainabilityHeroProps = {
     color: 'white',
     textColor: 'black',
     imageSrc: '/images/sustainability/sustainability-hero.jpg',
+    contentBackground: '/images/hero-background-white.png',
     logo: false,
     content: <SustainabilityHeroContent />,
 };

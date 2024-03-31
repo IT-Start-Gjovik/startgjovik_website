@@ -10,6 +10,7 @@ interface HeroProps {
     logo: boolean;
     textColor?: string;
     content: React.ReactNode;
+    contentBackground: string;
 }
 
 export default function Hero({
@@ -19,6 +20,7 @@ export default function Hero({
     logo,
     content,
     textColor,
+    contentBackground,
 }: HeroProps) {
     return (
         <>
@@ -48,7 +50,7 @@ export default function Hero({
             {/* HERO CONTENT BACKGROUND IMAGE (WHITE/DARKBLUE)             */}
             <div className='h-screen -mt-28 relative flex flex-col justify-center items-center bg-contain bg-no-repeat'>
                 <Image
-                    src='/images/hero-background-white.png'
+                    src={contentBackground}
                     layout='fill'
                     alt={''}
                     className='z-[10] '
