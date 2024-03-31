@@ -11,6 +11,7 @@ const forCompanyProps = {
     imageSrc: '/images/for-company/Front.png',
     logo: false,
     content: <ForCompanyHero />,
+    contentBackground: '/images/hero-background-white.png',
 };
 
 export default function ForCompany() {

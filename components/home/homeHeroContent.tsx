@@ -4,6 +4,7 @@ import HeroHeader from '../hero/heroHeader';
 export default function HomeHeroContent() {
     return (
         <>
+            <div className='pt-20'></div>
             <HeroHeader
                 header='En studentorganisasjon med lidenskap for entreprenørskap og
                 bærekraftig utvikling'
