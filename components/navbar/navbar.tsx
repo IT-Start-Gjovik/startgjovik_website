@@ -15,7 +15,10 @@ export default function Navbar() {
     return (
         <nav className='bg-transparent absolute top-0  right-0 flex justify-between mx-auto items-center gap-5 max-w-[1132px] p-5 md:p-10 w-full left-0 z-[999]'>
             {/* Start Logo START */}
-            <Link href={'/'} onClick={sidebar ? showSidebar : undefined}>
+            <Link
+                className='z-[9]'
+                href={'/'}
+                onClick={sidebar ? showSidebar : undefined}>
                 <Image
                     className='min-w-[120px]'
                     src='/images/startLogo.png'
@@ -40,7 +43,8 @@ export default function Navbar() {
                 </svg>
             </Link>
             {/* Hamburger icon END */}
-
+            <div
+                className={`${sidebar ? 'opacity-100 visible' : 'opacity-0 hidden'} bg-[#0009] left-0 bottom-0 right-0 top-0 fixed`}></div>
             <DropDownMenu sidebar={sidebar} showSidebar={showSidebar} />
         </nav>
     );
