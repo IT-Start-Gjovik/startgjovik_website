@@ -8,11 +8,7 @@ export const mainMenuItems = [
     { name: 'Bærekraft', path: '/baerekraft' },
 ];
 
-export const secondaryMenuItems = [
-    { name: 'Personver', path: '/personvern' },
-    { name: 'Tilgjengelighet', path: '/' },
-    { name: 'Informasjonkapsler', path: '/' },
-];
+export const secondaryMenuItems = [{ name: 'Personvern', path: '/personvern' }];
 
 export const socialMediaLinks = [
     {
