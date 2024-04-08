@@ -1,19 +1,29 @@
+'use client';
 import { getStartBoard } from '@/backend/sanity-utils';
 import { MemberTypes } from '@/types/memberTypes';
 import Image from 'next/image';
-import Logo from '../UI/logo';
+import { useEffect, useState } from 'react';
+export function StartMembers() {
+    const [boardMembers, setBoardMembers] = useState<MemberTypes[] | null>(null);
 
-export async function StartMembers() {
-    const boardMembers = await getStartBoard();
+    useEffect(() => {
+        if (!boardMembers) {
+            getStartBoard()
+                .then((data) => {
+                    setBoardMembers(data);
+                })
+                .catch((error) => console.log('Error caught!', error));
+        }
+    }, []);
 
     return (
         <section className='bg-[#132D4E] pb-20'>
             <div className='container mx-auto max-w-7xl p-6 lg:p-8'>
-                <h2 className='py-9 text-4xl md:text-5xl lg:text-6xl text-center font-bold text-[#B2C51F]'>
+                <h2 className='py-9 text-4xl md:text-5xl lg:text-6xl text-center font-bold'>
                     Styremedlemmer
                 </h2>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
-                    {boardMembers.map((member: MemberTypes) => (
+                    {boardMembers?.map((member: MemberTypes) => (
                         <article
                             key={member._id}
                             className='bg-white shadow-md rounded-lg overflow-hidden'>
@@ -28,13 +38,12 @@ export async function StartMembers() {
                                     {member.title} - {member.stilling}
                                 </h3>
                                 <p className='text-center mt-2 text-[#132D4E]'>
-                                    LinkedIn -{' '}
                                     <a
                                         href={member.url}
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         className='text-[#B2C51F] hover:underline'>
-                                        Besøk Profil
+                                        Linkedin profil
                                     </a>
                                 </p>
                             </div>
