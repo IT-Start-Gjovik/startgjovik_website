@@ -6,9 +6,9 @@ import React from 'react';
 
 export default function JoinPage() {
     return (
-        <main className='bg-gray-900 min-h-screen'>
+        <main className='bg-bg-primary-dark min-h-screen pt-28'>
             <div className='flex justify-center pt-10 px-6'>
-                <h1 className='text-4xl md:text-6xl'>Bli medlem🚀</h1>
+                <h1 className='text-4xl md:text-6xl'>Bli medlem 🚀</h1>
             </div>
 
             <div className='flex flex-col items-center mt-10 gap-10'>
@@ -22,10 +22,8 @@ export default function JoinPage() {
                         <ChecklistItem text='Du brenner for innovasjon og entreprenørskap!' />
                         <ChecklistItem text='Du studerer på NTNU eller Fagskolen i Gjøvik' />
                     </ul>
-                </section>
 
-                <section className='px-1'>
-                    <h2 className='mb-2 text-lg font-semibold text-white'>
+                    <h2 className='my-2 text-lg font-semibold text-white'>
                         Fordeler ✨
                     </h2>
                     <ul className='max-w-md space-y-1 list-inside text-gray-400'>
