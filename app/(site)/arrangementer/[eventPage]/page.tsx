@@ -46,18 +46,18 @@ export default function PageForEvent({ params }: Props) {
 
     const EventOverBadge = () => {
         return isOver ? (
-            <span className='bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-1.5 rounded '>
+            <span className='bg-red-100 ms-2 text-red-800 text-sm font-medium mr-2 px-2.5 py-1.5 rounded '>
                 Påmelding Lukket!
             </span>
         ) : null;
     };
 
     return (
-        <div className='flex flex-col min-h-screen bg-[#132D4E]'>
-            <main className='flex justify-center items-center min-h-screen p-4'>
-                <div className='max-w-2xl w-full bg-gray-800 shadow-lg rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out'>
+        <div className='flex flex-col min-h-screen bg-[#132D4E] pt-28'>
+            <main className='flex justify-center items-center min-h-screen'>
+                <div className='max-w-2xl w-full bg-white text-black shadow-lg rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out'>
                     <div className='p-4 md:p-8'>
-                        <h1 className='text-3xl md:text-4xl font-bold text-center text-white'>
+                        <h1 className='text-3xl md:text-4xl font-bold pt-2 pb-10 text-center'>
                             {eventPage.title}
                         </h1>
                         <img
@@ -66,24 +66,24 @@ export default function PageForEvent({ params }: Props) {
                             className='w-full md:w-3/4 lg:w-1/2 h-auto object-cover rounded-t-3xl mx-auto'
                         />
                         <div className='flex justify-center items-center mt-4'>
-                            <span className='text-sm md:text-base font-medium text-white mr-2'>
-                                📅{dateFormat}
+                            <span className='text-sm md:text-base font-medium  mr-2'>
+                                📅 {dateFormat}
                             </span>
-                            <span className='text-sm md:text-base font-medium text-white'>
-                                ⏰{timeFormat}
+                            <span className='text-sm md:text-base font-medium '>
+                                ⏰ {timeFormat}
                             </span>
                             <EventOverBadge />
                         </div>
 
-                        <hr className='my-6 border-white ' />
+                        <hr className='my-6 border-black' />
 
-                        <div className='prose prose-lg text-center text-white'>
+                        <div className='prose prose-lg '>
                             <PortableText value={eventPage.content} />
                         </div>
 
                         <div className='mt-6 flex justify-center items-center space-x-4'>
                             <RegistrerButton
-                                isEventOverBoolean={!isOver ? true : false}
+                                isEventOverBoolean={isOver ? true : false}
                                 urlToForm={eventPage.url}
                             />
                             <BackButton link='/' text='Tilbake' />
@@ -94,3 +94,4 @@ export default function PageForEvent({ params }: Props) {
         </div>
     );
 }
+
