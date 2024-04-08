@@ -1,31 +1,40 @@
-import SustainabilityGoal from './sustainabilityGoal';
+import ImageTextContainer from '../imageTextConatiner';
 
 const sustainabilityGoals = [
     {
-        title: 'Mål 9',
-        description: 'Fremme bærekraftig industriell vekst, utvikle infrastruktur og oppmuntre til innovasjon.',
+        description:
+            'Fremme bærekraftig industriell vekst, utvikle infrastruktur og oppmuntre til innovasjon.',
         imageSrc: '/images/sustainability/goal9.png',
-        linkUrl: 'https://www.fn.no/om-fn/fns-baerekraftsmaal/industri-innovasjon-og-infrastruktur',
+        linkUrl:
+            'https://www.fn.no/om-fn/fns-baerekraftsmaal/industri-innovasjon-og-infrastruktur',
+        backgroundColor: 'bg-bg-primary-dark',
+        isImageLeft: false,
     },
     {
-        title: 'Mål 13',
-        description: 'Handle raskt for å bekjempe klimaendringene og deres virkninger.',
+        description:
+            'Handle raskt for å bekjempe klimaendringene og deres virkninger.',
         imageSrc: '/images/sustainability/goal13.png',
-        linkUrl: 'https://www.fn.no/om-fn/fns-baerekraftsmaal/stoppe-klimaendringene',
+        linkUrl:
+            'https://www.fn.no/om-fn/fns-baerekraftsmaal/stoppe-klimaendringene',
+        backgroundColor: 'bg-bg-primary',
+        isImageLeft: true,
     },
     {
-        title: 'Mål 17',
-        description: 'Forbedre globale partnerskap for å støtte og nå bærekraftsmålene.',
+        description:
+            'Forbedre globale partnerskap for å støtte og nå bærekraftsmålene.',
         imageSrc: '/images/sustainability/goal17.png',
-        linkUrl: 'https://www.fn.no/om-fn/fns-baerekraftsmaal/samarbeid-for-aa-naa-maalene',
+        linkUrl:
+            'https://www.fn.no/om-fn/fns-baerekraftsmaal/samarbeid-for-aa-naa-maalene',
+        backgroundColor: 'bg-bg-primary-dark',
+        isImageLeft: false,
     },
 ];
 
 export default function SustainabilityGoalsContainer() {
     return (
-        <section className='grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] min-w-full gap-4 my-16 justify-center'>
+        <section>
             {sustainabilityGoals.map((goal, index) => {
-                return <SustainabilityGoal key={index} {...goal} />;
+                return <ImageTextContainer key={index} {...goal} />;
             })}
         </section>
     );

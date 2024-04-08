@@ -1,82 +1,103 @@
-import { Fragment, ReactNode } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { motion, Variants } from "framer-motion";
+'use client';
+import Link from 'next/link';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
+import React, { useEffect, useState } from 'react';
+import {
+    mainMenuItems,
+    secondaryMenuItems,
+    socialMediaLinks,
+} from './hambugerMenuItems';
 
-type MenuProps = {
-  menuItems: { name: string, path: string }[]
-  title: string
-  menuIcon: ReactNode
-  textSize: string
-}
-
-const fadeInAnimation: Variants = {
-  initial: {
-    opacity: 0,
-    y: -50
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    }
-  }),
-}
-
-
-export default function DropDownMenu({ menuItems, title, menuIcon, textSize }: MenuProps) {
+export default function DropDownMenu({
+    sidebar,
+    showSidebar,
+}: {
+    sidebar: boolean;
+    showSidebar: () => void;
+}) {
+    useEffect(() => {
+        const body = document.querySelector('body');
+        if (body) {
+            if (sidebar) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = 'auto';
+            }
+        }
+    }, [sidebar]);
     return (
-
-    <Menu as="div" className="relative inline-block text-left">
-      <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
-          {title}
-          {menuIcon}
-        </Menu.Button>
-      </div>
-
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="absolute left-0 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
-            {menuItems.map((item, index) => (
-              <motion.div key={index}
-                initial="initial"
-                variants={fadeInAnimation}
-                whileInView="animate"
-                viewport={{
-                  once: true,
-                }}
-                custom={index}>
-                <Menu.Item key={index}>
-                  {({ active }) => (
-                    <a key={index}
-                      href={item.path}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 leading-none ' + textSize
-                      )}
-                    >
-                      {item.name}
-                    </a>
-                  )}
-                </Menu.Item>
-              </motion.div>
-            ))}
-          </div>
-        </Menu.Items>
-      </Transition>
-    </Menu>
-  )
+        <aside
+            className={`fixed top-0 w-full  h-screen p-4 pt-0 right-0 md:max-w-[426px] overflow-y-auto  text-white ease-in-out duration-500 bg-bg-primary-dark z-50 ${
+                sidebar ? 'translate-x-0 ' : 'translate-x-full'
+            }`}>
+            <button
+                className='flex justify-end cursor-pointer z-50 w-full p-5 pt-0'
+                onClick={showSidebar}>
+                <svg
+                    width='35'
+                    height='35'
+                    viewBox='0 0 25 26'
+                    fill='currentColor'
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='mt-8 '>
+                    <path
+                        d='M3.56665 3.39648L21.8501 22.453'
+                        stroke='white'
+                        strokeWidth='4'
+                    />
+                    <path
+                        d='M3.23779 22.478L21.7394 3.68639'
+                        stroke='white'
+                        strokeWidth='4'
+                    />
+                </svg>
+            </button>
+            <div>
+                <ul className='nav-menu'>
+                    {mainMenuItems.map((item, index) => (
+                        <li key={index}>
+                            <Link
+                                href={item.path}
+                                className='text-[20px] border-b-[1px] border-solid border-gray-600 flex flex-wrap px-[25px] py-[5px]  text-white'
+                                onClick={() => {
+                                    showSidebar();
+                                }}>
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <div className='mt-8'>
+                    <ul className=''>
+                        {secondaryMenuItems.map((item, index) => (
+                            <li key={index}>
+                                <Link
+                                    href={item.path}
+                                    className='text-[16px] flex flex-wrap px-[25px] py-[4px] '
+                                    onClick={() => {
+                                        showSidebar();
+                                    }}>
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <ul className='flex flex-row mt-5 px-[25px] gap-3'>
+                        {socialMediaLinks.map((item, index) => (
+                            <li key={index}>
+                                <a
+                                    href={item.url}
+                                    dangerouslySetInnerHTML={{
+                                        __html: item.icon,
+                                    }}></a>
+                            </li>
+                        ))}
+                    </ul>
+                    <p className='mt-5 px-[25px] text-[13px] text-gray-400'>
+                        Opphavsrett @ 2024 Start Gjøvik, NO 918 138 358
+                    </p>
+                </div>
+            </div>
+        </aside>
+    );
 }

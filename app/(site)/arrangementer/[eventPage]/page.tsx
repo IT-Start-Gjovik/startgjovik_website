@@ -8,8 +8,7 @@ import LoadingPage from '@/components/loadingPage/loadingPage';
 import { EventPageType } from '@/types/EventPageType';
 import getDateTimeFormat from '@/utils/date';
 import { PortableText } from '@portabletext/react';
-import { error } from 'console';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 // Props for the event page
@@ -46,34 +45,53 @@ export default function PageForEvent({ params }: Props) {
     let isOver: Boolean = new Date() > new Date(eventPage.datetime);
 
     const EventOverBadge = () => {
-        return isOver ? <span className='bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-1.5 rounded '>Påmelding Lukket!</span> : null;
+        return isOver ? (
+            <span className='bg-red-100 ms-2 text-red-800 text-sm font-medium mr-2 px-2.5 py-1.5 rounded '>
+                Påmelding Lukket!
+            </span>
+        ) : null;
     };
 
     return (
-        <div className='flex flex-col min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
-            <main className='text-4xl flex justify-center min-h-screen'>
-                <div className='bg-slate-100 h-fit w-11/12 mt-2 p-5 md:p-20 md:w-3/4 md:text-6xl'>
-                    <h1 className=' font-bold text-black'>{eventPage.title}</h1>
+        <div className='flex flex-col min-h-screen bg-[#132D4E] pt-28'>
+            <main className='flex justify-center items-center min-h-screen'>
+                <div className='max-w-2xl w-full bg-white text-black shadow-lg rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out'>
+                    <div className='p-4 md:p-8'>
+                        <h1 className='text-3xl md:text-4xl font-bold pt-2 pb-10 text-center'>
+                            {eventPage.title}
+                        </h1>
+                        <img
+                            src={eventPage.image}
+                            alt={eventPage.title}
+                            className='w-full md:w-3/4 lg:w-1/2 h-auto object-cover rounded-t-3xl mx-auto'
+                        />
+                        <div className='flex justify-center items-center mt-4'>
+                            <span className='text-sm md:text-base font-medium  mr-2'>
+                                📅 {dateFormat}
+                            </span>
+                            <span className='text-sm md:text-base font-medium '>
+                                ⏰ {timeFormat}
+                            </span>
+                            <EventOverBadge />
+                        </div>
 
-                    <h2 className='text-black text-xl my-2 md:text-2xl md:my-5'>
-                        {' '}
-                        📅 {dateFormat} | 🕕 {timeFormat} <EventOverBadge />{' '}
-                    </h2>
+                        <hr className='my-6 border-black' />
 
-                    <hr className='h-1 my-8 border-0 bg-gray-800' />
+                        <div className='prose prose-lg '>
+                            <PortableText value={eventPage.content} />
+                        </div>
 
-                    <div className='text-lg text-gray-800 mt-5 mx-10'>
-                        <PortableText value={eventPage.content} />
-                    </div>
-
-                    <div className='flex justify-left gap-2'>
-                        <RegistrerButton isEventOverBoolean={isOver ? true : false} urlToForm={eventPage.url} />
-
-                        <BackButton link='/' text='Tilbake' />
+                        <div className='mt-6 flex justify-center items-center space-x-4'>
+                            <RegistrerButton
+                                isEventOverBoolean={isOver ? true : false}
+                                urlToForm={eventPage.url}
+                            />
+                            <BackButton link='/' text='Tilbake' />
+                        </div>
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }
+

@@ -1,17 +1,24 @@
-import Footer from '@/components/footer/footer';
-import Header from '@/components/header/page';
+'use client';
+import Hero from '@/components/hero/hero';
 import CarbonFootprint from '@/components/sustainability/carbonFootprint/carbonFootprint';
-import SustainabilityMain from '@/components/sustainability/sustainabilityMain';
+import SustainabilityGoalsContainer from '@/components/sustainability/sustainabilityGoalsContainer';
+import SustainabilityHeroContent from '@/components/sustainability/sustainabilityHeroContent';
+const sustainabilityHeroProps = {
+    title: 'Bærekraft',
+    color: 'white',
+    textColor: 'black',
+    imageSrc: '/images/sustainability/sustainability-hero.jpg',
+    contentBackground: '/images/hero-background-white.png',
+    logo: false,
+    content: <SustainabilityHeroContent />,
+};
 
 export default function BaerekraftPage() {
     return (
-        <div className='bg-gray-900'>
-            <Header />
-            <main className='mx-auto my-0 max-w-5xl px-4 transition-all md:px-8 min-h-screen'>
-                <SustainabilityMain />
-                <CarbonFootprint />
-            </main>
-            <Footer />
-        </div>
+        <main>
+            <Hero {...sustainabilityHeroProps} />
+            <SustainabilityGoalsContainer />
+            <CarbonFootprint />
+        </main>
     );
 }
