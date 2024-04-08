@@ -10,7 +10,7 @@ export default function CarbonFootprint() {
                         Carbon Footprint
                     </h2>
                     <Image
-                        src='/images/sustainability/co2-foot.png '
+                        src='/images/sustainability/co2-foot.png'
                         alt='Carbon footprint'
                         className='object-contain'
                         width={135}
