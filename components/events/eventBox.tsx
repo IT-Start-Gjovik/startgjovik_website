@@ -23,18 +23,18 @@ const EventBox: React.FC<EventBoxProps> = ({ imageUrl, title, alt, link }) => {
                     className='rounded-full shadow-sm'
                 />
             </div>
-            <h3 className='text-xl md:text-2xl font-bold text-white mt-4 mb-2 text-center group-hover:text-yellow-300 transition-colors duration-300'>
+            <h3 className='text-xl md:text-2xl font-bold text-white mt-4 mb-2 text-center'>
                 {title}
             </h3>
             <Link
                 href={link}
                 passHref
-                className='mt-4 mb-3 px-4 py-2 bg-[#B2c51f] text-white-800 rounded-full font-medium transition duration-300 transform hover:-translate-y-1 hover:bg-opacity-90 flex items-center justify-center w-full shadow-md group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white'>
+                className='mt-4 mb-3 px-4 py-2 bg-[#B2c51f] text-white-800 rounded-full font-medium transition duration-300 transform hover:-translate-y-1 hover:bg-opacity-90 flex items-center justify-center w-full shadow-md group-hover:scale-110 group-hover:text-white'>
                 Les mer
                 <svg
                     aria-hidden='true'
-                    className='ml-2 -mr-1 w-5 h-5 text-blue-500 group-hover:text-white transition-transform duration-500 hover:rotate-180'
-                    fill='currentColor'
+                    className='ml-2 -mr-1 w-5 h-5 text-blue-500'
+                    fill='white'
                     viewBox='0 0 20 20'
                     xmlns='http://www.w3.org/2000/svg'>
                     <path

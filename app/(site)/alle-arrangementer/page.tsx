@@ -12,28 +12,13 @@ const eventHeroProps = {
     title: 'Våre arrangementer',
     color: '#f5f5f5',
     textColor: 'black',
-    imageSrc: '/images/events/BCM.png',
+    imageSrc: '/images/our-events-hero-image.jpg',
     logo: false,
     content: <EventHeroContent />,
     contentBackground: '/images/hero-background-white.png',
 };
 
 export default function AllEventsPage() {
-    const [pastEvents, setPastEvents] = useState<EventCardType[]>([]);
-    const [error, setError] = useState<string | null>(null); // Error state
-
-    useEffect(() => {
-        getPastEventCards()
-            .then((data) => {
-                setPastEvents(data);
-                setError(null); // Clear any previous error
-            })
-            .catch((error) => {
-                console.error('Error fetching past events:', error);
-                setError('Failed to load past events. Please try again later.');
-            });
-    }, []);
-
     return (
         <main>
             <Hero {...eventHeroProps} />
