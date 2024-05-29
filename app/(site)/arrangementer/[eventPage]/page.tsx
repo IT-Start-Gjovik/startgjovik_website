@@ -57,13 +57,13 @@ export default function PageForEvent({ params }: Props) {
             <main className='flex justify-center items-center min-h-screen'>
                 <div className='max-w-2xl w-full bg-white text-black shadow-lg rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out'>
                     <div className='p-4 md:p-8'>
-                        <h1 className='text-3xl md:text-4xl font-bold pt-2 pb-10 text-center'>
+                        <h1 className='text-3xl md:text-4xl font-bold pt-2 pb-6 text-center'>
                             {eventPage.title}
                         </h1>
                         <img
                             src={eventPage.image}
                             alt={eventPage.title}
-                            className='w-full md:w-3/4 lg:w-1/2 h-auto object-cover rounded-t-3xl mx-auto'
+                            className='w-full h-auto object-cover min-w-60 rounded-t-3xl mx-auto'
                         />
                         <div className='flex justify-center items-center mt-4'>
                             <span className='text-sm md:text-base font-medium  mr-2'>
@@ -94,4 +94,3 @@ export default function PageForEvent({ params }: Props) {
         </div>
     );
 }
-
