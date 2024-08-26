@@ -2,16 +2,17 @@ import { EventCardType } from '@/types/EventCardType';
 import { EventPageType } from '@/types/EventPageType';
 import { VervType } from '@/types/Verv';
 import { MemberTypes } from '@/types/memberTypes';
+import { ImageCategory } from '@/enums/EImageCategory';
 import { createClient, groq } from 'next-sanity';
 
-export async function getEventCards(): Promise<EventCardType[]> {
-    const client = createClient({
-        projectId: 'a42ubgcg',
-        dataset: 'production',
-        apiVersion: '2023-07-06',
-        useCdn: false,
-    });
+const client = createClient({
+    projectId: 'a42ubgcg',
+    dataset: 'production',
+    apiVersion: '2023-07-06',
+    useCdn: false,
+});
 
+export async function getEventCards(): Promise<EventCardType[]> {
     const currentDate = new Date().toISOString();
 
     return client.fetch(
@@ -28,13 +29,6 @@ export async function getEventCards(): Promise<EventCardType[]> {
 }
 
 export async function getPastEventCards(): Promise<EventCardType[]> {
-    const client = createClient({
-        projectId: 'a42ubgcg',
-        dataset: 'production',
-        apiVersion: '2023-07-06',
-        useCdn: false,
-    });
-
     const currentDate = new Date().toISOString();
 
     return client.fetch(
@@ -51,13 +45,6 @@ export async function getPastEventCards(): Promise<EventCardType[]> {
 }
 
 export async function getCurrentEventCards(slug: string): Promise<EventPageType> {
-    const client = createClient({
-        projectId: 'a42ubgcg',
-        dataset: 'production',
-        apiVersion: '2023-07-06',
-        useCdn: false,
-    });
-
     return client.fetch(
         groq`*[_type == "event" && slug.current == $slug][0]{
             _id,
@@ -73,13 +60,6 @@ export async function getCurrentEventCards(slug: string): Promise<EventPageType>
 }
 
 export async function getVervs(): Promise<VervType[]> {
-    const client = createClient({
-        projectId: 'a42ubgcg',
-        dataset: 'production',
-        apiVersion: '2023-07-06',
-        useCdn: false,
-    });
-
     return client.fetch(
         groq`*[_type == "verv"]{
             _id,
@@ -91,13 +71,6 @@ export async function getVervs(): Promise<VervType[]> {
 }
 
 export async function getStartBoard(): Promise<MemberTypes[]> {
-    const client = createClient({
-        projectId: 'a42ubgcg',
-        dataset: 'production',
-        apiVersion: '2023-07-06',
-        useCdn: false,
-    });
-
     return client.fetch(
         groq`*[_type == "styre"]{
             _id,
@@ -110,4 +83,37 @@ export async function getStartBoard(): Promise<MemberTypes[]> {
             stilling
             }`,
     );
+}
+type ImageCategoryType = keyof typeof ImageCategory;
+export async function fetchImageByCategory(category: ImageCategoryType) {
+    const query = `*[_type == "images"]{
+              teamPic{
+                asset->{
+                  _id,
+                  url
+                },
+                  caption,
+                  year
+                },
+                homePic{
+                  asset->{
+                    _id,
+                    url
+                  },
+                  caption,
+                  year
+                }
+              }`;
+
+    const result = await client
+        .fetch(
+            query,
+            {},
+            {
+                next: { revalidate: 60 },
+            },
+        )
+        .then((res) => res[0][category]);
+
+    return result;
 }
