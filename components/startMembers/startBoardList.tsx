@@ -14,7 +14,7 @@ export default async function BoardMembers() {
                 <h2 className='py-9 text-4xl md:text-5xl lg:text-6xl text-center font-bold'>
                     Styremedlemmer
                 </h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-8'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16 mt-8'>
                     {boardMembers &&
                         boardMembers.map((member: MemberTypes) => (
                             <article key={member._id} className=' flex  flex-col'>
