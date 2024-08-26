@@ -16,7 +16,7 @@ const homePageProps = {
 };
 
 export default async function Home() {
-    const homePic = await fetchImageByCategory('HOME_PIC');
+    const homePic = await fetchImageByCategory(ImageCategory.HOME_PIC as 'HOME_PIC');
     const events = await getEventCards();
 
     return (
