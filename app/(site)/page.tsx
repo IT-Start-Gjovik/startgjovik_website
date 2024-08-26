@@ -1,51 +1,29 @@
-'use client';
-
-import { getEventCards } from '@/backend/sanity-utils';
+import { fetchImageByCategory, getEventCards } from '@/backend/sanity-utils';
 import EventSection from '@/components/eventSection/eventSection';
 import Hero from '@/components/hero/hero';
 import HomeHeroContent from '@/components/home/homeHeroContent';
-import LoadingPage from '@/components/loadingPage/loadingPage';
 import MiddleSection from '@/components/middleSection/middleSection';
 import SustainabilitySection from '@/components/sustainability/sustainabilitySection';
-import { EventCardType } from '@/types/EventCardType';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { ImageCategory } from '@/enums/EImageCategory';
 
 const homePageProps = {
     title: 'VELKOMMEN TIL',
     color: '#132D4E',
     textColor: 'white',
-    imageSrc: '/images/start_casebreaker.png',
     logo: true,
     content: <HomeHeroContent />,
     contentBackground: '/images/hero-background-upsidedown-blue.png',
 };
 
-export default function Home() {
-    const [events, setEvents] = useState<EventCardType[]>();
-    const router = useRouter();
-
-    useEffect(() => {
-        if (!events) {
-            getEventCards()
-                .then((data) => {
-                    console.log(data);
-                    setEvents(data);
-                })
-                .catch((error) => {
-                    router.push('/feilside');
-                });
-        }
-    }, [events, router]);
-    if (!events) {
-        return <LoadingPage />;
-    }
+export default async function Home() {
+    const homePic = await fetchImageByCategory(ImageCategory.HOME_PIC);
+    const events = await getEventCards();
 
     return (
         <div className='flex flex-col overflow-y-auto min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             {/** Header */}
             <main className='min-h-screen'>
-                <Hero {...homePageProps} />
+                <Hero {...homePageProps} imageSrc={homePic.asset.url} />
                 {/**List of events */}
                 <EventSection events={events}></EventSection>
 
