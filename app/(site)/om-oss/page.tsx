@@ -15,10 +15,10 @@ const aboutHeroProps = {
 };
 
 export default async function AboutUsPage() {
-    const teamPic = await fetchImageByCategory(ImageCategory.TEAM_PIC);
+    const teamPic = await fetchImageByCategory(ImageCategory.TEAM_PIC as 'TEAM_PIC');
     return (
         <main className='bg-gray-900 min-h-screen text-white'>
-            <Hero {...aboutHeroProps} imageSrc={teamPic.asset.url} />
+            <Hero {...aboutHeroProps} imageSrc={teamPic?.asset.url} />
             <AboutStart />
             <BoardMembers />
         </main>

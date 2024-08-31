@@ -1,11 +1,9 @@
-import { copyPaste } from '@superside-oss/sanity-plugin-copy-paste';
 import { defineField } from 'sanity';
 const event = {
     name: 'event',
     title: 'Event',
     type: 'document',
     fields: [
-        defineField(copyPaste),
         {
             name: 'title',
             title: 'Title på Event ',

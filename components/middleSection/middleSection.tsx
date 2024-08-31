@@ -11,8 +11,8 @@ export default function MiddleSection() {
 
             {/* Buttons container, allow wrapping if needed */}
             <div className='flex gap-4 md:gap-8 justify-center md:justify-start'>
-                <Button text='FOR BEDRIFTER' link='/for-bedrifter' />
-                <Button text='BLI MED' link='/bli-medlem' />
+                <Button text='FOR BEDRIFTER' link='/for-bedrifter' dark />
+                <Button text='BLI MED' link='/bli-medlem' dark />
             </div>
         </div>
     );

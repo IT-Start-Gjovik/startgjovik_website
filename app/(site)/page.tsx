@@ -16,14 +16,14 @@ const homePageProps = {
 };
 
 export default async function Home() {
-    const homePic = await fetchImageByCategory(ImageCategory.HOME_PIC);
+    const homePic = await fetchImageByCategory(ImageCategory.HOME_PIC as 'HOME_PIC');
     const events = await getEventCards();
 
     return (
         <div className='flex flex-col overflow-y-auto min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             {/** Header */}
             <main className='min-h-screen'>
-                <Hero {...homePageProps} imageSrc={homePic.asset.url} />
+                <Hero {...homePageProps} imageSrc={homePic?.asset.url || ''} />
                 {/**List of events */}
                 <EventSection events={events}></EventSection>
 
