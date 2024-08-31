@@ -9,7 +9,7 @@ export default function HomeHeroContent() {
                 header='En studentorganisasjon med lidenskap for entreprenørskap og
                 bærekraftig utvikling'
             />
-            <Button text='LES MER OM OSS' link='/om-oss' />
+            <Button text='LES MER OM OSS' link='/om-oss' dark />
         </>
     );
 }
