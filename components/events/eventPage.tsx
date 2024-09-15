@@ -5,6 +5,7 @@ import Header from '@/components/header/page';
 import Image from 'next/image';
 import Link from 'next/link';
 import ErrorPage from '../../app/(site)/feilside/page';
+import Button from '../Button/button';
 
 type EventPageProps = {
     eventId: string;
@@ -41,22 +42,18 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
                                 className='object-cover object-center rounded-l-xl'
                             />
                         </div>
-                        <div className='p-8 text-gray-800'>
+                        <div className='p-8'>
                             <h3
                                 className='text-2xl font-bold mb-4'
                                 style={{ color: '#132D4E' }}>
                                 {event.subtitle}
                             </h3>
                             <div
-                                className='text-base leading-relaxed'
+                                className='text-base leading-relaxed pb-2'
                                 style={{ color: '#4a4a4a' }}>
                                 {getDescriptionWithLineBreaks(event.description)}
                             </div>
-                            <Link
-                                href='/alle-arrangementer'
-                                passHref
-                                className='mt-6 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#B2C51F] hover:bg-0f2540 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-132D4E transition duration-300'>
-                                Tilbake
+                            <Button link='/alle-arrangementer' text='Tilbake'>
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     className='ml-2 h-5 w-5'
@@ -70,7 +67,7 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
                                         d='M15 19l-7-7 7-7'
                                     />
                                 </svg>
-                            </Link>
+                            </Button>
                         </div>
                     </div>
                 </div>
