@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ErrorPage from '../../app/(site)/feilside/page';
 import Button from '../Button/button';
+import BackButton from '../UI/backbutton';
 
 type EventPageProps = {
     eventId: string;
@@ -53,21 +54,11 @@ const EventPage: React.FC<EventPageProps> = ({ eventId }) => {
                                 style={{ color: '#4a4a4a' }}>
                                 {getDescriptionWithLineBreaks(event.description)}
                             </div>
-                            <Button link='/alle-arrangementer' text='Tilbake'>
-                                <svg
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    className='ml-2 h-5 w-5'
-                                    fill='none'
-                                    viewBox='0 0 24 24'
-                                    stroke='currentColor'>
-                                    <path
-                                        strokeLinecap='round'
-                                        strokeLinejoin='round'
-                                        strokeWidth={2}
-                                        d='M15 19l-7-7 7-7'
-                                    />
-                                </svg>
-                            </Button>
+                            <BackButton
+                                link='/alle-arrangementer'
+                                text='Tilbake'
+                                direction='left'
+                            />
                         </div>
                     </div>
                 </div>

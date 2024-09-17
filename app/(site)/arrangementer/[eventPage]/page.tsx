@@ -9,6 +9,7 @@ import { EventPageType } from '@/types/EventPageType';
 import getDateTimeFormat from '@/utils/date';
 import { PortableText } from '@portabletext/react';
 import { useRouter } from 'next/navigation';
+import { eventNames } from 'process';
 import { useEffect, useState } from 'react';
 
 // Props for the event page
@@ -81,12 +82,19 @@ export default function PageForEvent({ params }: Props) {
                             <PortableText value={eventPage.content} />
                         </div>
 
-                        <div className='mt-6 flex justify-center items-center space-x-4'>
-                            <RegistrerButton
-                                isEventOverBoolean={isOver ? true : false}
-                                urlToForm={eventPage.url}
+                        <div className='mt-6 flex justify-center items-center space-x-4 text-white'>
+                            <BackButton
+                                link='/'
+                                text='Tilbake'
+                                direction='left'
+                                disabled={isOver}
                             />
-                            <BackButton link='/' text='Tilbake' />
+
+                            <BackButton
+                                link={eventPage.url}
+                                text='Påmelding'
+                                direction='right'
+                            />
                         </div>
                     </div>
                 </div>

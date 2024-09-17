@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../Button/button';
+import BackButton from '../UI/backbutton';
 
-// Typescript interface for props passed to the EventBox component
 type EventBoxProps = {
     id: string;
     imageUrl: string;
@@ -27,19 +27,7 @@ const EventBox: React.FC<EventBoxProps> = ({ imageUrl, title, alt, link }) => {
             <h3 className='text-xl md:text-2xl font-bold text-white mt-4 mb-2 text-center'>
                 {title}
             </h3>
-            <Button text='Les mer' link={link} dark>
-                <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='30'
-                    height='30'
-                    fill='currentColor'
-                    viewBox='0 0 16 16'>
-                    <path
-                        fill-rule='evenodd'
-                        d='M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8'
-                    />
-                </svg>
-            </Button>
+            <BackButton link={link} text='Les mer' dark />
         </div>
     );
 };
