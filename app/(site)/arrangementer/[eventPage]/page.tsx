@@ -31,6 +31,7 @@ export default function PageForEvent({ params }: Props) {
                     if (!data) {
                         router.push('/feilside');
                     }
+                    console.log('EVENTPAGE: ', data);
                     setEventPage(data);
                 })
                 .catch((error) => console.log('Error catches!', error));
