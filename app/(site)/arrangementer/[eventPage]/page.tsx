@@ -2,18 +2,14 @@
 
 import { getCurrentEventCards } from '@/backend/sanity-utils';
 import BackButton from '@/components/UI/backbutton';
-import RegistrerButton from '@/components/UI/registrerbutton';
-import Footer from '@/components/footer/footer';
 import LoadingPage from '@/components/loadingPage/loadingPage';
 import { EventPageType } from '@/types/EventPageType';
 import getDateTimeFormat from '@/utils/date';
-import { PortableText, PortableTextReactComponents } from '@portabletext/react';
+import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { eventNames } from 'process';
 import { useEffect, useState } from 'react';
 
-// Props for the event page
 type Props = {
     params: { eventPage: string };
 };
@@ -106,7 +102,7 @@ export default function PageForEvent({ params }: Props) {
     );
 }
 
-const RichTextComponent: PortableTextReactComponents = {
+const RichTextComponent = {
     block: {
         h1: ({ children }: any) => <h1 className='text-4xl'>{children}</h1>,
         h2: ({ children }: any) => <h1 className='text-3xl'>{children}</h1>,
@@ -115,7 +111,7 @@ const RichTextComponent: PortableTextReactComponents = {
         h5: ({ children }: any) => <h1 className='text-lg'>{children}</h1>,
     },
     marks: {
-        link: ({ children, value }) => {
+        link: ({ children, value }: any) => {
             const target = (value?.href || '').startsWith('http')
                 ? '_blank'
                 : undefined;
