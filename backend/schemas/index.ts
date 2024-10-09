@@ -1,9 +1,8 @@
-import event from './event';
-import images from './images';
-import styre from './styre';
-import verv from './verv';
+import Event from './event';
+import Images from './images';
+import Board from './board';
+import Position from './position';
 
-// All schemas that the admin can modify
-const schemas = [event, verv, styre, images];
+const schemas = [Event, Position, Board, Images];
 
 export default schemas;

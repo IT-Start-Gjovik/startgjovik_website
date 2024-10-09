@@ -1,4 +1,4 @@
-export default {
+const Images = {
     name: 'images',
     type: 'document',
     title: 'Images',
@@ -41,3 +41,4 @@ export default {
         },
     ],
 };
+export default Images;
