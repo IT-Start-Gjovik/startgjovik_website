@@ -1,11 +1,9 @@
-export type MemberTypes = {
-    alt: string | undefined;
+export type MemberType = {
     _id: string;
     title: string;
     image: string;
     slug: string;
     url: string;
     stilling: string;
-    styre: Array<string>;
-    src: string;
+    email: string;
 };

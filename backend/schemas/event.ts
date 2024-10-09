@@ -1,5 +1,4 @@
-import { defineField } from 'sanity';
-const event = {
+const Event = {
     name: 'event',
     title: 'Event',
     type: 'document',
@@ -58,4 +57,4 @@ const event = {
     ],
 };
 
-export default event;
+export default Event;

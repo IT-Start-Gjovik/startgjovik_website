@@ -23,7 +23,7 @@ const FooterContent: FooterContentStructure = {
             title: 'Nyttige lenker',
             links: [
                 { name: 'Om oss', url: '/om-oss' },
-                { name: 'Våre arrangementer', url: '/arrangementer' },
+                { name: 'Våre arrangementer', url: '/alle-arrangementer' },
                 { name: 'For bedrifter', url: '/for-bedrifter' },
                 { name: 'Bærekraft', url: '/baerekraft' },
             ],
@@ -46,3 +46,4 @@ const FooterContent: FooterContentStructure = {
 };
 
 export { FooterContent };
+

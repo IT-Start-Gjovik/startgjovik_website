@@ -20,6 +20,7 @@ const EventCard: React.FC<EventProps> = ({
     description,
     slug,
 }: EventProps) => {
+    console.log('EventCard: ', imageUrl, title, date, time, description, slug);
     return (
         <div className='flex flex-col flex-grow min-w-[337px] max-w-[338px] h-[515px] p-1'>
             <div className='flex flex-grow h-[432px] bg-[#132D4E] rounded-[50px] overflow-hidden relative'>

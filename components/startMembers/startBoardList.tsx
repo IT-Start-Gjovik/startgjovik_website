@@ -1,5 +1,5 @@
 import { getStartBoard } from '@/backend/sanity-utils';
-import { MemberTypes } from '@/types/memberTypes';
+import { MemberType } from '@/types/memberTypes';
 import Image from 'next/image';
 import Link from 'next/link';
 export default async function BoardMembers() {
@@ -16,7 +16,7 @@ export default async function BoardMembers() {
                 </h2>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16 mt-8'>
                     {boardMembers &&
-                        boardMembers.map((member: MemberTypes) => (
+                        boardMembers.map((member: MemberType) => (
                             <article key={member._id} className=' flex  flex-col'>
                                 <Image
                                     src={member.image}
@@ -31,9 +31,16 @@ export default async function BoardMembers() {
                                     <p className='text-md text-gray-400'>
                                         {member.stilling}
                                     </p>
+                                    <Link href={`mailto:${member.email}`}>
+                                        <p className='text-md text-gray-300'>
+                                            {member.email}
+                                        </p>
+                                    </Link>
                                     <Link
-                                        href={member.url}
-                                        target='_blank'
+                                        href={member.url || '#'}
+                                        target={
+                                            member.url !== null ? '_blank' : '_self'
+                                        }
                                         className='text-bg-primary hover:underline inline '>
                                         Linkedin
                                         <svg

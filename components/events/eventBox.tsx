@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../Button/button';
+import BackButton from '../UI/backbutton';
 
-// Typescript interface for props passed to the EventBox component
 type EventBoxProps = {
     id: string;
     imageUrl: string;
@@ -27,7 +27,7 @@ const EventBox: React.FC<EventBoxProps> = ({ imageUrl, title, alt, link }) => {
             <h3 className='text-xl md:text-2xl font-bold text-white mt-4 mb-2 text-center'>
                 {title}
             </h3>
-            <Button text='Les mer' link={link} dark adaptiv />
+            <BackButton link={link} text='Les mer' dark />
         </div>
     );
 };

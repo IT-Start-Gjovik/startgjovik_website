@@ -34,7 +34,6 @@ export default function Footer() {
                                         <a
                                             key={link.name}
                                             href={link.url}
-                                            target='_blank'
                                             rel='noopener noreferrer'
                                             className='mb-3 hover:underline text-base lg:text-lg'>
                                             {link.name}
@@ -54,12 +53,6 @@ export default function Footer() {
             <div className='flex flex-wrap gap-2 md:gap-16'>
                 <a href='/personvern' className='hover:underline'>
                     Personvern
-                </a>
-                <a href='/tilgjengelighet' className='hover:underline'>
-                    Tilgjengelighet
-                </a>
-                <a href='/informasjonskapsler' className='hover:underline'>
-                    Informasjonskapsler
                 </a>
             </div>
             <div className='text-center font-normal text-blue-gray-900'>

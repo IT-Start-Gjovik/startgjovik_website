@@ -7,8 +7,10 @@ import Footer from '@/components/footer/footer';
 import LoadingPage from '@/components/loadingPage/loadingPage';
 import { EventPageType } from '@/types/EventPageType';
 import getDateTimeFormat from '@/utils/date';
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { eventNames } from 'process';
 import { useEffect, useState } from 'react';
 
 // Props for the event page
@@ -18,6 +20,7 @@ type Props = {
 
 export default function PageForEvent({ params }: Props) {
     const [eventPage, setEventPage] = useState<EventPageType | null>(null);
+    console.log('PARAMS: ', eventPage);
 
     const slug = params.eventPage;
     const router = useRouter();
@@ -30,6 +33,7 @@ export default function PageForEvent({ params }: Props) {
                     if (!data) {
                         router.push('/feilside');
                     }
+                    console.log('EVENTPAGE: ', data);
                     setEventPage(data);
                 })
                 .catch((error) => console.log('Error catches!', error));
@@ -77,16 +81,23 @@ export default function PageForEvent({ params }: Props) {
 
                         <hr className='my-6 border-black' />
 
-                        <div className='prose prose-lg '>
-                            <PortableText value={eventPage.content} />
-                        </div>
+                        <PortableText
+                            value={eventPage.content}
+                            components={RichTextComponent}
+                        />
 
-                        <div className='mt-6 flex justify-center items-center space-x-4'>
-                            <RegistrerButton
-                                isEventOverBoolean={isOver ? true : false}
-                                urlToForm={eventPage.url}
+                        <div className='mt-6 flex justify-center items-center space-x-4 text-white'>
+                            <BackButton
+                                link='/'
+                                text='Tilbake'
+                                direction='left'
+                                disabled={isOver}
                             />
-                            <BackButton link='/' text='Tilbake' />
+                            <BackButton
+                                link={eventPage.url}
+                                text='Påmelding'
+                                direction='right'
+                            />
                         </div>
                     </div>
                 </div>
@@ -94,3 +105,42 @@ export default function PageForEvent({ params }: Props) {
         </div>
     );
 }
+
+const RichTextComponent: PortableTextReactComponents = {
+    block: {
+        h1: ({ children }: any) => <h1 className='text-4xl'>{children}</h1>,
+        h2: ({ children }: any) => <h1 className='text-3xl'>{children}</h1>,
+        h3: ({ children }: any) => <h1 className='text-2l'>{children}</h1>,
+        h4: ({ children }: any) => <h1 className='text-xl'>{children}</h1>,
+        h5: ({ children }: any) => <h1 className='text-lg'>{children}</h1>,
+    },
+    marks: {
+        link: ({ children, value }) => {
+            const target = (value?.href || '').startsWith('http')
+                ? '_blank'
+                : undefined;
+            return (
+                <Link
+                    href={value?.href}
+                    target={target}
+                    rel={target ? 'noopener noreferrer' : undefined}
+                    className=' text-bg-primary-dark hover:text-cyan-950'>
+                    {children}
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        strokeWidth={1.5}
+                        stroke='currentColor'
+                        className='size-5 ms-1 mb-1 inline'>
+                        <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            d='M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25'
+                        />
+                    </svg>
+                </Link>
+            );
+        },
+    },
+};

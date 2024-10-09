@@ -8,10 +8,12 @@ interface EventCardListProps {
 }
 
 export default function EventCardList({ events }: EventCardListProps) {
+    console.log('LIST:', events);
     return (
         <>
             {events.map((event) => {
                 let { dateFormat, timeFormat } = getDateTimeFormat(event.datetime);
+
                 return (
                     <EventCard
                         description={event.description}

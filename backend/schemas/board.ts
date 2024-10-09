@@ -18,7 +18,7 @@ const Board = {
         },
         {
             name: 'title',
-            title: 'Navn på strye medlem ',
+            title: 'Navn på styre medlem',
             type: 'string',
         },
         {
@@ -33,11 +33,20 @@ const Board = {
             type: 'slug',
             options: { source: 'title' },
         },
-
         {
             name: 'url',
             title: 'linkdn',
             type: 'url',
+        },
+        {
+            name: 'email',
+            title: 'E-post',
+            type: 'string',
+            validation: (Rule: any) =>
+                Rule.regex(/^.*@startgjovik\.no$/, {
+                    name: 'email',
+                    invert: false,
+                }).error('Bruk ditt start-mail (XXXX@startgjovik.no)'),
         },
     ],
 };
