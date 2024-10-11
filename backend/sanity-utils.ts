@@ -1,7 +1,7 @@
 import { EventCardType } from '@/types/EventCardType';
 import { EventPageType } from '@/types/EventPageType';
 import { VervType } from '@/types/Verv';
-import { MemberTypes } from '@/types/memberTypes';
+import { MemberType } from '@/types/memberTypes';
 import { ImageCategory } from '@/enums/EImageCategory';
 import { createClient, groq } from 'next-sanity';
 
@@ -70,7 +70,7 @@ export async function getVervs(): Promise<VervType[]> {
     );
 }
 
-export async function getStartBoard(): Promise<MemberTypes[]> {
+export async function getStartBoard(): Promise<MemberType[]> {
     return client.fetch(
         groq`*[_type == "styre"]{
             _id,
