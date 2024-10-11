@@ -16,7 +16,6 @@ type Props = {
 
 export default function PageForEvent({ params }: Props) {
     const [eventPage, setEventPage] = useState<EventPageType | null>(null);
-    console.log('PARAMS: ', eventPage);
 
     const slug = params.eventPage;
     const router = useRouter();
@@ -29,10 +28,9 @@ export default function PageForEvent({ params }: Props) {
                     if (!data) {
                         router.push('/feilside');
                     }
-                    console.log('EVENTPAGE: ', data);
                     setEventPage(data);
                 })
-                .catch((error) => console.log('Error catches!', error));
+                .catch((error) => console.log('Error: ', error));
         }
     }, [slug, eventPage, router]);
 

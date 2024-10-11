@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Logo from '../UI/logo';
 import { FooterContent } from '@/types/FooterContentStructure';
 
@@ -6,38 +7,38 @@ export default function Footer() {
 
     return (
         <footer className='relative w-full bg-[#132D4E] text-white p-4 sm:p-10 lg:p-16'>
-            <div className='w-full border-t border-gray-600 my-4 lg:my-8'></div>
-            <div className='flex flex-col lg:flex-row justify-between items-start max-w-6xl mx-auto'>
-                <div className='flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 text-center md:justify-start lg:justify-between'>
-                    <a href='#' className='w-32 h-32 lg:w-48 lg:h-48 mb-4'>
+            <div className='w-full border-t border-gray-600 my-4 lg:my-8 '></div>
+            <div className='flex flex-col md:flex-row justify-between items-center  max-w-6xl mx-auto'>
+                <div className='w-full md:w-auto flex flex-wrap md:flex-nowrap md:flex-col items-center'>
+                    <Link href='/' className='w-32'>
                         <Logo />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href={`mailto:${FooterContent.email}`}
-                        className='hover:underline text-base lg:text-lg'>
+                        className='hover:underline text-base lg:text-lg hidden lg:block '>
                         {FooterContent.emailText}
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Links Section */}
                 <div className='relative w-full'>
                     <div className='mx-auto w-full max-w-7xl px-8'>
-                        <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+                        <div className='flex flex-wrap md:justify-evenly gap-5 '>
                             {FooterContent.sections.map((section) => (
-                                <div
-                                    key={section.title}
-                                    className='flex flex-col mb-4 lg:mb-0'>
-                                    <span className='font-bold mb-5 text-lg lg:text-3xl'>
+                                <div key={section.title}>
+                                    <p className='font-bold mb-2 text-xl lg:text-2xl'>
                                         {section.title}
-                                    </span>
+                                    </p>
                                     {section.links.map((link) => (
-                                        <a
-                                            key={link.name}
-                                            href={link.url}
-                                            rel='noopener noreferrer'
-                                            className='mb-3 hover:underline text-base lg:text-lg'>
-                                            {link.name}
-                                        </a>
+                                        <ul>
+                                            <Link
+                                                key={link.name}
+                                                href={link.url}
+                                                rel='noopener noreferrer'
+                                                className='hover:underline text-lg lg:text-xl'>
+                                                {link.name}
+                                            </Link>
+                                        </ul>
                                     ))}
                                 </div>
                             ))}
@@ -49,17 +50,8 @@ export default function Footer() {
             {/* BreakLine */}
             <div className='w-full border-t border-gray-600 my-4 lg:my-8'></div>
 
-            {/* Bottom Links */}
-            <div className='flex flex-wrap gap-2 md:gap-16'>
-                <a href='/personvern' className='hover:underline'>
-                    Personvern
-                </a>
-            </div>
             <div className='text-center font-normal text-blue-gray-900'>
-                &copy; {currentYear}{' '}
-                <a href='#' className='hover:underline'>
-                    Start Opphavsrett Gjøvik, NO 918 138 358
-                </a>
+                &copy; {currentYear} Start Opphavsrett Gjøvik, NO 918 138 358
             </div>
         </footer>
     );

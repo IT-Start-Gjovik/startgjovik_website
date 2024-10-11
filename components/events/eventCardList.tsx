@@ -8,7 +8,6 @@ interface EventCardListProps {
 }
 
 export default function EventCardList({ events }: EventCardListProps) {
-    console.log('LIST:', events);
     return (
         <>
             {events.map((event) => {

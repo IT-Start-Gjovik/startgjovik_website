@@ -1,5 +1,4 @@
 const getDateTimeFormat = (date: string) => {
-    console.log('processing date: ', date);
     const eventDate = new Date(date);
 
     const formatDate = (date: Date) =>
@@ -13,8 +12,6 @@ const getDateTimeFormat = (date: string) => {
 
     const dateFormat = formatDate(eventDate);
     const timeFormat = formatTime(eventDate);
-    console.log('date format: ', dateFormat);
-    console.log('time format: ', timeFormat);
 
     return { dateFormat, timeFormat };
 };
