@@ -1,12 +1,9 @@
 import { getStartBoard } from '@/backend/sanity-utils';
 import { MemberType } from '@/types/memberTypes';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 export default async function BoardMembers() {
-    const boardMembers = await getStartBoard().then((res) => {
-        console.log(res);
-        return res;
-    });
+    const boardMembers = await getStartBoard();
 
     return (
         <section className='bg-[#132D4E] pb-20'>
@@ -22,9 +19,9 @@ export default async function BoardMembers() {
                                     src={member.image}
                                     alt={member._id}
                                     width={300}
-                                    height={200}
+                                    height={280}
                                 />
-                                <div className='text-start'>
+                                <div className='text-center '>
                                     <h3 className='mt-4 text-xl font-semibold text-white'>
                                         {member.title}
                                     </h3>

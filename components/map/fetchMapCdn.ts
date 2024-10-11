@@ -11,7 +11,6 @@ export default function fetchMapCdn() {
     link.rel = 'stylesheet';
     document.body.appendChild(script1);
     document.body.appendChild(link);
-    console.log('script added');
     return () => {
         document.body.removeChild(script1);
         document.body.removeChild(link);

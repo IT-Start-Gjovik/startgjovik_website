@@ -31,14 +31,15 @@ export default function Map() {
                         fillColor: window.Mazemap.Util.Colors.MazeColors.MazeBlue,
                     });
 
-                    window.Mazemap.Data.getPoi(239637).then((poi: MapPositionType) => {
-                        console.log(poi);
-                        if (poi) {
-                            var lngLat = window.Mazemap.Util.getPoiLngLat(poi);
-                            map.flyTo({ center: lngLat, zoom: 19, speed: 0.5 });
-                            highlighter.highlight(poi);
-                        }
-                    });
+                    window.Mazemap.Data.getPoi(239637).then(
+                        (poi: MapPositionType) => {
+                            if (poi) {
+                                var lngLat = window.Mazemap.Util.getPoiLngLat(poi);
+                                map.flyTo({ center: lngLat, zoom: 19, speed: 0.5 });
+                                highlighter.highlight(poi);
+                            }
+                        },
+                    );
                 });
                 setMap(map);
             }
