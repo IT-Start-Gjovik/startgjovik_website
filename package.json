@@ -17,7 +17,7 @@
         "@types/react": "18.3.3",
         "@types/react-dom": "18.2.6",
         "autoprefixer": "10.4.14",
-        "eslint": "^9.9.1",
+        "eslint": "^9.12.0",
         "eslint-config-next": "^14.2.3",
         "framer-motion": "^11.11.8",
         "next": "^14.2.15",
