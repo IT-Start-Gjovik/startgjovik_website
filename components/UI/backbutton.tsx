@@ -1,6 +1,7 @@
+import { ButtonHTMLAttributes } from 'react';
 import Button from '../Button/button';
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     link: string;
     text: string;
     direction?: 'left' | 'right';

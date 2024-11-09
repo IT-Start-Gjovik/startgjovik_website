@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Button from '../Button/button';
 
-// Interface for the event card
 interface EventProps {
     imageUrl: string;
     title: string;
@@ -11,7 +10,6 @@ interface EventProps {
     slug: string;
 }
 
-// Event card itself
 const EventCard: React.FC<EventProps> = ({
     date,
     title,
@@ -29,7 +27,7 @@ const EventCard: React.FC<EventProps> = ({
                     alt='event image'
                     layout='fill'
                     objectFit='cover'
-                    className='rounded-t-[50px] opacity-70 '
+                    className='rounded-t-[50px] opacity-60'
                 />
                 <div className='absolute inset-0 flex flex-col items-center justify-end mb-5'>
                     <p className='text-[36px] font-bold text-center'>{title}</p>

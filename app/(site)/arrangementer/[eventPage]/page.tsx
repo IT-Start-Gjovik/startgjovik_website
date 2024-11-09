@@ -40,7 +40,7 @@ export default function PageForEvent({ params }: Props) {
 
     // Information time and date formatted correctly
     let { dateFormat, timeFormat } = getDateTimeFormat(eventPage.datetime);
-    let isOver: Boolean = new Date() > new Date(eventPage.datetime);
+    let isOver: boolean = new Date() > new Date(eventPage.datetime);
 
     const EventOverBadge = () => {
         return isOver ? (
@@ -81,16 +81,15 @@ export default function PageForEvent({ params }: Props) {
                         />
 
                         <div className='mt-6 flex justify-center items-center space-x-4 text-white'>
-                            <BackButton
-                                link='/'
-                                text='Tilbake'
-                                direction='left'
-                                disabled={isOver}
-                            />
+                            <BackButton link='/' text='Tilbake' direction='left' />
                             <BackButton
                                 link={eventPage.url}
                                 text='Påmelding'
                                 direction='right'
+                                disabled={isOver}
+                                style={{
+                                    cursor: isOver ? 'not-allowed' : 'pointer',
+                                }}
                             />
                         </div>
                     </div>
@@ -100,13 +99,15 @@ export default function PageForEvent({ params }: Props) {
     );
 }
 
-const RichTextComponent = {
-    block: {
+ // @ts-ignore
+ const RichTextComponent = {
+     block: {
         h1: ({ children }: any) => <h1 className='text-4xl'>{children}</h1>,
-        h2: ({ children }: any) => <h1 className='text-3xl'>{children}</h1>,
-        h3: ({ children }: any) => <h1 className='text-2l'>{children}</h1>,
-        h4: ({ children }: any) => <h1 className='text-xl'>{children}</h1>,
-        h5: ({ children }: any) => <h1 className='text-lg'>{children}</h1>,
+        h2: ({ children }: any) => <h2 className='text-3xl'>{children}</h2>,
+        h3: ({ children }: any) => <h3 className='text-2xl'>{children}</h3>,
+        h4: ({ children }: any) => <h4 className='text-xl'>{children}</h4>,
+        h5: ({ children }: any) => <h5 className='text-lg'>{children}</h5>,
+        normal: ({ children }: any) => <p className='text-base'>{children}</p>, // Default for normal paragraphs
     },
     marks: {
         link: ({ children, value }: any) => {
@@ -137,4 +138,13 @@ const RichTextComponent = {
             );
         },
     },
+    list: {
+        bullet: ({ children }) => <ul className='list-disc ml-4'>{children}</ul>,
+        number: ({ children }) => <ol className='list-decimal ml-4'>{children}</ol>,
+    },
+    listItem: {
+        bullet: ({ children }) => <li>{children}</li>,
+        number: ({ children }) => <li>{children}</li>,
+    },
+    hardBreak: () => <br />,
 };
