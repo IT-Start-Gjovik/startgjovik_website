@@ -61,9 +61,7 @@ export default function NoEvents({ events }: { events: EventCardType[] }) {
                 style={{ maxHeight: containerHeight }}>
                 <div className='mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                     {previousEvents.slice(0, visibleCount).map((event) => {
-                        const { dateFormat, timeFormat } = getDateTimeFormat(
-                            event.datetime,
-                        );
+                        const { timeFormat } = getDateTimeFormat(event.datetime);
 
                         return (
                             <MiniEventCard

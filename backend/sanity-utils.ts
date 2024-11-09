@@ -70,7 +70,7 @@ export async function getVervs(): Promise<VervType[]> {
     );
 }
 
-export async function getStartBoard(): Promise<MemberTypes[]> {
+export async function getStartBoard(): Promise<MemberType[]> {
     return client.fetch(
         groq`*[_type == "styre"]{
             _id,

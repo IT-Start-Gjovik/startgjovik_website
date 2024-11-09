@@ -2,15 +2,12 @@
 
 import { getCurrentEventCards } from '@/backend/sanity-utils';
 import BackButton from '@/components/UI/backbutton';
-import RegistrerButton from '@/components/UI/registrerbutton';
-import Footer from '@/components/footer/footer';
 import LoadingPage from '@/components/loadingPage/loadingPage';
 import { EventPageType } from '@/types/EventPageType';
 import getDateTimeFormat from '@/utils/date';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { eventNames } from 'process';
 import { useEffect, useState } from 'react';
 
 // Props for the event page
@@ -103,13 +100,20 @@ export default function PageForEvent({ params }: Props) {
     );
 }
 
+// @ts-ignore
 const RichTextComponent: PortableTextReactComponents = {
+    types: {
+        // Add any custom types if needed, e.g. images or other custom components
+        // Example:
+        image: ({ value }) => <img src={value.src} alt={value.alt} />,
+    },
     block: {
         h1: ({ children }: any) => <h1 className='text-4xl'>{children}</h1>,
-        h2: ({ children }: any) => <h1 className='text-3xl'>{children}</h1>,
-        h3: ({ children }: any) => <h1 className='text-2l'>{children}</h1>,
-        h4: ({ children }: any) => <h1 className='text-xl'>{children}</h1>,
-        h5: ({ children }: any) => <h1 className='text-lg'>{children}</h1>,
+        h2: ({ children }: any) => <h2 className='text-3xl'>{children}</h2>,
+        h3: ({ children }: any) => <h3 className='text-2xl'>{children}</h3>,
+        h4: ({ children }: any) => <h4 className='text-xl'>{children}</h4>,
+        h5: ({ children }: any) => <h5 className='text-lg'>{children}</h5>,
+        normal: ({ children }: any) => <p className='text-base'>{children}</p>, // Default for normal paragraphs
     },
     marks: {
         link: ({ children, value }) => {
@@ -140,4 +144,13 @@ const RichTextComponent: PortableTextReactComponents = {
             );
         },
     },
+    list: {
+        bullet: ({ children }) => <ul className='list-disc ml-4'>{children}</ul>,
+        number: ({ children }) => <ol className='list-decimal ml-4'>{children}</ol>,
+    },
+    listItem: {
+        bullet: ({ children }) => <li>{children}</li>,
+        number: ({ children }) => <li>{children}</li>,
+    },
+    hardBreak: () => <br />,
 };
