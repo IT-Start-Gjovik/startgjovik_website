@@ -5,12 +5,11 @@ import BackButton from '@/components/UI/backbutton';
 import LoadingPage from '@/components/loadingPage/loadingPage';
 import { EventPageType } from '@/types/EventPageType';
 import getDateTimeFormat from '@/utils/date';
-import { PortableText, PortableTextReactComponents } from '@portabletext/react';
+import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-// Props for the event page
 type Props = {
     params: { eventPage: string };
 };
@@ -100,14 +99,9 @@ export default function PageForEvent({ params }: Props) {
     );
 }
 
-// @ts-ignore
-const RichTextComponent: PortableTextReactComponents = {
-    types: {
-        // Add any custom types if needed, e.g. images or other custom components
-        // Example:
-        image: ({ value }) => <img src={value.src} alt={value.alt} />,
-    },
-    block: {
+ // @ts-ignore
+ const RichTextComponent = {
+     block: {
         h1: ({ children }: any) => <h1 className='text-4xl'>{children}</h1>,
         h2: ({ children }: any) => <h2 className='text-3xl'>{children}</h2>,
         h3: ({ children }: any) => <h3 className='text-2xl'>{children}</h3>,
@@ -116,7 +110,7 @@ const RichTextComponent: PortableTextReactComponents = {
         normal: ({ children }: any) => <p className='text-base'>{children}</p>, // Default for normal paragraphs
     },
     marks: {
-        link: ({ children, value }) => {
+        link: ({ children, value }: any) => {
             const target = (value?.href || '').startsWith('http')
                 ? '_blank'
                 : undefined;
