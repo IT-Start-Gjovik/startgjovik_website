@@ -16,7 +16,7 @@ export async function getEventCards(): Promise<EventCardType[]> {
     const currentDate = new Date().toISOString();
 
     return client.fetch(
-        groq`*[_type == "event" && datetime > $currentDate] | order(datetime asc){
+        groq`*[_type == "event"] | order(datetime asc){
             _id,
             title,
             description,

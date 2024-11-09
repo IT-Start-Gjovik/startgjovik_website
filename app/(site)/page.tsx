@@ -22,7 +22,7 @@ export default async function Home() {
     return (
         <div className='flex flex-col overflow-y-auto min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             {/** Header */}
-            <main className='min-h-screen'>
+            <main className=''>
                 <Hero {...homePageProps} imageSrc={homePic?.asset.url || ''} />
                 {/**List of events */}
                 <EventSection events={events}></EventSection>
