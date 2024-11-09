@@ -44,7 +44,7 @@ export default function PageForEvent({ params }: Props) {
 
     // Information time and date formatted correctly
     let { dateFormat, timeFormat } = getDateTimeFormat(eventPage.datetime);
-    let isOver: Boolean = new Date() > new Date(eventPage.datetime);
+    let isOver: boolean = new Date() > new Date(eventPage.datetime);
 
     const EventOverBadge = () => {
         return isOver ? (
@@ -85,16 +85,15 @@ export default function PageForEvent({ params }: Props) {
                         />
 
                         <div className='mt-6 flex justify-center items-center space-x-4 text-white'>
-                            <BackButton
-                                link='/'
-                                text='Tilbake'
-                                direction='left'
-                                disabled={isOver}
-                            />
+                            <BackButton link='/' text='Tilbake' direction='left' />
                             <BackButton
                                 link={eventPage.url}
                                 text='Påmelding'
                                 direction='right'
+                                disabled={isOver}
+                                style={{
+                                    cursor: isOver ? 'not-allowed' : 'pointer',
+                                }}
                             />
                         </div>
                     </div>
