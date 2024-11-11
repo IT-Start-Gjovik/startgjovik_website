@@ -5,8 +5,6 @@ interface EventProps {
     imageUrl: string;
     title: string;
     date?: string;
-    time?: string;
-    description: string;
     slug: string;
 }
 
@@ -14,11 +12,8 @@ const EventCard: React.FC<EventProps> = ({
     date,
     title,
     imageUrl,
-    time,
-    description,
     slug,
 }: EventProps) => {
-    console.log('EventCard: ', imageUrl, title, date, time, description, slug);
     return (
         <div className='flex flex-col flex-grow min-w-[337px] max-w-[338px] h-[515px] p-1'>
             <div className='flex flex-grow h-[432px] bg-[#132D4E] rounded-[50px] overflow-hidden relative'>
@@ -31,7 +26,7 @@ const EventCard: React.FC<EventProps> = ({
                 />
                 <div className='absolute inset-0 flex flex-col items-center justify-end mb-5'>
                     <p className='text-[36px] font-bold text-center'>{title}</p>
-                    <p className='text-[24px]'>{date} </p>
+                    <p className='text-[24px]'>{date}</p>
                 </div>
             </div>
             <Button

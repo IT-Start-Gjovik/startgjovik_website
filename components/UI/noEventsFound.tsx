@@ -7,17 +7,16 @@ import Button from '../Button/button';
 
 const DEFAULT_VISIBLE_COUNT = 4;
 
-export default function NoEvents({ events }: { events: EventCardType[] }) {
+export default function NoEvents({
+    previousEvents,
+}: {
+    previousEvents: EventCardType[];
+}) {
     const [showPreviousEvents, setShowPreviousEvents] = useState(false);
     const [visibleCount, setVisibleCount] = useState(DEFAULT_VISIBLE_COUNT);
     const containerRef = useRef<HTMLDivElement>(null);
     const buttonContainerRef = useRef<HTMLDivElement>(null);
     const [containerHeight, setContainerHeight] = useState('0px');
-
-    const previousEvents = events.filter(
-        (event) => new Date(event.datetime) < new Date(),
-    );
-
     const loadMoreEvents = () => {
         setVisibleCount((prevCount) => prevCount + DEFAULT_VISIBLE_COUNT);
 
@@ -60,21 +59,30 @@ export default function NoEvents({ events }: { events: EventCardType[] }) {
                 className='transition-max-height duration-500 ease-in-out overflow-hidden'
                 style={{ maxHeight: containerHeight }}>
                 <div className='mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-                    {previousEvents.slice(0, visibleCount).map((event) => {
-                        const { timeFormat } = getDateTimeFormat(event.datetime);
+                    {previousEvents &&
+                        // sort the events by date
+                        previousEvents
+                            .sort((a, b) =>
+                                new Date(a.datetime) > new Date(b.datetime) ? -1 : 1,
+                            )
+                            .slice(0, visibleCount)
+                            .map((event) => {
+                                const { timeFormat } = getDateTimeFormat(
+                                    event.datetime,
+                                );
 
-                        return (
-                            <MiniEventCard
-                                key={event._id}
-                                imageUrl={event.image}
-                                title={event.title}
-                                date={new Date(event.datetime).toLocaleDateString(
-                                    'en-GB',
-                                )}
-                                time={timeFormat}
-                            />
-                        );
-                    })}
+                                return (
+                                    <MiniEventCard
+                                        key={event._id}
+                                        imageUrl={event.image}
+                                        title={event.title}
+                                        date={new Date(
+                                            event.datetime,
+                                        ).toLocaleDateString('en-GB')}
+                                        time={timeFormat}
+                                    />
+                                );
+                            })}
                 </div>
             </div>
             {showPreviousEvents && visibleCount < previousEvents.length && (

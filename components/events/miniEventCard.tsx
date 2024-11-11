@@ -14,7 +14,7 @@ const MiniEventCard: React.FC<MiniEventProps> = ({
     time,
 }) => {
     return (
-        <div className='p-10 relative max-w-56 max-h-44 rounded-xl overflow-hidden shadow-md m-2 flex items-center justify-center text-white'>
+        <div className='p-10 relative max-w-56 max-h-44 rounded-xl overflow-hidden shadow-xl  m-2 flex items-center justify-center text-white'>
             <Image
                 src={imageUrl}
                 alt='event image'

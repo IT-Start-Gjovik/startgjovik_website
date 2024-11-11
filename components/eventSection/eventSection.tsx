@@ -21,7 +21,7 @@ export default function EventSection({ events }: { events: EventCardType[] }) {
                         <EventCardList events={validEvents} />
                     </>
                 ) : (
-                    <NoEvents events={previousEvents} />
+                    <NoEvents previousEvents={previousEvents} />
                 )}
             </div>
         </div>
