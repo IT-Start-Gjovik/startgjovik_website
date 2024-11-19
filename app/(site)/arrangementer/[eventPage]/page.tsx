@@ -77,6 +77,7 @@ export default function PageForEvent({ params }: Props) {
 
                         <PortableText
                             value={eventPage.content}
+                            // @ts-ignore
                             components={RichTextComponent}
                         />
 
@@ -139,12 +140,17 @@ const RichTextComponent = {
         },
     },
     list: {
-        bullet: ({ children }) => <ul className='list-disc ml-4'>{children}</ul>,
-        number: ({ children }) => <ol className='list-decimal ml-4'>{children}</ol>,
+        bullet: ({ children }: { children: any }) => (
+            <ul className='list-disc ml-4'>{children}</ul>
+        ),
+
+        number: ({ children }: { children: any }) => (
+            <ol className='list-decimal ml-4'>{children}</ol>
+        ),
     },
     listItem: {
-        bullet: ({ children }) => <li>{children}</li>,
-        number: ({ children }) => <li>{children}</li>,
+        bullet: ({ children }: { children: any }) => <li>{children}</li>,
+        number: ({ children }: { children: any }) => <li>{children}</li>,
     },
     hardBreak: () => <br />,
 };

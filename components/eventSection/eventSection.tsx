@@ -9,7 +9,6 @@ export default function EventSection({ events }: { events: EventCardType[] }) {
     let previousEvents = events.filter(
         (event) => new Date(event.datetime) < new Date(),
     );
-    previousEvents = [...previousEvents, ...previousEvents, ...previousEvents];
     return (
         <div className='bg-white pt-10 pb-3'>
             <h3 className='text-[#132D4E] font-semibold md:text-center text-4xl md:text-5xl py-5 px-8'>
@@ -22,7 +21,7 @@ export default function EventSection({ events }: { events: EventCardType[] }) {
                         <EventCardList events={validEvents} />
                     </>
                 ) : (
-                    <NoEvents events={previousEvents} />
+                    <NoEvents previousEvents={previousEvents} />
                 )}
             </div>
         </div>
