@@ -27,6 +27,17 @@ const Board = {
             type: 'string',
         },
         {
+            name: 'erLeder',
+            title: 'Er denne personen lederen?',
+            type: 'boolean',
+        },
+        {
+            name: 'tlfNrLeder',
+            title: 'Tlf. nummeren til leder',
+            type: 'string',
+            hidden: ({ document }: { document: any }) => !document?.erLeder,
+        },
+        {
             name: 'slug',
             title: 'URL-mer leselig lenke(slug)',
             description: 'Enkel navn for link til LINKDN profile',
