@@ -81,7 +81,9 @@ export async function getStartBoard(): Promise<MemberType[]> {
             "image": image.asset->url,
             linkdn,
             stilling,
-            email
+            email,
+            erLeder, 
+            tlfNrLeder
             }`,
     );
 }

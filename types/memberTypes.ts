@@ -6,4 +6,6 @@ export type MemberType = {
     url: string;
     stilling: string;
     email: string;
+    erLeder: boolean;
+    tlfNrLeder?: string;
 };

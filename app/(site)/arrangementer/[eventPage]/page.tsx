@@ -100,7 +100,8 @@ export default function PageForEvent({ params }: Props) {
     );
 }
 
- const RichTextComponent = {
+// @ts-ignore
+const RichTextComponent = {
     block: {
         h1: ({ children }: any) => <h1 className='text-4xl'>{children}</h1>,
         h2: ({ children }: any) => <h2 className='text-3xl'>{children}</h2>,
