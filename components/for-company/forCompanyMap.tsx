@@ -2,12 +2,17 @@ import ListIcon from '@/components/listIcon/listIcon';
 import { InboxIcon, MapIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import dynamic from 'next/dynamic';
 import Spinner from '@/components/UI/Spinner';
+import { getStartBoard } from '@/backend/sanity-utils';
 
 const Map = dynamic(() => import('@/components/map/map'), {
     ssr: false,
     loading: () => <Spinner />,
 });
-export default function ForCompanyMap() {
+export default async function ForCompanyMap() {
+    const board = await getStartBoard();
+    const leader = board.filter((member) => member.erLeder)[0];
+    const phoneNumLeader = leader.tlfNrLeder || leader.title;
+
     return (
         <div className='bg-white flex flex-col md:flex-row w-full py-2 md:py-14 px-5 items-center gap-5 md:gap-10 justify-center'>
             <article className='text-black'>
@@ -15,7 +20,9 @@ export default function ForCompanyMap() {
                     Kontakt oss
                 </h2>
                 <ul className='grid xl:text-xl px-10 md:px-0'>
-                    <ListIcon icon={<PhoneIcon />} text='988 15 727' />
+                    {phoneNumLeader && (
+                        <ListIcon icon={<PhoneIcon />} text={phoneNumLeader} />
+                    )}
                     <ListIcon
                         icon={<InboxIcon />}
                         text='leder@startgjovik.no'
