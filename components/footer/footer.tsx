@@ -30,7 +30,7 @@ export default function Footer() {
                                         {section.title}
                                     </p>
                                     {section.links.map((link) => (
-                                        <ul>
+                                        <ul key={link.name}>
                                             <Link
                                                 key={link.name}
                                                 href={link.url}
