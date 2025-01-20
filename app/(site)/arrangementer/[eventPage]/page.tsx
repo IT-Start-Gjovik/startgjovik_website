@@ -9,6 +9,7 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 type Props = {
     params: { eventPage: string };
@@ -58,7 +59,7 @@ export default function PageForEvent({ params }: Props) {
                         <h1 className='text-3xl md:text-4xl font-bold pt-2 pb-6 text-center'>
                             {eventPage.title}
                         </h1>
-                        <img
+                        <Image
                             src={eventPage.image}
                             alt={eventPage.title}
                             className='w-full h-auto object-cover min-w-60 rounded-t-3xl mx-auto'
