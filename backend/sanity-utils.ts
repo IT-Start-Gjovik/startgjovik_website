@@ -3,6 +3,7 @@ import { EventPageType } from '@/types/EventPageType';
 import { VervType } from '@/types/Verv';
 import { MemberType } from '@/types/memberTypes';
 import { ImageCategory } from '@/enums/EImageCategory';
+import { WeeklyActivityType } from '@/types/WeeklyActivityType';
 import { createClient, groq } from 'next-sanity';
 
 const client = createClient({
@@ -119,4 +120,22 @@ export async function fetchImageByCategory(category: ImageCategoryType) {
         .then((res) => res[0][category]);
 
     return result;
+}
+
+export async function getWeeklyActivities(): Promise<WeeklyActivityType[]> {
+    return client.fetch(
+        groq`*[_type == "weeklyActivity" && isActive == true] | order(date desc, order asc, dayOfWeek asc){
+            _id,
+            title,
+            description,
+            date,
+            dayOfWeek,
+            time,
+            location,
+            "image": image.asset->url,
+            isActive,
+            order,
+            registrationUrl
+        }`,
+    );
 }
