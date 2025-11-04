@@ -1,9 +1,10 @@
-import { fetchImageByCategory, getEventCards } from '@/backend/sanity-utils';
+import { fetchImageByCategory, getEventCards, getWeeklyActivities } from '@/backend/sanity-utils';
 import EventSection from '@/components/eventSection/eventSection';
 import Hero from '@/components/hero/hero';
 import HomeHeroContent from '@/components/home/homeHeroContent';
 import MiddleSection from '@/components/middleSection/middleSection';
 import SustainabilitySection from '@/components/sustainability/sustainabilitySection';
+import WeeklyActivitiesSection from '@/components/weeklyActivities/weeklyActivitiesSection';
 import { ImageCategory } from '@/enums/EImageCategory';
 
 const homePageProps = {
@@ -18,12 +19,17 @@ const homePageProps = {
 export default async function Home() {
     const homePic = await fetchImageByCategory(ImageCategory.HOME_PIC as 'HOME_PIC');
     const events = await getEventCards();
+    const weeklyActivities = await getWeeklyActivities();
 
     return (
         <div className='flex flex-col overflow-y-auto min-h-screen bg-gradient-to-tl from-gradient-end via-gradient-mid to-gradient-start'>
             {/** Header */}
             <main className=''>
                 <Hero {...homePageProps} imageSrc={homePic?.asset.url || ''} />
+                
+                {/** Weekly Activities - Prioritized */}
+                <WeeklyActivitiesSection activities={weeklyActivities} />
+
                 {/**List of events */}
                 <EventSection events={events}></EventSection>
 
