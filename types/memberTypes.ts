@@ -4,6 +4,7 @@ export type MemberType = {
     image: string;
     slug: string;
     url: string;
+    department:string;
     stilling: string;
     email: string;
     erLeder: boolean;

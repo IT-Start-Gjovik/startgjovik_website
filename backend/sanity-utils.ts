@@ -82,6 +82,7 @@ export async function getStartBoard(): Promise<MemberType[]> {
             "image": image.asset->url,
             linkdn,
             stilling,
+            department,
             email,
             erLeder, 
             tlfNrLeder
