@@ -15,7 +15,7 @@ const groupedMembers = boardMembers.reduce(
 
         groups[stilling].push(member);
 
-        return groups;
+        return groups;member
     },
     {}
 );             
@@ -28,11 +28,6 @@ const groupedMembers = boardMembers.reduce(
                 <h2 className='py-9 text-4xl md:text-5xl lg:text-6xl text-center font-bold'>
                     Styremedlemmer
                 </h2>
-
-                <div>
-                    <p>Ledere og Neste Leder</p>
-        
-                </div>
 
                                  
                
