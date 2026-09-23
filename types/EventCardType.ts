@@ -4,5 +4,6 @@ export type EventCardType = {
     description: string,
     datetime: string,
     image: string,
-    slug: string
+    slug: string,
+    url: string
 }
