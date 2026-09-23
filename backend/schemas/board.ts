@@ -32,6 +32,11 @@ const Board = {
             type: 'boolean',
         },
         {
+            name:'departement',
+            title: 'departement',
+            type: 'string'
+        },
+        {
             name: 'tlfNrLeder',
             title: 'Tlf. nummeren til leder',
             type: 'string',

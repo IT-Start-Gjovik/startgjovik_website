@@ -8,6 +8,7 @@ interface EventCardListProps {
 }
 
 export default function EventCardList({ events }: EventCardListProps) {
+    
     return (
         <>
             {events.map((event) => {
@@ -20,6 +21,8 @@ export default function EventCardList({ events }: EventCardListProps) {
                         key={event._id}
                         date={dateFormat}
                         slug={event.slug}
+                        url={event.url}
+                        
                     />
                 );
             })}

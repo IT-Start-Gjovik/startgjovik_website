@@ -12,23 +12,32 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 type Props = {
-    params: { eventPage: string };
+    params: Promise<{ eventPage: string }>;
 };
 
 export default function PageForEvent({ params }: Props) {
+    const [slug, setSlug] = useState<string>('');
     const [eventPage, setEventPage] = useState<EventPageType | null>(null);
 
-    const slug = params.eventPage;
     const router = useRouter();
 
     useEffect(() => {
-        if (!slug) router.push('/');
+        params.then(({ eventPage }) => {
+            setSlug(eventPage);
+        });
+    }, [params]);
+
+    useEffect(() => {
+        if (!slug) return;
+
         if (!eventPage) {
             getCurrentEventCards(slug)
                 .then((data) => {
                     if (!data) {
                         router.push('/feilside');
+                        return;
                     }
+
                     setEventPage(data);
                 })
                 .catch((error) => console.log('Error: ', error));

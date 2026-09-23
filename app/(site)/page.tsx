@@ -6,6 +6,7 @@ import MiddleSection from '@/components/middleSection/middleSection';
 import SustainabilitySection from '@/components/sustainability/sustainabilitySection';
 import WeeklyActivitiesSection from '@/components/weeklyActivities/weeklyActivitiesSection';
 import { ImageCategory } from '@/enums/EImageCategory';
+import { url } from 'inspector';
 
 const homePageProps = {
     title: 'VELKOMMEN TIL',
