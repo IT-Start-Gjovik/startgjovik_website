@@ -24,6 +24,8 @@ export async function getEventCards(): Promise<EventCardType[]> {
             datetime,
             "image": image.asset -> url,
             "slug": slug.current,
+            "url": url
+            
         }`,
         { currentDate },
     );
@@ -40,6 +42,7 @@ export async function getPastEventCards(): Promise<EventCardType[]> {
             datetime,
             "image": image.asset -> url,
             "slug": slug.current,
+            "url" : url
         }`,
         { currentDate },
     );
@@ -52,7 +55,7 @@ export async function getCurrentEventCards(slug: string): Promise<EventPageType>
             title,
             "slug": slug.current,
             "image": image.asset->url,
-            url,
+            "url":url,
             content,
             datetime
         }`,
